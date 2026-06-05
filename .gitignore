@@ -1,8 +1,17 @@
 /.idea
 /out
-*.log
-*.fls
-*.fdb_latexmk
+
+# Generated LaTeX auxiliary files
 *.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
 *.toc
-*.bib
+*.synctex.gz
