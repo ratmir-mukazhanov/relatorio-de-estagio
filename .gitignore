@@ -1,0 +1,8 @@
+/.idea
+/out
+*.log
+*.fls
+*.fdb_latexmk
+*.aux
+*.toc
+*.bib
