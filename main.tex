@@ -68,6 +68,7 @@
 
 % ---------------------------- GRAPHICS ----------------------------------------
 \usepackage{graphicx}
+\usepackage{float}
 
 % ---------------------------- CAPTIONS ----------------------------------------
 \usepackage[font=small,labelfont=bf,justification=justified]{caption}
@@ -388,17 +389,207 @@ ao trabalho realizado.
 
 % ===================== ANEXOS =================================================
 \begin{appendices}
+\renewcommand{\thefigure}{\arabic{figure}}
+\setcounter{figure}{0}
 
-  \chapter{Plano Individual de Trabalho (PIT)}
+% --- Anexo 1: PIT (2 anexos) ---
+\chapter{Plano Individual de Trabalho (PIT)}
 
-  O Plano Individual de Trabalho encontra-se nas páginas seguintes.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image3.png}
+  \caption{Plano do estágio, página 1}
+  \label{fig:pit-pag1}
+\end{figure}
 
-  % --- Para incluir o PIT como PDF ---
-  % \includepdf[pages=-]{anexos/pit.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image4.png}
+  \caption{Plano do estágio, página 2}
+  \label{fig:pit-pag2}
+\end{figure}
 
-  \chapter{Outros Anexos}
+% --- Anexo 2: Descrição Técnica de Tarefas (5 anexos) ---
+\chapter{Descrição Técnica de Tarefas}
 
-  Incluir outros anexos conforme aplicável.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image5.png}
+  \caption{Descrição de tarefas, página 1}
+  \label{fig:tarefas-pag1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image6.png}
+  \caption{Descrição de tarefas, página 2}
+  \label{fig:tarefas-pag2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image7.png}
+  \caption{Descrição de tarefas, página 3}
+  \label{fig:tarefas-pag3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image8.png}
+  \caption{Descrição de tarefas, página 4}
+  \label{fig:tarefas-pag4}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image9.png}
+  \caption{Descrição de tarefas, página 5}
+  \label{fig:tarefas-pag5}
+\end{figure}
+
+% --- Anexo 3: Diagrama de Gantt (1 anexo) ---
+\chapter{Diagrama de Gantt}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image10.png}
+  \caption{Diagrama de Gantt da calendarização prevista}
+  \label{fig:gantt}
+\end{figure}
+
+% --- Anexo 4: Horário Letivo e Disponibilidade (1 anexo) ---
+\chapter{Horário Letivo e Disponibilidade}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image11.png}
+  \caption{Horário Letivo e Disponibilidade}
+  \label{fig:horario}
+\end{figure}
+
+% --- Anexo 5: Proposta de Métricas Tracking API (3 anexos) ---
+\chapter{Proposta de Métricas \textit{Tracking API}}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image12.png}
+  \caption{Proposta de Métricas \textit{Tracking API}, página 1}
+  \label{fig:metricas-pag1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image13.png}
+  \caption{Proposta de Métricas \textit{Tracking API}, página 2}
+  \label{fig:metricas-pag2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image14.png}
+  \caption{Proposta de Métricas \textit{Tracking API}, página 3}
+  \label{fig:metricas-pag3}
+\end{figure}
+
+% --- Anexo 6: Preparação do Ambiente 4GL (2 anexos) ---
+\chapter{Preparação do Ambiente 4GL}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image15.png}
+  \caption{Ambiente exemplo de desenvolvimento 4GL}
+  \label{fig:4gl-exemplo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image16.png}
+  \caption{Ambiente de desenvolvimento 4GL configurado}
+  \label{fig:4gl-configurado}
+\end{figure}
+
+% --- Anexo 7: Capturas de Ecrã da Solução (8 anexos) ---
+\chapter{Capturas de Ecrã da Solução}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image17.png}
+  \caption{Menu lateral e gestão de utilizadores}
+  \label{fig:solucao-menu}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image18.png}
+  \caption{Listagem de envios}
+  \label{fig:solucao-envios}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image19.png}
+  \caption{Movimentos do envio}
+  \label{fig:solucao-movimentos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image20.png}
+  \caption{Posição de envio finalizado}
+  \label{fig:solucao-finalizado}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image21.png}
+  \caption{Posição de envio em tempo real}
+  \label{fig:solucao-temporeal}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image22.png}
+  \caption{Estatística do cliente}
+  \label{fig:solucao-cliente}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image23.png}
+  \caption{Estatística financeira da plataforma}
+  \label{fig:solucao-financeira}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image24.png}
+  \caption{Estatística técnica da plataforma}
+  \label{fig:solucao-tecnica}
+\end{figure}
+
+% --- Anexo 8: Integração com a SeaRates (3 anexos) ---
+\chapter{Integração com a \textit{SeaRates}}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image25.png}
+  \caption{Simulação da \textit{SeaRates} API com Prism}
+  \label{fig:searates-prism}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image26.png}
+  \caption{Ativação do ambiente de teste da \textit{SeaRates}}
+  \label{fig:searates-teste}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image27.png}
+  \caption{Dados dos navios reais}
+  \label{fig:searates-navios}
+\end{figure}
 
 \end{appendices}
 
