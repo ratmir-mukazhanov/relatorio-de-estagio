@@ -301,9 +301,7 @@ In the final phase of the internship, although the environment was prepared for 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-A empresa onde decorreu o estágio, Devlop, integra o grupo Leviahub, um cluster especializado em tecnologia e consultoria orientado para o setor da cadeia de abastecimento (Supply Chain). Fundada em 1999, a empresa acumula mais de 25 anos de experiência no desenvolvimento de soluções tecnológicas, posicionando-se como uma parceira relevante na transformação digital de pequenas e médias empresas (PME), especialmente nas áreas de transportes e logística.
-
-A Devlop tem a sua sede em Cascais e conta com presença em várias localizações em Portugal, nomeadamente em Leiria, Aveiro e Porto, e opera também em mercados internacionais, com destaque para os PALOP (Países Africanos de Língua Oficial Portuguesa). Esta presença reforça o seu foco em mercados em que a digitalização da logística ainda apresenta elevado potencial de crescimento.
+A empresa onde decorreu o estágio, Devlop, integra o grupo Leviahub, um cluster especializado em tecnologia e consultoria orientado para o setor da cadeia de abastecimento (Supply Chain). Fundada em 1999, a empresa acumula mais de 25 anos de experiência no desenvolvimento de soluções tecnológicas para pequenas e médias empresas (PME), especialmente nas áreas de transportes e logística. Tem sede em Cascais e presença em Leiria, Aveiro e Porto, operando também nos PALOP (Países Africanos de Língua Oficial Portuguesa).
 
 No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
 
@@ -314,24 +312,20 @@ No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes
   \label{fig:devlop-pilares}
 \end{figure}
 
-No domínio da Supply Chain, a Devlop desenvolve soluções próprias orientadas para a gestão e a otimização do transporte e do armazenamento de mercadorias. Entre estas, destacam-se sistemas de gestão de transporte, como o Transporter, WebSHoT, WebTrans e Shipperform, bem como soluções especializadas, como o WebDepot, voltado à gestão de parques de contentores. Complementarmente, disponibiliza ainda WMS que suporta operações de inventário e de distribuição.
+No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão de transporte e armazenamento, como o Transporter, WebSHoT, WebTrans e WebDepot, bem como WMS de suporte a operações de inventário e distribuição. Nas soluções corporativas, atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera, incluindo a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de dashboards com Power BI. Ao nível da infraestrutura, fornece serviços de alojamento em nuvem, cibersegurança (em parceria com a Sophos) e suporte técnico.
 
-No que diz respeito às soluções corporativas, a Devlop atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera. Este trabalho inclui a integração de sistemas, a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de soluções de Business Intelligence, nomeadamente dashboards com recurso ao Power BI e à Cegid Business Analytics.
+Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET no backend e bases de dados SQL, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
 
-Ao nível da infraestrutura, a empresa fornece serviços de alojamento em nuvem, cibersegurança (em parceria com a Sophos) e suporte técnico, incluindo manutenção de hardware e operações de suporte técnico.
+\subsection{Situação Atual do Projeto}
 
-Do ponto de vista tecnológico, o ambiente de desenvolvimento da empresa centra-se sobretudo em tecnologias da Microsoft, com destaque para o .NET Framework e o .NET Core no backend. A integração entre sistemas assume um papel crítico, sendo frequente o uso de EDI no contexto logístico, bem como o desenvolvimento de APIs para ligação entre ERPs antigos e plataformas web modernas. As bases de dados utilizadas são maioritariamente baseadas em SQL, refletindo a integração com sistemas como o Primavera. Paralelamente, são desenvolvidas aplicações web e portais digitais que dão suporte aos produtos da empresa.
-
-A Devlop participa ainda em projetos de investigação e desenvolvimento de relevo, como a Agenda NEXUS, focada na transição digital e ecológica do setor logístico, e em iniciativas como o Projecto SPC e o Projecto Grow, frequentemente cofinanciadas por programas europeus. Para além disso, organiza o evento TechLogistics, reforçando a sua posição como agente ativo na inovação e na discussão tecnológica no setor.
-
-Relativamente à estrutura da equipa, esta insere-se num contexto multidisciplinar, tipicamente composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio, que colaboram de forma integrada no desenvolvimento, na implementação e no suporte das soluções oferecidas pela empresa.
+O integrador de tracking, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma API que atuava como ponte entre clientes externos e fornecedores de tracking, comunicando, à data de início do estágio, exclusivamente com o fornecedor ShipsGo. Esta API registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de tracking e os \textit{logs} de pedidos para posterior faturação, suportando ainda o cálculo de custos associados ao consumo da API. Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando-se na expansão das capacidades do sistema existente.
 
 % --- Objetivos ---
 \section{Objetivos}
 
 \subsection{Objetivos gerais}
 
-Descrição do(s) objetivo(s) geral(ais) do estágio/projeto.
+O estágio teve como tema \enquote{Integrador Tracking --- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos utilizando as APIs da ShipsGo e SeaRates, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores, e a integração dos dados nos sistemas internos de gestão de trânsitos (FWD).
 
 \subsection{Objetivos específicos}
 
@@ -339,7 +333,7 @@ Enumeração e descrição dos objetivos específicos que se pretendem alcançar
 o trabalho realizado.
 
 % --- Metodologia ---
-\section{Metodologia}
+\section{Metodologias de Trabalho}
 
 Durante o estágio, a organização do trabalho seguiu uma abordagem ágil, com ciclos semanais e acompanhamento regular das tarefas.
 
@@ -356,7 +350,7 @@ De forma geral, o modelo de trabalho adotado permitiu um acompanhamento contínu
 Para o acompanhamento formal do progresso, estabeleceu-se uma rotina de registo semanal. Nas semanas iniciais, as tarefas foram documentadas num ficheiro independente. Posteriormente, o orientador da entidade de acolhimento disponibilizou o modelo oficial de relatório de estágio da Devlop, com o histórico das primeiras semanas já integrado. A partir desse momento, este documento passou a ser atualizado de forma contínua, detalhando semanalmente as atividades realizadas, os resultados alcançados e as dificuldades encontradas.
 
 % --- Estrutura do relatório ---
-\section{Estrutura do Relatório}
+\section{Descrição da estrutura interna do relatório}
 
 O presente relatório está estruturado em cinco capítulos. Após esta introdução, o Capítulo II apresenta o planeamento e a calendarização original do trabalho. O Capítulo III descreve detalhadamente as atividades desenvolvidas ao longo do estágio, divididas pelas respetivas fases técnicas. O Capítulo IV efetua uma análise retrospetiva dos resultados alcançados face aos objetivos propostos. Por fim, o Capítulo V encerra o documento com uma reflexão crítica sobre a experiência, as competências adquiridas e o cumprimento do plano estipulado.
 
