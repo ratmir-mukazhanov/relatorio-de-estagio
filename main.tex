@@ -350,7 +350,7 @@ Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando
 
 \subsection{Objetivos gerais}
 
-O estágio teve como tema \enquote{Integrador Tracking --- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos utilizando as APIs da ShipsGo e SeaRates~\cite{searates}, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores, e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
+O estágio teve como tema \enquote{Integrador Tracking -- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos utilizando as APIs da ShipsGo e SeaRates~\cite{searates}, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores, e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
 
 \subsection{Objetivos específicos}
 
@@ -444,7 +444,7 @@ Esta preparação inicial revelou-se essencial para abordar com segurança o có
 
 Antes de qualquer implementação, procedeu-se ao estudo aprofundado da API de \textit{tracking} existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos para o fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (Anexo~2, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API SeaRates.
 
-Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores --- com destaque para o modelo \textit{stateless} da SeaRates --- e dos desafios que a integração implicaria.
+Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores -- com destaque para o modelo \textit{stateless} da SeaRates -- e dos desafios que a integração implicaria.
 
 \section{Integração do Fornecedor SeaRates}
 
@@ -488,7 +488,7 @@ Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de 
 
 Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a Português, Inglês e Espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (Anexo~6, \autoref{fig:metricas-pag1} a \autoref{fig:metricas-pag3}), que serviu de base aos \textit{dashboards} do painel administrativo. A organização do código foi sendo melhorada através de refatorações sucessivas dos componentes React.
 
-A interface resultante (Anexo~8, \autoref{fig:solucao-menu} a \autoref{fig:solucao-tecnica}) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada com o \textit{backend}, com suporte multi-idioma e um sistema de permissões robusto.
+A interface resultante (Anexo~8) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada com o \textit{backend}, com suporte multi-idioma e um sistema de permissões robusto. Entre os ecrãs desenvolvidos, destacam-se o menu lateral e a gestão de utilizadores (\autoref{fig:solucao-menu}), a listagem de envios (\autoref{fig:solucao-envios}), a visualização dos movimentos de cada envio (\autoref{fig:solucao-movimentos}), a posição de um envio finalizado (\autoref{fig:solucao-finalizado}), o seguimento em tempo real (\autoref{fig:solucao-temporeal}), as estatísticas por cliente (\autoref{fig:solucao-cliente}) e os painéis financeiro (\autoref{fig:solucao-financeira}) e técnico (\autoref{fig:solucao-tecnica}).
 
 \section{Integrações e Testes Finais}
 
@@ -500,11 +500,11 @@ O motor de estatísticas foi alvo de uma refatoração profunda: a remoção de 
 
 Um dos principais desafios técnicos desta fase relacionou-se com a renderização geográfica em tempo real. O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (Anexo~9, \autoref{fig:searates-prism}), refletindo apenas rotas de envios já finalizados.
 
-Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~9, \autoref{fig:searates-teste}), a transição para dados reais --- facilitada pelo fornecimento interno de contentores de teste (Anexo~9, \autoref{fig:searates-navios}) --- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de \textit{tracking} de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas numericamente representa um salto de 358°.
+Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~9, \autoref{fig:searates-teste}), a transição para dados reais -- facilitada pelo fornecimento interno de contentores de teste (Anexo~9, \autoref{fig:searates-navios}) -- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de \textit{tracking} de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas numericamente representa um salto de 358°.
 
 Antes da correção, os \textit{mappers} GeoJSON ligavam os pontos consecutivos na ordem ingénua das longitudes, fazendo com que uma rota como [179°E] → [-179°W] fosse renderizada como uma linha que contornava quase todo o planeta, em vez do curto salto sobre o meridiano 180°. A solução consistiu em detetar saltos superiores a 180° entre longitudes consecutivas e normalizar as coordenadas para uma mesma reta numérica contínua, interpolando o ponto exato de cruzamento com o antimeridiano e dividindo a \textit{LineString} em dois segmentos independentes, um em cada hemisfério. Como resultado, as rotas que cruzam a Linha Internacional de Data passaram a ser representadas corretamente nos mapas, exibindo a verdadeira travessia do Pacífico.
 
-Ao nível da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o anterior modelo baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} --- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação --- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
+Ao nível da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o anterior modelo baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} -- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação -- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
 
 No termo desta fase, a plataforma apresentava uma API estabilizada face a exceções do novo fornecedor, representação geográfica correta dos trajetos marítimos, autenticação centralizada e segura, e melhorias significativas na fiabilidade e na apresentação de dados analíticos.
 
@@ -525,9 +525,9 @@ Quanto às Fases~5 e~6, dedicadas às integrações e à estabilização, o plan
 
 A migração do sistema de autenticação para Keycloak e a correção de anomalias na renderização geográfica asseguraram que a solução final reunisse as condições de segurança, fiabilidade e usabilidade necessárias à sua adoção interna.
 
-Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates, integrado pelo autor, e o OpenSyllo, integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
+Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates, integrado pelo autor, e o OpenSyllo~\cite{opensyllo}, integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
 
-A API expõe 37 \textit{controllers} organizados em 10 domínios funcionais, suportados por 26 entidades na base de dados SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (Português, Inglês e Espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit, Moq e FluentAssertions), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
+A API expõe 37 \textit{controllers} organizados em 10 domínios funcionais, suportados por 26 entidades na base de dados SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (Português, Inglês e Espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
 
 \section{Discussão}
 
@@ -572,19 +572,21 @@ No \textit{backend}, a solução assenta sobre a plataforma .NET, que forneceu a
 
 \subsubsection{Ferramentas}
 
-Para o desenvolvimento, foram utilizados os ambientes JetBrains Rider (\textit{backend}) e WebStorm (\textit{frontend}), que proporcionaram funcionalidades avançadas de implementação, teste e depuração. O controlo de versões foi efetuado com Git, com repositórios alojados no Azure DevOps Server, assegurando a gestão colaborativa do código ao longo de todo o projeto. A base de dados utilizada foi o Microsoft SQL Server, responsável pelo armazenamento da informação de \textit{tracking}, de clientes e de \textit{logs} da API.
+Para o desenvolvimento, foram utilizados os ambientes JetBrains Rider~\cite{rider} (\textit{backend}) e WebStorm~\cite{webstorm} (\textit{frontend}), que proporcionaram funcionalidades avançadas de implementação, teste e depuração. O controlo de versões foi efetuado com Git, com repositórios alojados no Azure DevOps Server~\cite{azuredevops}, assegurando a gestão colaborativa do código ao longo de todo o projeto. A base de dados utilizada foi o Microsoft SQL Server, responsável pelo armazenamento da informação de \textit{tracking}, de clientes e de \textit{logs} da API.
 
 Para teste e exploração da API, recorreu-se ao Swagger~\cite{swagger}, que permitiu validar \textit{endpoints}, testar integrações e analisar respostas durante o desenvolvimento. No \textit{frontend}, foram frequentemente utilizadas as ferramentas de desenvolvimento do navegador para inspeção de elementos, análise de pedidos HTTP e depuração do comportamento da interface. A comunicação e o acompanhamento do trabalho foram realizados através do Microsoft Teams, plataforma que facilitou a interação com a equipa e o seguimento das tarefas.
 
-Como ferramentas de apoio ao desenvolvimento, foram utilizados o GitHub Copilot e o OpenCode, principalmente para auxiliar na geração de código e na automatização de tarefas repetitivas, contribuindo para uma maior produtividade. Por fim, o Microsoft Word foi utilizado para a elaboração dos relatórios semanais e da documentação associada ao estágio.
+Como ferramentas de apoio ao desenvolvimento, foram utilizados o GitHub Copilot~\cite{copilot} e o OpenCode, principalmente para auxiliar na geração de código e na automatização de tarefas repetitivas, contribuindo para uma maior produtividade. Por fim, o Microsoft Word foi utilizado para a elaboração dos relatórios semanais e da documentação associada ao estágio.
 
 \subsection{Planeamento Previsto e Executado}
 
-A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de \textit{tracking} de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, repartido ao longo de 16 semanas. O Anexo~3 apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a calendarização correspondente.
+A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de \textit{tracking} de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, repartido ao longo de 16 semanas. O Anexo~3 (\autoref{tab:execucao-real}) apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a calendarização correspondente.
 
 Comparativamente ao PIT, verifica-se que as Fases~1 e~2 decorreram em conformidade com o previsto, totalizando 56 horas nas duas primeiras semanas. A Fase~3, embora tenha mantido a sua duração global, foi concluída antecipadamente (72 horas em três semanas, face às 160 horas e quatro semanas planeadas), beneficiando da utilização de ferramentas de simulação que agilizaram o desenvolvimento e os testes. A Fase~4, relativa ao \textit{frontend}, registou o maior desvio: as 320 horas inicialmente estimadas foram ajustadas para 168 horas reais, distribuídas por seis semanas, refletindo uma maior eficiência na implementação e uma delimitação mais precisa do âmbito funcional.
 
 A Fase~5, originalmente dedicada à integração com o i-Forwarder, foi reorientada para incluir também a preparação do ambiente 4GL e a resolução de problemas de paginação, totalizando 68 horas em três semanas. Por fim, a Fase~6 alargou o seu âmbito para acomodar a migração para Keycloak e a refatoração do motor de estatísticas, ocupando 52 horas em duas semanas.
+
+A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e as horas efetivamente executadas em cada uma das seis fases do estágio.
 
 \begin{table}[H]
 \centering
@@ -618,11 +620,11 @@ Ao longo do estágio, foram identificadas dificuldades de natureza organizaciona
 
 No plano técnico, uma das principais dificuldades esteve relacionada com o desenvolvimento \textit{frontend}, área na qual existia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica.
 
-Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: foram dedicados três dias úteis à implementação isolada de uma interface \textit{CRUD} completa com React Admin, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
+Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: foram dedicados três dias úteis à implementação isolada de uma interface \textit{CRUD} completa com React Admin~\cite{reactadmin}, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
 
 A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
 
-A implementação do motor de estatísticas apresentou ainda um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade --- e consequente aprendizagem --- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando os dados diretamente da base de dados.
+A implementação do motor de estatísticas apresentou ainda um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade -- e consequente aprendizagem -- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando os dados diretamente da base de dados.
 
 Esta simplificação, orientada pela manutenibilidade, trouxe ainda um benefício adicional: ao operar sobre dados em bruto, o sistema ganhou maior granularidade, facilitando a introdução da funcionalidade de exportação para Excel.
 
@@ -636,7 +638,7 @@ Em segundo lugar, sugere-se a retoma da integração com o sistema i-Forwarder. 
 
 Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à base de dados simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
 
-Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da base de dados --- como vistas materializadas --- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
+Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da base de dados -- como vistas materializadas -- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
 
 % ===================== BIBLIOGRAFIA ===========================================
 \printbibliography
@@ -832,7 +834,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Migração da autenticação para Keycloak.
 & \multirow{4}{0.12\textwidth}{15 e 16} \\
 \cline{2-2}
-& Refatorização de estatísticas, exportação Excel e correção do seguimento em tempo real. & \\
+& Refatoração de estatísticas, exportação Excel e correção do seguimento em tempo real. & \\
 \cline{2-2}
 & Realização de testes finais (manuais e automatizados) e documentação de código. & \\
 \cline{2-2}
