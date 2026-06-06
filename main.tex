@@ -98,7 +98,7 @@
 
 % ---------------------------- MISC --------------------------------------------
 \usepackage{url}
-\usepackage{pdfpages}                     % Para incluir PDFs nos anexos
+\usepackage{pdfpages}
 
 % =============================================================================
 \begin{document}
@@ -110,7 +110,7 @@
 
   \vspace*{2cm}
 
-  \includegraphics[width=0.5\textwidth]{images/logoUA.png}
+  \includegraphics[width=0.45\textwidth]{images/image1.png}
 
   \vspace{0.5cm}
 
@@ -132,19 +132,13 @@
   \vspace{2cm}
 
   {\fontsize{13}{16}\selectfont
-    \textbf{Ratmir Mukazhanov}\\
-    N.º Mecanográfico: 120629\par}
+    Ratmir Mukazhanov\par}
 
-  \vspace{1cm}
+  \vspace{1.5cm}
 
   {\fontsize{12}{15}\selectfont
     Orientador ESTGA-UA: Prof. Doutor António Augusto Nunes Godinho\\
     Orientador da Entidade de Acolhimento: Bruno Miguel Ferreira Leitão\par}
-
-  \vspace{0.5cm}
-
-  {\fontsize{12}{15}\selectfont
-    Entidade de Acolhimento: Devlop -- Leviahub\par}
 
   \vfill
 
@@ -165,7 +159,7 @@
 
   \vspace*{2cm}
 
-  \includegraphics[width=0.5\textwidth]{images/logoUA.png}
+  \includegraphics[width=0.45\textwidth]{images/image1.png}
 
   \vspace{0.5cm}
 
@@ -187,19 +181,13 @@
   \vspace{2cm}
 
   {\fontsize{13}{16}\selectfont
-    \textbf{Ratmir Mukazhanov}\\
-    N.º Mecanográfico: 120629\par}
+    Ratmir Mukazhanov\par}
 
-  \vspace{1cm}
+  \vspace{1.5cm}
 
   {\fontsize{12}{15}\selectfont
     Orientador ESTGA-UA: Prof. Doutor António Augusto Nunes Godinho\\
     Orientador da Entidade de Acolhimento: Bruno Miguel Ferreira Leitão\par}
-
-  \vspace{0.5cm}
-
-  {\fontsize{12}{15}\selectfont
-    Entidade de Acolhimento: Devlop -- Leviahub\par}
 
   \vfill
 
@@ -214,23 +202,32 @@
 \pagenumbering{roman}
 \setcounter{page}{4}
 
-% ===================== AGRADECIMENTOS (FACULTATIVO) ===========================
-% --- Descomentar se pretender incluir agradecimentos ---
-% \chapter*{Agradecimentos}
-% \addcontentsline{toc}{chapter}{Agradecimentos}
-%
-% Texto dos agradecimentos...
-%
-% \newpage
+% ===================== AGRADECIMENTOS =========================================
+\chapter*{Agradecimentos}
+\addcontentsline{toc}{chapter}{Agradecimentos}
+
+Gostaria de expressar o meu sincero agradecimento à Escola Superior de Tecnologia e Gestão da Universidade de Aveiro e à Universidade de Aveiro pela formação proporcionada ao longo do curso, que constituiu a base essencial para a realização deste estágio.
+
+Agradeço à empresa Devlop pela oportunidade de realizar o estágio curricular e pela integração num ambiente profissional, onde tive a possibilidade de aplicar e desenvolver os meus conhecimentos.
+
+Um agradecimento especial ao Professor António Godinho pelo acompanhamento, orientação e disponibilidade ao longo do estágio.
+
+Agradeço também a Sandro Cunha pelo apoio prestado durante o período de estágio, pela partilha de conhecimento e pela ajuda na resolução das dificuldades encontradas.
+
+Por fim, agradeço aos meus colegas pelo apoio, espírito de entreajuda e partilha de experiências, que contribuíram para um ambiente de trabalho positivo e para o meu desenvolvimento pessoal e profissional.
+
+\newpage
 
 % ===================== RESUMO =================================================
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-Texto do resumo em português (máximo de 300 palavras).
+Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu na evolução de uma API de seguimento de envios marítimos pré-existente, através da integração de um novo fornecedor de dados, a plataforma SeaRates. O desenvolvimento de backend, suportado em .NET e Entity Framework Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema de forma agnóstica e determinística. Adicionalmente, foi desenhada e implementada uma interface frontend em React para suportar a gestão operacional e administrativa da plataforma, englobando operações CRUD para múltiplas entidades, internacionalização e gestão de créditos comerciais.
+
+Na fase final do estágio, embora o ambiente tenha sido preparado para a integração com os sistemas internos de gestão de trânsitos (FWB) da empresa num ecossistema Four Js Genero (4GL), as prioridades do projeto foram reorientadas para garantir a estabilidade e a segurança da solução desenvolvida. Consequentemente, o trabalho focou-se na consolidação da integração com a SeaRates, na correção de anomalias complexas de dados geográficos no mapa de seguimento em tempo real e na migração integral do sistema de autenticação para o Keycloak. Os resultados evidenciaram a eficácia da arquitetura implementada, dotando a empresa de uma solução estável, escalável e segura para a monitorização logística.
 
 \vspace{1cm}
-\noindent\textbf{Palavras-chave:} palavra-chave 1; palavra-chave 2; palavra-chave 3; palavra-chave 4; palavra-chave 5; palavra-chave 6.
+\noindent\textbf{Palavras-chave:} Integração de APIs, .NET, React, Seguimento Marítimo, Keycloak.
 
 \newpage
 
@@ -238,10 +235,12 @@ Texto do resumo em português (máximo de 300 palavras).
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-Abstract text in English (maximum 300 words).
+This report describes the work conducted during the curricular internship for the Bachelor's Degree in Information Technologies at Devlop. The main objective of the project was the evolution of a pre-existing maritime shipment tracking API by integrating a new data provider, the SeaRates platform. The development involved backend components using .NET and Entity Framework Core, extending the system's service orchestrator and capabilities registry in an agnostic and deterministic manner. Additionally, a frontend interface was designed and implemented in React to support the platform's operational and administrative management, including CRUD operations for multiple entities, internationalization, and commercial credit management.
+
+In the final phase of the internship, although the environment was prepared for integration with the company's internal freight forwarding systems (FWB) within a Four Js Genero (4GL) ecosystem, the project's priorities were redirected to ensure stability and security of the developed solution. Consequently, the work focused on consolidating the SeaRates integration, fixing complex geographic data anomalies on the live tracking map, and fully migrating the authentication system to Keycloak. The results demonstrated the effectiveness of the implemented architecture, providing the company with a stable, scalable, and secure multi-provider solution for logistics monitoring.
 
 \vspace{1cm}
-\noindent\textbf{Keywords:} keyword 1; keyword 2; keyword 3; keyword 4; keyword 5; keyword 6.
+\noindent\textbf{Keywords:} API Integration, .NET, React, Maritime Tracking, Keycloak.
 
 \newpage
 
@@ -256,21 +255,33 @@ Abstract text in English (maximum 300 words).
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}
 
-% ===================== LISTA DE SIGLAS E ABREVIATURAS (FACULTATIVO) ===========
-% --- Descomentar se pretender incluir lista de siglas ---
-% \newpage
-% \chapter*{Lista de Siglas e Abreviaturas}
-% \addcontentsline{toc}{chapter}{Lista de Siglas e Abreviaturas}
-%
-% \begin{acronym}
-%   \acro{ESTGA}{Escola Superior de Tecnologia e Gestão de Águeda}
-%   \acro{UA}{Universidade de Aveiro}
-%   \acro{TI}{Tecnologias da Informação}
-%   \acro{EA}{Entidade de Acolhimento}
-%   \acro{PIT}{Plano Individual de Trabalho}
-% \end{acronym}
-%
-% \newpage
+% ===================== LISTA DE SIGLAS E ABREVIATURAS =========================
+\newpage
+\chapter*{Lista de Siglas e Abreviaturas}
+\addcontentsline{toc}{chapter}{Lista de Siglas e Abreviaturas}
+
+\begin{acronym}
+  \acro{4GL}{Fourth-Generation Programming Language}
+  \acro{API}{Application Programming Interface}
+  \acro{BD}{Base de Dados}
+  \acro{CRUD}{Create, Read, Update, Delete}
+  \acro{DTO}{Data Transfer Object}
+  \acro{EDI}{Electronic Data Interchange}
+  \acro{ERP}{Enterprise Resource Planning}
+  \acro{ESTGA-UA}{Escola Superior de Tecnologia e Gestão de Águeda -- Universidade de Aveiro}
+  \acro{FWB}{Freight Forwarding Systems / Sistemas internos de gestão de trânsitos}
+  \acro{HTTP}{HyperText Transfer Protocol}
+  \acro{KPI}{Key Performance Indicator}
+  \acro{PaaS}{Platform as a Service}
+  \acro{PALOP}{Países Africanos de Língua Oficial Portuguesa}
+  \acro{PME}{Pequenas e Médias Empresas}
+  \acro{REST}{Representational State Transfer}
+  \acro{SQL}{Structured Query Language}
+  \acro{UI}{User Interface}
+  \acro{WMS}{Sistema de gestão de armazéns (Warehouse Management System)}
+\end{acronym}
+
+\newpage
 
 % ===================== NUMERAÇÃO ÁRABE (CORPO DO RELATÓRIO) ===================
 \pagenumbering{arabic}
