@@ -390,32 +390,37 @@ No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos 
 % ===================== CAPÍTULO 3 - ATIVIDADES DESENVOLVIDAS ==================
 \chapter{Descrição das Atividades Desenvolvidas}
 
-\section{Atividade 1}
+\section{Formação e Preparação Técnica}
 
-Descrição e análise detalhada da primeira atividade desenvolvida no âmbito do
-estágio/projeto.
+O estágio teve início com um período de adaptação à stack tecnológica da Devlop e ao ambiente de desenvolvimento utilizado na empresa. Para adquirir os conhecimentos práticos necessários à compreensão da base de código existente, foram frequentados os cursos de \textit{Entity Framework Core} e de \textit{SQL Server Database Design} referidos no planeamento (Anexo~1, \autoref{fig:pit-pag1}). Complementarmente, foi desenvolvido um projeto prático CRUD envolvendo backend em .NET, frontend em React e base de dados SQL Server, o que permitiu configurar um ambiente de desenvolvimento funcional e compreender a interação entre as diferentes camadas tecnológicas. Esta preparação inicial revelou-se essencial para abordar com segurança o código do projeto principal.
 
-\subsection{Tarefas realizadas}
+\section{Análise da Arquitetura Existente}
 
-Descrição das tarefas concretas.
+Antes de qualquer implementação, procedeu-se ao estudo aprofundado da API de tracking existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos para o fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (Anexo~2, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API SeaRates. Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores --- com destaque para o modelo sem estado (\textit{stateless}) da SeaRates --- e dos desafios que a integração implicaria.
 
-\subsection{Resultados obtidos}
+\section{Integração do Fornecedor SeaRates}
 
-Apresentação e discussão dos resultados.
+A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo (\textit{Ocean}), aéreo (\textit{Air}) e de transportadoras (\textit{Carriers}). O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
-\section{Atividade 2}
+No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de tracking operacionais e a comunicação com a API externa validada. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores.
 
-Descrição e análise detalhada da segunda atividade.
+\section{Desenvolvimento da Interface da Plataforma}
 
-% --- Exemplo de figura ---
-% \begin{figure}[h]
-%   \centering
-%   % \includegraphics[width=0.8\textwidth]{images/exemplo.png}
-%   \caption{Legenda da figura.}
-%   \label{fig:exemplo}
-% \end{figure}
-%
-% A Figura~\ref{fig:exemplo} ilustra o processo descrito.
+Com a camada de backend consolidada, procedeu-se ao desenvolvimento de uma interface web em React para interação com a API de tracking. Foram implementadas operações CRUD para as principais entidades do sistema e desenvolvidas páginas dedicadas ao tracking e ao detalhe de envios, integradas com a API através de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo um controlo de acessos granular entre perfis de administrador e de cliente.
+
+Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a Português, Inglês e Espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (Anexo~5, \autoref{fig:metricas-pag1} a \autoref{fig:metricas-pag3}), que serviu de base aos \textit{dashboards} do painel administrativo. A organização do código foi sendo melhorada através de refatorações sucessivas dos componentes React.
+
+A interface resultante (Anexo~7, \autoref{fig:solucao-menu} a \autoref{fig:solucao-tecnica}) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada com o backend, com suporte multi-idioma e um sistema de permissões robusto.
+
+\section{Integrações e Testes Finais}
+
+Na fase final do estágio, iniciou-se a preparação para a integração com o sistema interno de gestão de trânsitos, o i-Forwarder. Foi configurado um ambiente de desenvolvimento inicial em Four Js Genero (Anexo~6, \autoref{fig:4gl-exemplo} e \autoref{fig:4gl-configurado}) e realizaram-se as primeiras reuniões de alinhamento com a equipa responsável. Contudo, a necessidade de garantir a estabilidade e a segurança da plataforma levou a uma reorientação das prioridades para as semanas finais.
+
+O esforço de consolidação da integração com a SeaRates centrou-se na adição de exceções específicas para este fornecedor e na unificação e tradução das mensagens de movimento dos envios. Foram também resolvidos constrangimentos de paginação em pontos críticos do sistema, como as listagens de envios e de consumos. O motor de estatísticas foi alvo de uma refatoração profunda: a remoção de agregações pré-calculadas simplificou a arquitetura e permitiu uma maior granularidade dos dados, viabilizando a exportação de dados para Excel.
+
+Um dos principais desafios técnicos desta fase relacionou-se com a renderização geográfica em tempo real. O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (Anexo~8, \autoref{fig:searates-prism}), refletindo apenas rotas de envios já finalizados. Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~8, \autoref{fig:searates-teste}), a transição para dados reais --- facilitada pelo fornecimento interno de contentores de teste (Anexo~8, \autoref{fig:searates-navios}) --- expôs o problema do antimeridiano, uma anomalia na normalização de coordenadas que causava a inversão visual das rotas ao cruzar os limites do mapa. A resolução deste problema exigiu a revisão da lógica de processamento de coordenadas geográficas.
+
+Ao nível da segurança, procedeu-se à migração do fluxo de autenticação e autorização para o Keycloak, o que implicou uma depuração exaustiva e ajustes na lógica de controlo de acessos. No termo desta fase, a plataforma apresentava uma API estabilizada face a exceções do novo fornecedor, representação geográfica correta dos trajetos marítimos, autenticação centralizada e segura, e melhorias significativas na fiabilidade e na apresentação de dados analíticos.
 
 % ===================== CAPÍTULO 4 - ANÁLISE DE RESULTADOS =====================
 \chapter{Análise de Resultados}
