@@ -102,6 +102,7 @@
 \usepackage[printonlyused]{acronym}
 
 % ---------------------------- MISC --------------------------------------------
+\usepackage{multirow}
 \usepackage{url}
 \usepackage{pdfpages}
 
@@ -427,34 +428,84 @@ Ao nível da segurança, procedeu-se à migração do fluxo de autenticação e 
 
 \section{Cumprimento dos Objetivos}
 
-Análise do cumprimento dos objetivos gerais e específicos definidos inicialmente
-para o estágio/projeto.
+O balanço global do estágio revela um elevado índice de concretização das metas estabelecidas no plano de trabalho inicial, complementado por uma adaptação eficaz aos desafios técnicos que surgiram na fase final. A avaliação do cumprimento dos objetivos organiza-se em torno das três macrofases de desenvolvimento que estruturaram o projeto.
+
+No que respeita ao backend, correspondente às Fases~1 a~3 do planeamento, o objetivo central de integrar o fornecedor SeaRates na API de tracking existente foi plenamente alcançado. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o roteamento determinístico de pedidos para o novo fornecedor, sem qualquer alteração aos \textit{endpoints} públicos já expostos a clientes externos. A validação em ambiente simulado, com recurso ao Prism para \textit{mocking} da API SeaRates, permitiu garantir a estabilidade da integração e a conformidade dos contratos de dados definidos através dos DTOs implementados. Deste modo, foi cumprido o objetivo de expandir a API sem quebrar a retrocompatibilidade com os consumidores existentes.
+
+Relativamente ao frontend, desenvolvido no âmbito da Fase~4, a interface ultrapassou o propósito inicial de uma ferramenta de consulta de tracking, consolidando-se como um painel administrativo completo em React. Foram validadas com sucesso as operações CRUD dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo tipado de acessos através de enumerados e a gestão detalhada de créditos e de integrações visuais. O objetivo de criar uma plataforma funcional para clientes finais e para a administração da Devlop foi, assim, concretizado.
+
+Quanto às Fases~5 e~6, dedicadas às integrações e à estabilização, o plano original previa uma integração aprofundada com a aplicação corporativa FWB. Embora este objetivo não tenha sido atingido na sua totalidade, a reorientação estratégica das prioridades revelou-se acertada. O foco foi redirecionado para necessidades críticas da plataforma, resultando numa API estabilizada, com tratamento de exceções específico para a SeaRates e mensagens de movimento normalizadas. A migração do sistema de autenticação para Keycloak e a correção de anomalias na renderização geográfica asseguraram que a solução final reunisse as condições de segurança, fiabilidade e usabilidade necessárias à sua adoção interna.
 
 \section{Discussão}
 
-Discussão dos principais resultados obtidos, dificuldades encontradas e
-soluções adotadas.
+A execução do plano de trabalhos decorreu, no essencial, em conformidade com a calendarização prevista no PIT (Anexo~1), registando-se, contudo, desvios na fase final que merecem reflexão. O principal desvio face ao planeamento inicial consistiu na redução do âmbito da integração com o sistema FWB, em favor de um investimento mais aprofundado na estabilização da plataforma e no reforço da sua segurança. Esta decisão, tomada em articulação com o orientador da empresa, demonstrou ser a mais adequada ao estado de maturidade do produto, garantindo que a solução entregue se encontrasse robusta e pronta para utilização em ambiente interno.
+
+Entre as dificuldades técnicas encontradas, destaca-se o problema do antimeridiano na renderização geográfica de trajetos marítimos em tempo real. A transição de dados simulados para dados reais da API SeaRates expôs uma anomalia na normalização de coordenadas que provocava a inversão visual das rotas ao cruzar os limites do mapa. A resolução deste problema implicou a revisão da lógica de processamento de coordenadas e constituiu um dos momentos de maior exigência técnica do estágio, tendo, no entanto, sido superada com sucesso.
+
+Outro desafio relevante foi a migração do sistema de autenticação e autorização para Keycloak. Este processo exigiu uma depuração minuciosa da lógica de controlo de acessos e a adaptação de todo o fluxo de autenticação do frontend e do backend ao novo \textit{identity provider}. Apesar da complexidade envolvida, o resultado final traduziu-se num sistema de autenticação seguro, centralizado e alinhado com as melhores práticas de gestão de identidades.
+
+Globalmente, os resultados obtidos evidenciam que os objetivos gerais do estágio foram cumpridos, com a integração do novo fornecedor SeaRates plenamente operacional e a plataforma de tracking dotada de uma interface funcional e segura. Os desvios pontuais ao planeamento inicial foram geridos de forma adaptativa, privilegiando a qualidade e a estabilidade da solução entregue.
 
 % ===================== CAPÍTULO 5 - CONCLUSÕES ================================
 \chapter{Conclusões}
 
 \section{Reflexão Crítica}
 
-Reflexão crítica sobre o trabalho de estágio/projeto realizado, incidindo sobre
-os seguintes aspetos:
+\subsection{Atividades Desenvolvidas e Competências Adquiridas}
 
-\begin{itemize}
-  \item Atividades desenvolvidas
-  \item Estratégias de trabalho adotadas
-  \item Tecnologias utilizadas
-  \item Planeamento previsto e o efetivamente executado
-  \item Sugestões que possam colmatar eventuais lacunas do trabalho realizado
-\end{itemize}
+Ao longo do estágio, foram adquiridas e consolidadas competências técnicas e pessoais diretamente relacionadas com as atividades realizadas. No domínio técnico, o trabalho na API de tracking permitiu aprofundar conhecimentos em desenvolvimento backend com .NET, incluindo a implementação de serviços REST, a integração com APIs externas e o mapeamento de DTOs. A utilização do Entity Framework Core para acesso a dados em SQL Server e o desenvolvimento frontend com React, abrangendo a criação de interfaces, a integração com APIs e a gestão de estado, completaram o leque de competências técnicas desenvolvidas. Foram ainda utilizadas ferramentas de desenvolvimento profissional como Git, Azure DevOps, Swagger e as ferramentas de desenvolvimento do navegador, para além da adaptação a arquiteturas de software existentes e consolidadas.
+
+No plano pessoal, o estágio proporcionou o desenvolvimento da capacidade de adaptação a novas tecnologias e contextos técnicos, da autonomia na resolução de problemas e na aprendizagem contínua, e da gestão de tempo e organização de tarefas em regime de trabalho parcial. A comunicação em contexto de equipa, incluindo a discussão de soluções técnicas e o esclarecimento de dúvidas, bem como a capacidade de integrar e compreender código existente, foram também aspetos relevantes do crescimento profissional alcançado.
+
+\subsection{Estratégias de Trabalho Adotadas}
+
+A execução do projeto assentou numa metodologia ágil adaptada à realidade corporativa da Devlop. O fluxo de trabalho foi estruturado em iterações semanais com definição prévia de objetivos operacionais, em moldes semelhantes a \textit{sprints} de desenvolvimento. No final de cada ciclo, realizavam-se sessões de alinhamento com o orientador da entidade de acolhimento para validação das decisões de arquitetura e demonstração dos resultados alcançados. Adicionalmente, a estratégia de integração foi acelerada pela partilha diária de conhecimento com o colega de equipa, Sandro Cunha, o que permitiu desmistificar com maior celeridade a base de código pré-existente e mitigar os constrangimentos associados à curva de aprendizagem das ferramentas.
+
+\subsection{Tecnologias e Ferramentas Utilizadas}
+
+Durante o estágio, foram utilizadas diversas tecnologias e ferramentas no desenvolvimento e na integração da solução de tracking, tanto no backend quanto no frontend.
+
+\subsubsection{Linguagens}
+
+A principal linguagem de programação utilizada foi C\#, que serviu de base ao desenvolvimento da API, à implementação dos serviços de tracking e à lógica aplicacional de integração com o fornecedor SeaRates. No desenvolvimento do frontend, foram utilizadas tecnologias baseadas em JavaScript no ecossistema React.
+
+\subsubsection{Frameworks}
+
+No backend, a solução assenta sobre a plataforma .NET, que forneceu a base para a construção da API e para a gestão da lógica de negócio. O acesso a dados foi realizado através do Entity Framework Core, permitindo a interação com a base de dados SQL Server de forma estruturada e tipificada. No frontend, o React foi a \textit{framework} utilizada para a construção da interface da plataforma de tracking.
+
+\subsubsection{Ferramentas}
+
+Para o desenvolvimento, foram utilizados os ambientes JetBrains Rider (backend) e WebStorm (frontend), que proporcionaram funcionalidades avançadas de implementação, teste e depuração. O controlo de versões foi efetuado com Git, com repositórios alojados no Azure DevOps Server, assegurando a gestão colaborativa do código ao longo de todo o projeto. A base de dados utilizada foi o Microsoft SQL Server, responsável pelo armazenamento da informação de tracking, de clientes e de \textit{logs} da API.
+
+Para teste e exploração da API, recorreu-se ao Swagger, que permitiu validar \textit{endpoints}, testar integrações e analisar respostas durante o desenvolvimento. No frontend, foram frequentemente utilizadas as ferramentas de desenvolvimento do navegador para inspeção de elementos, análise de pedidos HTTP e depuração do comportamento da interface. A comunicação e o acompanhamento do trabalho foram realizados através do Microsoft Teams, plataforma que facilitou a interação com a equipa e o seguimento das tarefas.
+
+Como ferramentas de apoio ao desenvolvimento, foram utilizados o GitHub Copilot e o OpenCode, principalmente para auxiliar na geração de código e na automatização de tarefas repetitivas, contribuindo para uma maior produtividade. Por fim, o Microsoft Word foi utilizado para a elaboração dos relatórios semanais e da documentação associada ao estágio.
+
+\subsection{Planeamento Previsto e Executado}
+
+A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de tracking de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, repartido ao longo de 16 semanas. O Anexo~9 apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a calendarização correspondente.
+
+Comparativamente ao PIT, verifica-se que as Fases~1 e~2 decorreram em conformidade com o previsto, totalizando 56 horas nas duas primeiras semanas. A Fase~3, embora tenha mantido a sua duração global, foi concluída antecipadamente (72 horas em três semanas, face às 160 horas e quatro semanas planeadas), beneficiando da utilização de ferramentas de simulação que agilizaram o desenvolvimento e os testes. A Fase~4, relativa ao frontend, registou o maior desvio: as 320 horas inicialmente estimadas foram ajustadas para 168 horas reais, distribuídas por seis semanas, refletindo uma maior eficiência na implementação e uma delimitação mais precisa do âmbito funcional. A Fase~5, originalmente dedicada à integração com o FWB, foi reorientada para incluir também a preparação do ambiente 4GL e a resolução de problemas de paginação, totalizando 68 horas em três semanas. Por fim, a Fase~6 alargou o seu âmbito para acomodar a migração para Keycloak e a refatoração do motor de estatísticas, ocupando 52 horas em duas semanas.
+
+\subsection{Dificuldades Encontradas}
+
+Ao longo do estágio, foram identificadas dificuldades de natureza organizacional e técnica. No plano organizacional, a gestão do tempo constituiu um desafio relevante, uma vez que o estágio decorreu em regime parcial durante a maior parte do semestre. A disponibilidade esteve condicionada pelo horário letivo da licenciatura, que ocupava as segundas e terças-feiras quase na totalidade (Anexo~4, \autoref{fig:horario}), exigindo uma rigorosa organização de tarefas e um foco redobrado nas atividades críticas nos restantes dias úteis.
+
+No plano técnico, uma das principais dificuldades esteve relacionada com o desenvolvimento frontend, área na qual existia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica. Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: foram dedicados três dias úteis à implementação isolada de uma interface CRUD completa com React Admin, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
+
+A complexidade da arquitetura de backend e a necessidade de integrar um novo fornecedor num sistema já consolidado representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak exigiu uma depuração exaustiva da lógica de autorização, e a resolução da anomalia do antimeridiano no mapa de tracking em tempo real necessitou de um esforço analítico profundo.
+
+A implementação do motor de estatísticas apresentou ainda um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade --- e consequente aprendizagem --- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando os dados diretamente da base de dados. Esta simplificação, orientada pela manutenibilidade, trouxe ainda um benefício adicional: ao operar sobre dados em bruto, o sistema ganhou maior granularidade, facilitando a introdução da funcionalidade de exportação para Excel.
 
 \section{Trabalho Futuro}
 
-Sugestões de melhorias e desenvolvimentos futuros que possam dar continuidade
-ao trabalho realizado.
+Como propostas para desenvolvimentos futuros e otimização do ecossistema desenvolvido, identificam-se três linhas de ação prioritárias.
+
+Em primeiro lugar, recomenda-se a implementação de um mecanismo de armazenamento em cache e de persistência local para os dados da SeaRates. Dado que esta API opera num modelo sem estado, a criação de uma cache na base de dados interna da Devlop permitiria reter o histórico de estados e trajetórias dos navios por períodos mais longos, reduzindo o volume de consultas redundantes à API externa e minimizando os custos operacionais associados.
+
+Em segundo lugar, sugere-se a retoma da integração com o sistema FWB. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de gatilhos automáticos entre o ecossistema 4GL do i-Forwarder e a Tracking API permitiria que qualquer atualização de estado refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
+
+Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à base de dados simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho. Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da base de dados --- como vistas materializadas --- ou a introdução de uma camada de cache dedicada às métricas que não exijam atualização imediata.
 
 % ===================== BIBLIOGRAFIA ===========================================
 \printbibliography
@@ -665,6 +716,70 @@ ao trabalho realizado.
   \caption{Dados dos navios reais}
   \label{fig:searates-navios}
 \end{figure}
+
+% --- Anexo 9: Registo da Execução Real (1 anexo) ---
+\chapter{Registo da Execução Real do Estágio}
+\label{anx:execucao-real}
+\newpage
+\begin{table}[H]
+\centering
+\caption{Registo da execução real do estágio}
+\label{tab:execucao-real}
+\small
+\begin{tabular}{|p{3.3cm}|p{7.5cm}|p{3.5cm}|}
+\hline
+\textbf{Fases / Objetivos} & \textbf{Atividades Desenvolvidas (Execução Real)} & \textbf{Calendarização Real} \\
+\hline
+\multirow{3}{3.3cm}{Fase 1 -- Formação Técnica na stack Devlop}
+& Configuração do ambiente de desenvolvimento.
+& \multirow{3}{3.5cm}{32 horas \\ Período: 09-02 a 13-02 \\ (Semana 1)} \\
+\cline{2-2}
+& Realização de formação na Udemy (\textit{Entity Framework Core} e MS SQL). & \\
+\cline{2-2}
+& Desenvolvimento de um projeto prático CRUD utilizando .NET no backend e React no frontend. & \\
+\hline
+\multirow{3}{3.3cm}{Fase 2 -- Análise da API existente e arquitetura atual}
+& Estudo da arquitetura, do orquestrador de serviços e do integrador ShipsGo.
+& \multirow{3}{3.5cm}{24 horas \\ Período: 16-02 a 20-02 \\ (Semana 2)} \\
+\cline{2-2}
+& Análise da estrutura \textit{InMemoryProvider\-CapabilitiesRegistry} e dos mecanismos de faturação. & \\
+\cline{2-2}
+& Análise técnica da documentação da API SeaRates. & \\
+\hline
+\multirow{3}{3.3cm}{Fase 3 -- Integração do novo fornecedor SeaRates (Backend)}
+& Definição de estruturas DTO e configuração do novo fornecedor no sistema.
+& \multirow{3}{3.5cm}{72 horas \\ Período: 23-02 a 13-03 \\ (Semanas 3 a 5)} \\
+\cline{2-2}
+& Desenvolvimento do cliente da API SeaRates e dos serviços de tracking (\textit{Ocean} e \textit{Air}). & \\
+\cline{2-2}
+& Testes unitários recorrendo à ferramenta Prism para simulação da API e finalização da integração com o mapeamento de coordenadas. & \\
+\hline
+\multirow{3}{3.3cm}{Fase 4 -- Desenvolvimento do Frontend da Plataforma de Tracking}
+& Implementação de um painel administrativo com React Admin, operações CRUD e listagem de trackings.
+& \multirow{3}{3.5cm}{168 horas \\ Período: 16-03 a 28-04 \\ (Semanas 6 a 11)} \\
+\cline{2-2}
+& Adaptação do sistema de permissões baseado em \textit{enums}, implementação de \textit{dashboards}, métricas segmentadas por perfil e gestão de créditos. & \\
+\cline{2-2}
+& Internacionalização do portal (PT, EN, ES). & \\
+\hline
+\multirow{3}{3.3cm}{Fase 5 -- Integração com Aplicação Interna (FWB / i-Forwarder)}
+& Preparação do ambiente para desenvolvimento Four Js Genero (4GL).
+& \multirow{3}{3.5cm}{68 horas \\ Período: 29-04 a 15-05 \\ (Semanas 12 a 14)} \\
+\cline{2-2}
+& Reuniões de alinhamento, demonstração do produto e primeiras integrações com a equipa i-Forwarder. & \\
+\cline{2-2}
+& Correção de problemas de paginação na API e adição de filtros automáticos. & \\
+\hline
+\multirow{3}{3.3cm}{Fase 6 -- Testes finais, documentação e conclusão}
+& Migração da autenticação para Keycloak.
+& \multirow{3}{3.5cm}{52 horas \\ Período: 18-05 a 29-05 \\ (Semanas 15 e 16)} \\
+\cline{2-2}
+& Refatoração de estatísticas, exportação Excel e correção do tracking em tempo real. & \\
+\cline{2-2}
+& Realização de testes finais (manuais e automatizados), documentação de código e elaboração do relatório de estágio. & \\
+\hline
+\end{tabular}
+\end{table}
 
 \end{appendices}
 
