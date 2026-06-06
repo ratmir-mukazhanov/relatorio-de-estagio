@@ -302,7 +302,7 @@ In the final phase of the internship, although the environment was prepared for 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-A empresa onde decorreu o estágio, Devlop, integra o grupo Leviahub, um cluster especializado em tecnologia e consultoria orientado para o setor da cadeia de abastecimento (Supply Chain). Fundada em 1999, a empresa acumula mais de 25 anos de experiência no desenvolvimento de soluções tecnológicas para pequenas e médias empresas (PME), especialmente nas áreas de transportes e logística. Tem sede em Cascais e presença em Leiria, Aveiro e Porto, operando também nos PALOP (Países Africanos de Língua Oficial Portuguesa).
+A empresa onde decorreu o estágio, Devlop~\cite{devlop}, integra o grupo Leviahub, um \textit{cluster} especializado em tecnologia e consultoria orientado para o setor da cadeia de abastecimento (\textit{Supply Chain}). Fundada em 1999, a empresa acumula mais de 25 anos de experiência no desenvolvimento de soluções tecnológicas para pequenas e médias empresas (PME), especialmente nas áreas de transportes e logística. Tem sede em Cascais e presença em Leiria, Aveiro e Porto, operando também nos PALOP (Países Africanos de Língua Oficial Portuguesa).
 
 No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
 
@@ -317,11 +317,11 @@ No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão
 
 Ao nível da infraestrutura, fornece serviços de alojamento em nuvem, cibersegurança (em parceria com a Sophos) e suporte técnico.
 
-Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET no backend e bases de dados SQL, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
+Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e bases de dados SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
 
 \subsection{Situação Atual do Projeto}
 
-O integrador de tracking, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma API que atuava como ponte entre clientes externos e fornecedores de tracking, comunicando, à data de início do estágio, exclusivamente com o fornecedor ShipsGo. Esta API registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de tracking e os \textit{logs} de pedidos para posterior faturação, suportando ainda o cálculo de custos associados ao consumo da API.
+O integrador de tracking, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma API que atuava como ponte entre clientes externos e fornecedores de tracking, comunicando, à data de início do estágio, exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}. Esta API registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de tracking e os \textit{logs} de pedidos para posterior faturação, suportando ainda o cálculo de custos associados ao consumo da API.
 
 Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando-se na expansão das capacidades do sistema existente.
 
@@ -330,11 +330,11 @@ Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando
 
 \subsection{Objetivos gerais}
 
-O estágio teve como tema \enquote{Integrador Tracking --- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos utilizando as APIs da ShipsGo e SeaRates, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores, e a integração dos dados nos sistemas internos de gestão de trânsitos (FWD).
+O estágio teve como tema \enquote{Integrador Tracking --- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos utilizando as APIs da ShipsGo e SeaRates~\cite{searates}, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores, e a integração dos dados nos sistemas internos de gestão de trânsitos (FWB).
 
 \subsection{Objetivos específicos}
 
-De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na API de tracking existente, respeitando o padrão de orquestração já implementado para o ShipsGo e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface frontend funcional em React para a plataforma de seguimento, com suporte a operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na stack tecnológica da Devlop, nomeadamente .NET, Entity Framework Core, SQL Server e React.
+De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na API de tracking existente, respeitando o padrão de orquestração já implementado para o ShipsGo e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte a operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, Entity Framework Core~\cite{efcore}, SQL Server e React.
 
 Adicionalmente, previa-se a preparação da integração da solução com os sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se ainda que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs em contexto empresarial real.
 
@@ -404,7 +404,7 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
 
 A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo (\textit{Ocean}), aéreo (\textit{Air}) e de transportadoras (\textit{Carriers}).
 
-O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
+O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
 No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de tracking operacionais e a comunicação com a API externa validada. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores.
 
@@ -418,7 +418,7 @@ A interface resultante (Anexo~7, \autoref{fig:solucao-menu} a \autoref{fig:soluc
 
 \section{Integrações e Testes Finais}
 
-Na fase final do estágio, iniciou-se a preparação para a integração com o sistema interno de gestão de trânsitos, o i-Forwarder. Foi configurado um ambiente de desenvolvimento inicial em Four Js Genero (Anexo~6, \autoref{fig:4gl-exemplo} e \autoref{fig:4gl-configurado}) e realizaram-se as primeiras reuniões de alinhamento com a equipa responsável. Contudo, a necessidade de garantir a estabilidade e a segurança da plataforma levou a uma reorientação das prioridades para as semanas finais.
+Na fase final do estágio, iniciou-se a preparação para a integração com o sistema interno de gestão de trânsitos, o i-Forwarder. Foi configurado um ambiente de desenvolvimento inicial em Four Js Genero~\cite{fourjs} (Anexo~6, \autoref{fig:4gl-exemplo} e \autoref{fig:4gl-configurado}) e realizaram-se as primeiras reuniões de alinhamento com a equipa responsável. Contudo, a necessidade de garantir a estabilidade e a segurança da plataforma levou a uma reorientação das prioridades para as semanas finais.
 
 O esforço de consolidação da integração com a SeaRates centrou-se na adição de exceções específicas para este fornecedor e na unificação e tradução das mensagens de movimento dos envios. Foram também resolvidos constrangimentos de paginação em pontos críticos do sistema, como as listagens de envios e de consumos.
 
@@ -430,7 +430,7 @@ Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~8, \autoref{fi
 
 Antes da correção, os \textit{mappers} GeoJSON ligavam os pontos consecutivos na ordem ingénua das longitudes, fazendo com que uma rota como [179°E] → [-179°W] fosse renderizada como uma linha que contornava quase todo o planeta, em vez do curto salto sobre o meridiano 180°. A solução consistiu em detetar saltos superiores a 180° entre longitudes consecutivas e normalizar as coordenadas para uma mesma reta numérica contínua, interpolando o ponto exato de cruzamento com o antimeridiano e dividindo a \textit{LineString} em dois segmentos independentes, um em cada hemisfério. Como resultado, as rotas que cruzam a Linha Internacional de Data passaram a ser representadas corretamente nos mapas, exibindo a verdadeira travessia do Pacífico.
 
-Ao nível da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o anterior modelo baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} --- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação --- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
+Ao nível da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o anterior modelo baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} --- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação --- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
 
 No termo desta fase, a plataforma apresentava uma API estabilizada face a exceções do novo fornecedor, representação geográfica correta dos trajetos marítimos, autenticação centralizada e segura, e melhorias significativas na fiabilidade e na apresentação de dados analíticos.
 
@@ -498,7 +498,7 @@ No backend, a solução assenta sobre a plataforma .NET, que forneceu a base par
 
 Para o desenvolvimento, foram utilizados os ambientes JetBrains Rider (backend) e WebStorm (frontend), que proporcionaram funcionalidades avançadas de implementação, teste e depuração. O controlo de versões foi efetuado com Git, com repositórios alojados no Azure DevOps Server, assegurando a gestão colaborativa do código ao longo de todo o projeto. A base de dados utilizada foi o Microsoft SQL Server, responsável pelo armazenamento da informação de tracking, de clientes e de \textit{logs} da API.
 
-Para teste e exploração da API, recorreu-se ao Swagger, que permitiu validar \textit{endpoints}, testar integrações e analisar respostas durante o desenvolvimento. No frontend, foram frequentemente utilizadas as ferramentas de desenvolvimento do navegador para inspeção de elementos, análise de pedidos HTTP e depuração do comportamento da interface. A comunicação e o acompanhamento do trabalho foram realizados através do Microsoft Teams, plataforma que facilitou a interação com a equipa e o seguimento das tarefas.
+Para teste e exploração da API, recorreu-se ao Swagger~\cite{swagger}, que permitiu validar \textit{endpoints}, testar integrações e analisar respostas durante o desenvolvimento. No frontend, foram frequentemente utilizadas as ferramentas de desenvolvimento do navegador para inspeção de elementos, análise de pedidos HTTP e depuração do comportamento da interface. A comunicação e o acompanhamento do trabalho foram realizados através do Microsoft Teams, plataforma que facilitou a interação com a equipa e o seguimento das tarefas.
 
 Como ferramentas de apoio ao desenvolvimento, foram utilizados o GitHub Copilot e o OpenCode, principalmente para auxiliar na geração de código e na automatização de tarefas repetitivas, contribuindo para uma maior produtividade. Por fim, o Microsoft Word foi utilizado para a elaboração dos relatórios semanais e da documentação associada ao estágio.
 
