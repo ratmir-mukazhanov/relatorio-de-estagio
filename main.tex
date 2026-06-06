@@ -79,6 +79,9 @@
 \counterwithout{figure}{chapter}
 \AtBeginDocument{\renewcommand{\thefigure}{\arabic{figure}}}
 
+\counterwithout{table}{chapter}
+\AtBeginDocument{\renewcommand{\thetable}{\arabic{table}}}
+
 % ---------------------------- TABLES (improved) -------------------------------
 \usepackage{array}
 \usepackage{booktabs}
@@ -99,7 +102,7 @@
 }
 
 % ---------------------------- ACRONYMS ----------------------------------------
-\usepackage[printonlyused]{acronym}
+\usepackage[nohyperlinks]{acronym}
 
 % ---------------------------- MISC --------------------------------------------
 \usepackage{multirow}
@@ -141,7 +144,7 @@
   \vspace{2cm}
 
   {\fontsize{13}{16}\selectfont
-    Autor: Ratmir Mukazhanov\par}
+    Autor: Ratmir Mukazhanov (n.º 120629)\par}
 
   \vspace{1.5cm}
 
@@ -189,7 +192,7 @@
   \vspace{2cm}
 
   {\fontsize{13}{16}\selectfont
-    Autor: Ratmir Mukazhanov\par}
+    Autor: Ratmir Mukazhanov (n.º 120629)\par}
 
   \vspace{1.5cm}
 
@@ -271,17 +274,21 @@ In the final phase of the internship, although the environment was prepared for 
 \begin{acronym}
   \acro{4GL}{Fourth-Generation Programming Language}
   \acro{API}{Application Programming Interface}
+  \acro{ASP.NET}{Active Server Pages .NET Framework}
   \acro{BD}{Base de Dados}
   \acro{CRUD}{Create, Read, Update, Delete}
   \acro{DTO}{Data Transfer Object}
   \acro{EDI}{Electronic Data Interchange}
   \acro{ERP}{Enterprise Resource Planning}
   \acro{ESTGA-UA}{Escola Superior de Tecnologia e Gestão de Águeda -- Universidade de Aveiro}
-  \acro{FWB}{Freight Forwarding Systems / Sistemas internos de gestão de trânsitos}
+  \acro{FWB}{Freight Forwarding Systems / Sistemas internos de gestão de trânsitos (i-Forwarder)}
+  \acro{GeoJSON}{Geographic JavaScript Object Notation}
   \acro{HTTP}{HyperText Transfer Protocol}
+  \acro{JWT}{JSON Web Token}
   \acro{KPI}{Key Performance Indicator}
   \acro{PaaS}{Platform as a Service}
   \acro{PALOP}{Países Africanos de Língua Oficial Portuguesa}
+  \acro{PIT}{Plano Individual de Trabalho}
   \acro{PME}{Pequenas e Médias Empresas}
   \acro{REST}{Representational State Transfer}
   \acro{SQL}{Structured Query Language}
