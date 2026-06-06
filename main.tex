@@ -518,7 +518,9 @@ A Fase~5, originalmente dedicada à integração com o FWB, foi reorientada para
 
 Ao longo do estágio, foram identificadas dificuldades de natureza organizacional e técnica. No plano organizacional, a gestão do tempo constituiu um desafio relevante, uma vez que o estágio decorreu em regime parcial durante a maior parte do semestre. A disponibilidade esteve condicionada pelo horário letivo da licenciatura, que ocupava as segundas e terças-feiras quase na totalidade (Anexo~4, \autoref{fig:horario}), exigindo uma rigorosa organização de tarefas e um foco redobrado nas atividades críticas nos restantes dias úteis.
 
-No plano técnico, uma das principais dificuldades esteve relacionada com o desenvolvimento frontend, área na qual existia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica. Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: foram dedicados três dias úteis à implementação isolada de uma interface CRUD completa com React Admin, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
+No plano técnico, uma das principais dificuldades esteve relacionada com o desenvolvimento frontend, área na qual existia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica.
+
+Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: foram dedicados três dias úteis à implementação isolada de uma interface CRUD completa com React Admin, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
 
 A complexidade da arquitetura de backend e a necessidade de integrar um novo fornecedor num sistema já consolidado representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak exigiu uma depuração exaustiva da lógica de autorização, e a resolução da anomalia do antimeridiano no mapa de tracking em tempo real necessitou de um esforço analítico profundo.
 
@@ -534,7 +536,9 @@ Em primeiro lugar, recomenda-se a implementação de um mecanismo de armazenamen
 
 Em segundo lugar, sugere-se a retoma da integração com o sistema FWB. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de gatilhos automáticos entre o ecossistema 4GL do i-Forwarder e a Tracking API permitiria que qualquer atualização de estado refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
 
-Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à base de dados simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho. Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da base de dados --- como vistas materializadas --- ou a introdução de uma camada de cache dedicada às métricas que não exijam atualização imediata.
+Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à base de dados simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
+
+Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da base de dados --- como vistas materializadas --- ou a introdução de uma camada de cache dedicada às métricas que não exijam atualização imediata.
 
 % ===================== BIBLIOGRAFIA ===========================================
 \printbibliography
