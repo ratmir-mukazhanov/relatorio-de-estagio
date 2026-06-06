@@ -75,6 +75,9 @@
 
 % ---------------------------- CAPTIONS ----------------------------------------
 \usepackage[font=small,labelfont=bf,justification=justified]{caption}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\AtBeginDocument{\renewcommand{\thefigure}{\arabic{figure}}}
 
 % ---------------------------- TABLES (improved) -------------------------------
 \usepackage{array}
@@ -297,9 +300,30 @@ In the final phase of the internship, although the environment was prepared for 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-Texto de apresentação do tema do estágio/projeto e da Entidade de Acolhimento
-(EA). Descrever sucintamente a empresa/instituição onde o estágio/projeto foi
-realizado, a sua área de atuação e o contexto em que o trabalho se insere.
+A empresa onde decorreu o estágio, Devlop, integra o grupo Leviahub, um cluster especializado em tecnologia e consultoria orientado para o setor da cadeia de abastecimento (Supply Chain). Fundada em 1999, a empresa acumula mais de 25 anos de experiência no desenvolvimento de soluções tecnológicas, posicionando-se como uma parceira relevante na transformação digital de pequenas e médias empresas (PME), especialmente nas áreas de transportes e logística.
+
+A Devlop tem a sua sede em Cascais e conta com presença em várias localizações em Portugal, nomeadamente em Leiria, Aveiro e Porto, e opera também em mercados internacionais, com destaque para os PALOP (Países Africanos de Língua Oficial Portuguesa). Esta presença reforça o seu foco em mercados em que a digitalização da logística ainda apresenta elevado potencial de crescimento.
+
+No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/image2.png}
+  \caption{Pilares de atuação da Devlop}
+  \label{fig:devlop-pilares}
+\end{figure}
+
+No domínio da Supply Chain, a Devlop desenvolve soluções próprias orientadas para a gestão e a otimização do transporte e do armazenamento de mercadorias. Entre estas, destacam-se sistemas de gestão de transporte, como o Transporter, WebSHoT, WebTrans e Shipperform, bem como soluções especializadas, como o WebDepot, voltado à gestão de parques de contentores. Complementarmente, disponibiliza ainda WMS que suporta operações de inventário e de distribuição.
+
+No que diz respeito às soluções corporativas, a Devlop atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera. Este trabalho inclui a integração de sistemas, a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de soluções de Business Intelligence, nomeadamente dashboards com recurso ao Power BI e à Cegid Business Analytics.
+
+Ao nível da infraestrutura, a empresa fornece serviços de alojamento em nuvem, cibersegurança (em parceria com a Sophos) e suporte técnico, incluindo manutenção de hardware e operações de suporte técnico.
+
+Do ponto de vista tecnológico, o ambiente de desenvolvimento da empresa centra-se sobretudo em tecnologias da Microsoft, com destaque para o .NET Framework e o .NET Core no backend. A integração entre sistemas assume um papel crítico, sendo frequente o uso de EDI no contexto logístico, bem como o desenvolvimento de APIs para ligação entre ERPs antigos e plataformas web modernas. As bases de dados utilizadas são maioritariamente baseadas em SQL, refletindo a integração com sistemas como o Primavera. Paralelamente, são desenvolvidas aplicações web e portais digitais que dão suporte aos produtos da empresa.
+
+A Devlop participa ainda em projetos de investigação e desenvolvimento de relevo, como a Agenda NEXUS, focada na transição digital e ecológica do setor logístico, e em iniciativas como o Projecto SPC e o Projecto Grow, frequentemente cofinanciadas por programas europeus. Para além disso, organiza o evento TechLogistics, reforçando a sua posição como agente ativo na inovação e na discussão tecnológica no setor.
+
+Relativamente à estrutura da equipa, esta insere-se num contexto multidisciplinar, tipicamente composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio, que colaboram de forma integrada no desenvolvimento, na implementação e no suporte das soluções oferecidas pela empresa.
 
 % --- Objetivos ---
 \section{Objetivos}
@@ -421,8 +445,6 @@ ao trabalho realizado.
 % ===================== ANEXOS =================================================
 \begin{appendices}
 \renewcommand{\thechapter}{\arabic{chapter}}
-\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
-\setcounter{figure}{0}
 
 % --- Anexo 1: PIT (2 anexos) ---
 \chapter{Plano Individual de Trabalho (PIT)}
