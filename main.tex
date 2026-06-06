@@ -32,7 +32,7 @@
 
 \fancypagestyle{mystyle}{
   \fancyhf{}
-  \fancyhead[L]{\includegraphics[height=1cm]{images/logo_extensa_cor.png}}
+  \fancyhead[C]{\includegraphics[height=1cm]{images/logo_extensa_cor.png}}
   \fancyfoot[R]{\fontsize{10}{12}\selectfont\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
@@ -43,7 +43,7 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
-\pagestyle{mystyle}
+\pagestyle{plain}
 
 % ---------------------------- TITLE FORMATTING --------------------------------
 \usepackage{titlesec}
@@ -293,6 +293,7 @@ In the final phase of the internship, although the environment was prepared for 
 % ===================== NUMERAÇÃO ÁRABE (CORPO DO RELATÓRIO) ===================
 \pagenumbering{arabic}
 \setcounter{page}{1}
+\pagestyle{mystyle}
 
 % ===================== CAPÍTULO 1 - INTRODUÇÃO ================================
 \chapter{Introdução}
@@ -308,7 +309,7 @@ No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{images/image2.png}
+  \includegraphics[width=0.5\textwidth]{images/image2.png}
   \caption{Pilares de atuação da Devlop}
   \label{fig:devlop-pilares}
 \end{figure}
