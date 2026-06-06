@@ -523,6 +523,32 @@ Comparativamente ao PIT, verifica-se que as Fases~1 e~2 decorreram em conformida
 
 A Fase~5, originalmente dedicada à integração com o i-Forwarder, foi reorientada para incluir também a preparação do ambiente 4GL e a resolução de problemas de paginação, totalizando 68 horas em três semanas. Por fim, a Fase~6 alargou o seu âmbito para acomodar a migração para Keycloak e a refatoração do motor de estatísticas, ocupando 52 horas em duas semanas.
 
+\begin{table}[H]
+\centering
+\caption{Comparação entre horas planeadas e executadas por fase}
+\label{tab:comparacao-horas}
+\small
+\begin{tabular}{|p{0.42\textwidth}|c|c|c|}
+\hline
+\textbf{Fase} & \textbf{Planeadas (h)} & \textbf{Reais (h)} & \textbf{Desvio} \\
+\hline
+Fase 1 -- Formação Técnica na \textit{stack} Devlop & 32 & 32 & 0\,\% \\
+\hline
+Fase 2 -- Análise da API existente e arquitetura atual & 40 & 24 & $-$40\,\% \\
+\hline
+Fase 3 -- Integração do novo fornecedor SeaRates & 160 & 72 & $-$55\,\% \\
+\hline
+Fase 4 -- Desenvolvimento do \textit{Frontend} da Plataforma de Tracking & 320 & 168 & $-$48\,\% \\
+\hline
+Fase 5 -- Integração com Aplicação Interna (i-Forwarder) & 80 & 68 & $-$15\,\% \\
+\hline
+Fase 6 -- Testes finais, documentação e conclusão & 40 & 52 & +30\,\% \\
+\hline
+\textbf{Total} & \textbf{672} & \textbf{416} & \textbf{$-$38\,\%} \\
+\hline
+\end{tabular}
+\end{table}
+
 \subsection{Dificuldades Encontradas}
 
 Ao longo do estágio, foram identificadas dificuldades de natureza organizacional e técnica. No plano organizacional, a gestão do tempo constituiu um desafio relevante, uma vez que o estágio decorreu em regime parcial durante a maior parte do semestre. A disponibilidade esteve condicionada pelo horário letivo da licenciatura, que ocupava as segundas e terças-feiras quase na totalidade (Anexo~5, \autoref{fig:horario}), exigindo uma rigorosa organização de tarefas e um foco redobrado nas atividades críticas nos restantes dias úteis.
@@ -692,7 +718,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \small
 \begin{tabular}{|p{0.22\textwidth}|p{0.56\textwidth}|p{0.18\textwidth}|}
 \hline
-\textbf{Fases / Objetivos} & \textbf{Atividades Desenvolvidas (Execução Real)} & \textbf{Calendarização Real (Horas e Período)} \\
+\textbf{Objetivos} & \textbf{Atividades Desenvolvidas} & \textbf{Calendarização} \\
 \hline
 \multirow{3}{0.22\textwidth}{Fase 1 -- Formação Técnica na \textit{stack} Devlop}
 & Configuração do ambiente de desenvolvimento.
