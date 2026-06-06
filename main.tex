@@ -28,9 +28,11 @@
 
 % ---------------------------- HEADERS & FOOTERS -------------------------------
 \usepackage{fancyhdr}
+\setlength{\headheight}{1.2cm}
 
 \fancypagestyle{mystyle}{
   \fancyhf{}
+  \fancyhead[L]{\includegraphics[height=1cm]{images/logo_extensa_cor.png}}
   \fancyfoot[R]{\fontsize{10}{12}\selectfont\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
@@ -110,18 +112,21 @@
 
   \vspace*{2cm}
 
-  \includegraphics[width=0.45\textwidth]{images/image1.png}
+  \includegraphics[width=0.55\textwidth]{images/image1.png}
 
   \vspace{0.5cm}
 
   {\fontsize{18}{22}\selectfont\bfseries
-    Universidade de Aveiro\\
+    Universidade de Aveiro\par}
+  {\fontsize{14}{17}\selectfont\bfseries
     Escola Superior de Tecnologia e Gestão de Águeda\par}
 
   \vspace{2cm}
 
   {\fontsize{20}{24}\selectfont\bfseries
-    Título do Relatório de Estágio\par}
+    Evolução de um Sistema de Monitorização Marítima:\\
+    Integração da API SeaRates\par}
+
 
   \vspace{1.5cm}
 
@@ -132,7 +137,7 @@
   \vspace{2cm}
 
   {\fontsize{13}{16}\selectfont
-    Ratmir Mukazhanov\par}
+    Autor: Ratmir Mukazhanov\par}
 
   \vspace{1.5cm}
 
@@ -157,20 +162,19 @@
 \thispagestyle{empty}
 \begin{center}
 
-  \vspace*{2cm}
-
-  \includegraphics[width=0.45\textwidth]{images/image1.png}
-
-  \vspace{0.5cm}
+  \vspace*{3cm}
 
   {\fontsize{18}{22}\selectfont\bfseries
-    Universidade de Aveiro\\
+    Universidade de Aveiro\par}
+  {\fontsize{14}{17}\selectfont\bfseries
     Escola Superior de Tecnologia e Gestão de Águeda\par}
 
   \vspace{2cm}
 
   {\fontsize{20}{24}\selectfont\bfseries
-    Título do Relatório de Estágio\par}
+    Evolução de um Sistema de Monitorização Marítima:\\
+    Integração da API SeaRates\par}
+
 
   \vspace{1.5cm}
 
@@ -181,7 +185,7 @@
   \vspace{2cm}
 
   {\fontsize{13}{16}\selectfont
-    Ratmir Mukazhanov\par}
+    Autor: Ratmir Mukazhanov\par}
 
   \vspace{1.5cm}
 
@@ -416,12 +420,13 @@ ao trabalho realizado.
 
 % ===================== ANEXOS =================================================
 \begin{appendices}
-\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
 \setcounter{figure}{0}
 
 % --- Anexo 1: PIT (2 anexos) ---
 \chapter{Plano Individual de Trabalho (PIT)}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image3.png}
@@ -438,45 +443,45 @@ ao trabalho realizado.
 
 % --- Anexo 2: Descrição Técnica de Tarefas (5 anexos) ---
 \chapter{Descrição Técnica de Tarefas}
-
+\newpage
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/image5.png}
+  \includegraphics[width=0.95\textwidth]{images/image5.png}
   \caption{Descrição de tarefas, página 1}
   \label{fig:tarefas-pag1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/image6.png}
+  \includegraphics[width=0.9\textwidth]{images/image6.png}
   \caption{Descrição de tarefas, página 2}
   \label{fig:tarefas-pag2}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/image7.png}
+  \includegraphics[trim={0 1bp 0 0}, clip, width=0.9\textwidth]{images/image7.png}
   \caption{Descrição de tarefas, página 3}
   \label{fig:tarefas-pag3}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/image8.png}
+  \includegraphics[width=0.9\textwidth]{images/image8.png}
   \caption{Descrição de tarefas, página 4}
   \label{fig:tarefas-pag4}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/image9.png}
+  \includegraphics[width=0.9\textwidth]{images/image9.png}
   \caption{Descrição de tarefas, página 5}
   \label{fig:tarefas-pag5}
 \end{figure}
 
 % --- Anexo 3: Diagrama de Gantt (1 anexo) ---
 \chapter{Diagrama de Gantt}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image10.png}
@@ -486,7 +491,7 @@ ao trabalho realizado.
 
 % --- Anexo 4: Horário Letivo e Disponibilidade (1 anexo) ---
 \chapter{Horário Letivo e Disponibilidade}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image11.png}
@@ -496,7 +501,7 @@ ao trabalho realizado.
 
 % --- Anexo 5: Proposta de Métricas Tracking API (3 anexos) ---
 \chapter{Proposta de Métricas \textit{Tracking API}}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image12.png}
@@ -520,7 +525,7 @@ ao trabalho realizado.
 
 % --- Anexo 6: Preparação do Ambiente 4GL (2 anexos) ---
 \chapter{Preparação do Ambiente 4GL}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image15.png}
@@ -537,7 +542,7 @@ ao trabalho realizado.
 
 % --- Anexo 7: Capturas de Ecrã da Solução (8 anexos) ---
 \chapter{Capturas de Ecrã da Solução}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image17.png}
@@ -596,7 +601,7 @@ ao trabalho realizado.
 
 % --- Anexo 8: Integração com a SeaRates (3 anexos) ---
 \chapter{Integração com a \textit{SeaRates}}
-
+\newpage
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/image25.png}
