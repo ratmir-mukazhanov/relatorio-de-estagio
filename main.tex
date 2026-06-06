@@ -308,7 +308,7 @@ In the final phase of the internship, although the environment was prepared for 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas de transportes, logística e distribuição. Fundada em 1999, conta com 26 anos de experiência no mercado nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, assim como para PME em Portugal e nos PALOP (Países Africanos de Língua Oficial Portuguesa). A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto.
+A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas de transportes, logística e distribuição. Fundada em 1999, conta com 26 anos de experiência no mercado nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, assim como para PME em Portugal e nos PALOP (Países Africanos de Língua Oficial Portuguesa). A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
 
 No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
 
@@ -415,7 +415,7 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
   \label{fig:searates-logo}
 \end{figure}
 
-A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo (\textit{Ocean}), aéreo (\textit{Air}) e de transportadoras (\textit{Carriers}).
+A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo (\textit{Ocean}), aéreo (\textit{Air}) e de transportadoras (\textit{Carriers}).
 
 O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
