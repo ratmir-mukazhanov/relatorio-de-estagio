@@ -365,27 +365,33 @@ O presente relatório está estruturado em cinco capítulos. Após esta introdu�
 
 \section{Plano de Trabalho}
 
-Identificação e descrição das atividades previstas para a realização do
-estágio/projeto, incluindo a calendarização definida no Plano Individual de
-Trabalho (PIT).
+O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no Plano Individual de Trabalho (PIT), apresentado no Anexo~1 (páginas~\pageref{fig:pit-pag1} e~\pageref{fig:pit-pag2}), e detalhada na Descrição Técnica de Tarefas, constante do Anexo~2 (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A calendarização global é ilustrada no Diagrama de Gantt do Anexo~3 (\autoref{fig:gantt}).
 
-% --- Exemplo de tabela ---
-% \begin{table}[h]
-%   \centering
-%   \caption{Planeamento das atividades do estágio/projeto}
-%   \label{tab:planeamento}
-%   \begin{tabular}{|c|c|c|c|}
-%     \hline
-%     \textbf{ID} & \textbf{Atividade} & \textbf{Data de Início} & \textbf{Data de Fim} \\
-%     \hline
-%     A1 & Atividade 1 & mês/ano & mês/ano \\
-%     \hline
-%     A2 & Atividade 2 & mês/ano & mês/ano \\
-%     \hline
-%   \end{tabular}
-% \end{table}
-%
-% A Tabela~\ref{tab:planeamento} apresenta o plano de trabalho previsto.
+\subsection{Fase 1 --- Formação Técnica na Stack Devlop}
+
+A primeira fase, com a duração prevista de 32 horas (aproximadamente 4 dias úteis, de 9 a 13 de fevereiro), foi dedicada à capacitação técnica na stack tecnológica da Devlop. As atividades incluíram a frequência dos cursos \textit{Entity Framework Core --- The Complete Guide [2025]} e \textit{Complete Microsoft SQL Server Database Design Masterclass}, complementadas pela exploração opcional do curso \textit{React --- The Complete Guide}, caso se revelasse necessário para o desenvolvimento da interface prevista na Fase~4 (\autoref{fig:pit-pag1} e \autoref{fig:tarefas-pag1}).
+
+\subsection{Fase 2 --- Análise da API Existente e Arquitetura Atual}
+
+Com a duração de 5 dias úteis (16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de tracking existente. As atividades contemplaram o estudo da documentação interna da API de tracking, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\autoref{fig:pit-pag1} e \autoref{fig:tarefas-pag2}).
+
+\subsection{Fase 3 --- Integração do Novo Fornecedor SeaRates}
+
+A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas, de 23 de fevereiro a 20 de março). As atividades incluíram o estudo da documentação da API SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{fig:pit-pag1} e \autoref{fig:tarefas-pag2}--\autoref{fig:tarefas-pag3}).
+
+\subsection{Fase 4 --- Desenvolvimento da Interface da Plataforma de Tracking}
+
+A quarta fase, correspondente ao desenvolvimento \textit{frontend}, foi a mais longa do estágio, com a duração estimada de 40 dias úteis (aproximadamente 320 horas, de 23 de março a 18 de maio). Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de tracking, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a API existente, e a realização de testes e melhorias (\autoref{fig:pit-pag1}--\autoref{fig:pit-pag2} e \autoref{fig:tarefas-pag3}--\autoref{fig:tarefas-pag4}).
+
+\subsection{Fase 5 --- Integração com Aplicação Interna (FWB)}
+
+Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna FWB da Devlop. As atividades incluíram o estudo da aplicação FWB, a integração da API de tracking com o sistema interno, os testes de integração e a correção de erros e otimização (\autoref{fig:pit-pag2} e \autoref{fig:tarefas-pag4}--\autoref{fig:tarefas-pag5}).
+
+\subsection{Fase 6 --- Testes Finais, Documentação e Conclusão}
+
+A sexta e última fase, com a duração de 5 dias úteis (1 a 5 de junho), foi reservada para a finalização e entrega do trabalho. As atividades englobaram os testes finais da solução completa, a elaboração da documentação técnica e funcional, e a preparação da entrega final (\autoref{fig:pit-pag2} e \autoref{fig:tarefas-pag5}).
+
+No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontram-se representadas no Diagrama de Gantt do Anexo~3 (\autoref{fig:gantt}). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no Anexo~4 (\autoref{fig:horario}).
 
 % ===================== CAPÍTULO 3 - ATIVIDADES DESENVOLVIDAS ==================
 \chapter{Descrição das Atividades Desenvolvidas}
@@ -460,6 +466,7 @@ ao trabalho realizado.
 
 % --- Anexo 1: PIT (2 anexos) ---
 \chapter{Plano Individual de Trabalho (PIT)}
+\label{anx:pit}
 \newpage
 \begin{figure}[H]
   \centering
@@ -477,6 +484,7 @@ ao trabalho realizado.
 
 % --- Anexo 2: Descrição Técnica de Tarefas (5 anexos) ---
 \chapter{Descrição Técnica de Tarefas}
+\label{anx:tarefas}
 \newpage
 \begin{figure}[H]
   \centering
@@ -515,6 +523,7 @@ ao trabalho realizado.
 
 % --- Anexo 3: Diagrama de Gantt (1 anexo) ---
 \chapter{Diagrama de Gantt}
+\label{anx:gantt}
 \newpage
 \begin{figure}[H]
   \centering
@@ -525,6 +534,7 @@ ao trabalho realizado.
 
 % --- Anexo 4: Horário Letivo e Disponibilidade (1 anexo) ---
 \chapter{Horário Letivo e Disponibilidade}
+\label{anx:horario}
 \newpage
 \begin{figure}[H]
   \centering
