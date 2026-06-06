@@ -404,7 +404,7 @@ Esta preparação inicial revelou-se essencial para abordar com segurança o có
 
 Antes de qualquer implementação, procedeu-se ao estudo aprofundado da API de tracking existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos para o fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (Anexo~2, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API SeaRates.
 
-Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores --- com destaque para o modelo sem estado (\textit{stateless}) da SeaRates --- e dos desafios que a integração implicaria.
+Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores --- com destaque para o modelo \textit{stateless} da SeaRates --- e dos desafios que a integração implicaria.
 
 \section{Integração do Fornecedor SeaRates}
 
@@ -415,7 +415,6 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
   \label{fig:searates-logo}
 \end{figure}
 
-A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo (\textit{Ocean}), aéreo (\textit{Air}) e de transportadoras (\textit{Carriers}).
 
 O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
@@ -714,7 +713,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Definição de estruturas DTO e configuração do novo fornecedor no sistema.
 & \multirow{3}{3.5cm}{72 horas \\ Período: 23-02 a 13-03 \\ (Semanas 3 a 5)} \\
 \cline{2-2}
-& Desenvolvimento do cliente da API SeaRates e dos serviços de tracking (\textit{Ocean} e \textit{Air}). & \\
+& Desenvolvimento do cliente da API SeaRates e dos serviços de tracking marítimo e aéreo. & \\
 \cline{2-2}
 & Testes unitários recorrendo à ferramenta Prism para simulação da API e finalização da integração com o mapeamento de coordenadas. & \\
 \hline
