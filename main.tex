@@ -415,6 +415,7 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
   \label{fig:searates-logo}
 \end{figure}
 
+A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo, aéreo e de transportadoras.
 
 O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
@@ -689,57 +690,63 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \caption{Registo da execução real do estágio}
 \label{tab:execucao-real}
 \small
-\begin{tabular}{|p{3.3cm}|p{7.5cm}|p{3.5cm}|}
+\begin{tabular}{|p{0.22\textwidth}|p{0.56\textwidth}|p{0.18\textwidth}|}
 \hline
-\textbf{Fases / Objetivos} & \textbf{Atividades Desenvolvidas (Execução Real)} & \textbf{Calendarização Real} \\
+\textbf{Fases / Objetivos} & \textbf{Atividades Desenvolvidas (Execução Real)} & \textbf{Calendarização Real (Horas e Período)} \\
 \hline
-\multirow{3}{3.3cm}{Fase 1 -- Formação Técnica na stack Devlop}
+\multirow{3}{0.22\textwidth}{Fase 1 -- Formação Técnica na \textit{stack} Devlop}
 & Configuração do ambiente de desenvolvimento.
-& \multirow{3}{3.5cm}{32 horas \\ Período: 09-02 a 13-02 \\ (Semana 1)} \\
+& \multirow{3}{0.18\textwidth}{32 horas \\ Período: 09-02 a 13-02 \\ (Semana 1)} \\
 \cline{2-2}
 & Realização de formação na Udemy (\textit{Entity Framework Core} e MS SQL). & \\
 \cline{2-2}
-& Desenvolvimento de um projeto prático CRUD utilizando .NET no backend e React no frontend. & \\
+& Desenvolvimento de um projeto prático CRUD utilizando .NET no \textit{backend} e React no \textit{frontend}. & \\
 \hline
-\multirow{3}{3.3cm}{Fase 2 -- Análise da API existente e arquitetura atual}
+\multirow{3}{0.22\textwidth}{Fase 2 -- Análise da API existente e arquitetura atual}
 & Estudo da arquitetura, do orquestrador de serviços e do integrador ShipsGo.
-& \multirow{3}{3.5cm}{24 horas \\ Período: 16-02 a 20-02 \\ (Semana 2)} \\
+& \multirow{3}{0.18\textwidth}{24 horas \\ Período: 16-02 a 20-02 \\ (Semana 2)} \\
 \cline{2-2}
 & Análise da estrutura \textit{InMemoryProvider\-CapabilitiesRegistry} e dos mecanismos de faturação. & \\
 \cline{2-2}
 & Análise técnica da documentação da API SeaRates. & \\
 \hline
-\multirow{3}{3.3cm}{Fase 3 -- Integração do novo fornecedor SeaRates (Backend)}
+\multirow{4}{0.22\textwidth}{Fase 3 -- Integração do novo fornecedor SeaRates (\textit{Backend})}
 & Definição de estruturas DTO e configuração do novo fornecedor no sistema.
-& \multirow{3}{3.5cm}{72 horas \\ Período: 23-02 a 13-03 \\ (Semanas 3 a 5)} \\
+& \multirow{4}{0.18\textwidth}{72 horas \\ Período: 23-02 a 13-03 \\ (Semanas 3 a 5)} \\
 \cline{2-2}
 & Desenvolvimento do cliente da API SeaRates e dos serviços de tracking marítimo e aéreo. & \\
 \cline{2-2}
-& Testes unitários recorrendo à ferramenta Prism para simulação da API e finalização da integração com o mapeamento de coordenadas. & \\
-\hline
-\multirow{3}{3.3cm}{Fase 4 -- Desenvolvimento do Frontend da Plataforma de Tracking}
-& Implementação de um painel administrativo com React Admin, operações CRUD e listagem de trackings.
-& \multirow{3}{3.5cm}{168 horas \\ Período: 16-03 a 28-04 \\ (Semanas 6 a 11)} \\
+& Testes unitários recorrendo à ferramenta Prism para simulação da API. & \\
 \cline{2-2}
-& Adaptação do sistema de permissões baseado em \textit{enums}, implementação de \textit{dashboards}, métricas segmentadas por perfil e gestão de créditos. & \\
+& Finalização da integração com o mapeamento de coordenadas. & \\
+\hline
+\multirow{4}{0.22\textwidth}{Fase 4 -- Desenvolvimento do \textit{Frontend} da Plataforma de Tracking}
+& Implementação de um painel administrativo com React Admin, operações CRUD e listagem de trackings.
+& \multirow{4}{0.18\textwidth}{168 horas \\ Período: 16-03 a 28-04 \\ (Semanas 6 a 11)} \\
+\cline{2-2}
+& Adaptação do sistema de permissões baseado em \textit{enums}. & \\
+\cline{2-2}
+& Implementação de \textit{dashboards}, métricas segmentadas por perfil e gestão de créditos. & \\
 \cline{2-2}
 & Internacionalização do portal (PT, EN, ES). & \\
 \hline
-\multirow{3}{3.3cm}{Fase 5 -- Integração com Aplicação Interna (i-Forwarder)}
+\multirow{3}{0.22\textwidth}{Fase 5 -- Integração com Aplicação Interna (i-Forwarder)}
 & Preparação do ambiente para desenvolvimento Four Js Genero (4GL).
-& \multirow{3}{3.5cm}{68 horas \\ Período: 29-04 a 15-05 \\ (Semanas 12 a 14)} \\
+& \multirow{3}{0.18\textwidth}{68 horas \\ Período: 29-04 a 15-05 \\ (Semanas 12 a 14)} \\
 \cline{2-2}
 & Reuniões de alinhamento, demonstração do produto e primeiras integrações com a equipa i-Forwarder. & \\
 \cline{2-2}
 & Correção de problemas de paginação na API e adição de filtros automáticos. & \\
 \hline
-\multirow{3}{3.3cm}{Fase 6 -- Testes finais, documentação e conclusão}
+\multirow{4}{0.22\textwidth}{Fase 6 -- Testes finais, documentação e conclusão}
 & Migração da autenticação para Keycloak.
-& \multirow{3}{3.5cm}{52 horas \\ Período: 18-05 a 29-05 \\ (Semanas 15 e 16)} \\
+& \multirow{4}{0.18\textwidth}{52 horas \\ Período: 18-05 a 29-05 \\ (Semanas 15 e 16)} \\
 \cline{2-2}
-& Refatoração de estatísticas, exportação Excel e correção do tracking em tempo real. & \\
+& Refatorização de estatísticas, exportação Excel e correção do seguimento em tempo real. & \\
 \cline{2-2}
-& Realização de testes finais (manuais e automatizados), documentação de código e elaboração do relatório de estágio. & \\
+& Realização de testes finais (manuais e automatizados) e documentação de código. & \\
+\cline{2-2}
+& Elaboração do relatório de estágio. & \\
 \hline
 \end{tabular}
 \end{table}
