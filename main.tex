@@ -357,7 +357,7 @@ O presente relatório está estruturado em cinco capítulos, complementados pela
 
 \section{Plano de Trabalho}
 
-O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no Plano Individual de Trabalho (PIT), apresentado no Anexo~1 (páginas~\pageref{fig:pit-pag1} e~\pageref{fig:pit-pag2}), e detalhada na Descrição Técnica de Tarefas, constante do Anexo~2 (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A calendarização global é ilustrada no Diagrama de Gantt do Anexo~3 (\autoref{fig:gantt}).
+O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no Plano Individual de Trabalho (PIT), apresentado no Anexo~1 (páginas~\pageref{fig:pit-pag1} e~\pageref{fig:pit-pag2}), e detalhada na Descrição Técnica de Tarefas, constante do Anexo~2 (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A calendarização global encontra-se documentada no PIT (Anexo~1).
 
 \subsection{Fase 1 --- Formação Técnica na Stack Devlop}
 
@@ -383,7 +383,7 @@ Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29
 
 A sexta e última fase, com a duração de 5 dias úteis (1 a 5 de junho), foi reservada para a finalização e entrega do trabalho. As atividades englobaram os testes finais da solução completa, a elaboração da documentação técnica e funcional, e a preparação da entrega final (\autoref{fig:pit-pag2} e \autoref{fig:tarefas-pag5}).
 
-No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontram-se representadas no Diagrama de Gantt do Anexo~3 (\autoref{fig:gantt}). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no Anexo~4 (\autoref{fig:horario}).
+No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontram-se detalhadas no PIT (Anexo~1). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no Anexo~5 (\autoref{fig:horario}).
 
 % ===================== CAPÍTULO 3 - ATIVIDADES DESENVOLVIDAS ==================
 \chapter{Descrição das Atividades Desenvolvidas}
@@ -406,27 +406,27 @@ A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo nece
 
 O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
-No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de tracking operacionais e a comunicação com a API externa validada. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores.
+No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de tracking operacionais e a comunicação com a API externa validada. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores. Uma visão global da arquitetura do sistema é apresentada no Anexo~4 (\autoref{fig:arquitetura}).
 
 \section{Desenvolvimento da Interface da Plataforma}
 
 Com a camada de backend consolidada, procedeu-se ao desenvolvimento de uma interface web em React para interação com a API de tracking. Foram implementadas operações CRUD para as principais entidades do sistema e desenvolvidas páginas dedicadas ao tracking e ao detalhe de envios, integradas com a API através de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo um controlo de acessos granular entre perfis de administrador e de cliente.
 
-Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a Português, Inglês e Espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (Anexo~5, \autoref{fig:metricas-pag1} a \autoref{fig:metricas-pag3}), que serviu de base aos \textit{dashboards} do painel administrativo. A organização do código foi sendo melhorada através de refatorações sucessivas dos componentes React.
+Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a Português, Inglês e Espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (Anexo~6, \autoref{fig:metricas-pag1} a \autoref{fig:metricas-pag3}), que serviu de base aos \textit{dashboards} do painel administrativo. A organização do código foi sendo melhorada através de refatorações sucessivas dos componentes React.
 
-A interface resultante (Anexo~7, \autoref{fig:solucao-menu} a \autoref{fig:solucao-tecnica}) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada com o backend, com suporte multi-idioma e um sistema de permissões robusto.
+A interface resultante (Anexo~8, \autoref{fig:solucao-menu} a \autoref{fig:solucao-tecnica}) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada com o backend, com suporte multi-idioma e um sistema de permissões robusto.
 
 \section{Integrações e Testes Finais}
 
-Na fase final do estágio, iniciou-se a preparação para a integração com o sistema interno de gestão de trânsitos, o i-Forwarder. Foi configurado um ambiente de desenvolvimento inicial em Four Js Genero~\cite{fourjs} (Anexo~6, \autoref{fig:4gl-exemplo} e \autoref{fig:4gl-configurado}) e realizaram-se as primeiras reuniões de alinhamento com a equipa responsável. Contudo, a necessidade de garantir a estabilidade e a segurança da plataforma levou a uma reorientação das prioridades para as semanas finais.
+Na fase final do estágio, iniciou-se a preparação para a integração com o sistema interno de gestão de trânsitos, o i-Forwarder. Foi configurado um ambiente de desenvolvimento inicial em Four Js Genero~\cite{fourjs} (Anexo~7, \autoref{fig:4gl-exemplo} e \autoref{fig:4gl-configurado}) e realizaram-se as primeiras reuniões de alinhamento com a equipa responsável. Contudo, a necessidade de garantir a estabilidade e a segurança da plataforma levou a uma reorientação das prioridades para as semanas finais.
 
 O esforço de consolidação da integração com a SeaRates centrou-se na adição de exceções específicas para este fornecedor e na unificação e tradução das mensagens de movimento dos envios. Foram também resolvidos constrangimentos de paginação em pontos críticos do sistema, como as listagens de envios e de consumos.
 
 O motor de estatísticas foi alvo de uma refatoração profunda: a remoção de agregações pré-calculadas simplificou a arquitetura e permitiu uma maior granularidade dos dados, viabilizando a exportação de dados para Excel.
 
-Um dos principais desafios técnicos desta fase relacionou-se com a renderização geográfica em tempo real. O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (Anexo~8, \autoref{fig:searates-prism}), refletindo apenas rotas de envios já finalizados.
+Um dos principais desafios técnicos desta fase relacionou-se com a renderização geográfica em tempo real. O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (Anexo~9, \autoref{fig:searates-prism}), refletindo apenas rotas de envios já finalizados.
 
-Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~8, \autoref{fig:searates-teste}), a transição para dados reais --- facilitada pelo fornecimento interno de contentores de teste (Anexo~8, \autoref{fig:searates-navios}) --- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de tracking de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas numericamente representa um salto de 358°.
+Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~9, \autoref{fig:searates-teste}), a transição para dados reais --- facilitada pelo fornecimento interno de contentores de teste (Anexo~9, \autoref{fig:searates-navios}) --- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de tracking de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas numericamente representa um salto de 358°.
 
 Antes da correção, os \textit{mappers} GeoJSON ligavam os pontos consecutivos na ordem ingénua das longitudes, fazendo com que uma rota como [179°E] → [-179°W] fosse renderizada como uma linha que contornava quase todo o planeta, em vez do curto salto sobre o meridiano 180°. A solução consistiu em detetar saltos superiores a 180° entre longitudes consecutivas e normalizar as coordenadas para uma mesma reta numérica contínua, interpolando o ponto exato de cruzamento com o antimeridiano e dividindo a \textit{LineString} em dois segmentos independentes, um em cada hemisfério. Como resultado, as rotas que cruzam a Linha Internacional de Data passaram a ser representadas corretamente nos mapas, exibindo a verdadeira travessia do Pacífico.
 
@@ -504,7 +504,7 @@ Como ferramentas de apoio ao desenvolvimento, foram utilizados o GitHub Copilot 
 
 \subsection{Planeamento Previsto e Executado}
 
-A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de tracking de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, repartido ao longo de 16 semanas. O Anexo~9 apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a calendarização correspondente.
+A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de tracking de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, repartido ao longo de 16 semanas. O Anexo~3 apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a calendarização correspondente.
 
 Comparativamente ao PIT, verifica-se que as Fases~1 e~2 decorreram em conformidade com o previsto, totalizando 56 horas nas duas primeiras semanas. A Fase~3, embora tenha mantido a sua duração global, foi concluída antecipadamente (72 horas em três semanas, face às 160 horas e quatro semanas planeadas), beneficiando da utilização de ferramentas de simulação que agilizaram o desenvolvimento e os testes. A Fase~4, relativa ao frontend, registou o maior desvio: as 320 horas inicialmente estimadas foram ajustadas para 168 horas reais, distribuídas por seis semanas, refletindo uma maior eficiência na implementação e uma delimitação mais precisa do âmbito funcional.
 
@@ -512,7 +512,7 @@ A Fase~5, originalmente dedicada à integração com o FWB, foi reorientada para
 
 \subsection{Dificuldades Encontradas}
 
-Ao longo do estágio, foram identificadas dificuldades de natureza organizacional e técnica. No plano organizacional, a gestão do tempo constituiu um desafio relevante, uma vez que o estágio decorreu em regime parcial durante a maior parte do semestre. A disponibilidade esteve condicionada pelo horário letivo da licenciatura, que ocupava as segundas e terças-feiras quase na totalidade (Anexo~4, \autoref{fig:horario}), exigindo uma rigorosa organização de tarefas e um foco redobrado nas atividades críticas nos restantes dias úteis.
+Ao longo do estágio, foram identificadas dificuldades de natureza organizacional e técnica. No plano organizacional, a gestão do tempo constituiu um desafio relevante, uma vez que o estágio decorreu em regime parcial durante a maior parte do semestre. A disponibilidade esteve condicionada pelo horário letivo da licenciatura, que ocupava as segundas e terças-feiras quase na totalidade (Anexo~5, \autoref{fig:horario}), exigindo uma rigorosa organização de tarefas e um foco redobrado nas atividades críticas nos restantes dias úteis.
 
 No plano técnico, uma das principais dificuldades esteve relacionada com o desenvolvimento frontend, área na qual existia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica.
 
@@ -600,153 +600,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
   \label{fig:tarefas-pag5}
 \end{figure}
 
-% --- Anexo 3: Diagrama de Gantt (1 anexo) ---
-\chapter{Diagrama de Gantt}
-\label{anx:gantt}
-\newpage
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image10.png}
-  \caption{Diagrama de Gantt da calendarização prevista}
-  \label{fig:gantt}
-\end{figure}
-
-% --- Anexo 4: Horário Letivo e Disponibilidade (1 anexo) ---
-\chapter{Horário Letivo e Disponibilidade}
-\label{anx:horario}
-\newpage
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image11.png}
-  \caption{Horário Letivo e Disponibilidade}
-  \label{fig:horario}
-\end{figure}
-
-% --- Anexo 5: Proposta de Métricas Tracking API (3 anexos) ---
-\chapter{Proposta de Métricas \textit{Tracking API}}
-\newpage
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image12.png}
-  \caption{Proposta de Métricas \textit{Tracking API}, página 1}
-  \label{fig:metricas-pag1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image13.png}
-  \caption{Proposta de Métricas \textit{Tracking API}, página 2}
-  \label{fig:metricas-pag2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image14.png}
-  \caption{Proposta de Métricas \textit{Tracking API}, página 3}
-  \label{fig:metricas-pag3}
-\end{figure}
-
-% --- Anexo 6: Preparação do Ambiente 4GL (2 anexos) ---
-\chapter{Preparação do Ambiente 4GL}
-\newpage
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image15.png}
-  \caption{Ambiente exemplo de desenvolvimento 4GL}
-  \label{fig:4gl-exemplo}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image16.png}
-  \caption{Ambiente de desenvolvimento 4GL configurado}
-  \label{fig:4gl-configurado}
-\end{figure}
-
-% --- Anexo 7: Capturas de Ecrã da Solução (8 anexos) ---
-\chapter{Capturas de Ecrã da Solução}
-\newpage
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image17.png}
-  \caption{Menu lateral e gestão de utilizadores}
-  \label{fig:solucao-menu}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image18.png}
-  \caption{Listagem de envios}
-  \label{fig:solucao-envios}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image19.png}
-  \caption{Movimentos do envio}
-  \label{fig:solucao-movimentos}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image20.png}
-  \caption{Posição de envio finalizado}
-  \label{fig:solucao-finalizado}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image21.png}
-  \caption{Posição de envio em tempo real}
-  \label{fig:solucao-temporeal}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image22.png}
-  \caption{Estatística do cliente}
-  \label{fig:solucao-cliente}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image23.png}
-  \caption{Estatística financeira da plataforma}
-  \label{fig:solucao-financeira}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image24.png}
-  \caption{Estatística técnica da plataforma}
-  \label{fig:solucao-tecnica}
-\end{figure}
-
-% --- Anexo 8: Integração com a SeaRates (3 anexos) ---
-\chapter{Integração com a \textit{SeaRates}}
-\newpage
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image25.png}
-  \caption{Simulação da \textit{SeaRates} API com Prism}
-  \label{fig:searates-prism}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image26.png}
-  \caption{Ativação do ambiente de teste da \textit{SeaRates}}
-  \label{fig:searates-teste}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/image27.png}
-  \caption{Dados dos navios reais}
-  \label{fig:searates-navios}
-\end{figure}
-
-% --- Anexo 9: Registo da Execução Real (1 anexo) ---
+% --- Anexo 3: Registo da Execução Real (1 tabela) ---
 \chapter{Registo da Execução Real do Estágio}
 \label{anx:execucao-real}
 \newpage
@@ -809,6 +663,152 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \hline
 \end{tabular}
 \end{table}
+
+% --- Anexo 4: Diagrama de Arquitetura do Sistema (1 figura) ---
+\chapter{Diagrama de Arquitetura do Sistema}
+\label{anx:arquitetura}
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/arch-diagram.png}
+  \caption{Diagrama de arquitetura do sistema Integrador Tracking}
+  \label{fig:arquitetura}
+\end{figure}
+
+% --- Anexo 5: Horário Letivo e Disponibilidade (1 figura) ---
+\chapter{Horário Letivo e Disponibilidade}
+\label{anx:horario}
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image11.png}
+  \caption{Horário Letivo e Disponibilidade}
+  \label{fig:horario}
+\end{figure}
+
+% --- Anexo 6: Proposta de Métricas Tracking API (3 figuras) ---
+\chapter{Proposta de Métricas \textit{Tracking API}}
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image12.png}
+  \caption{Proposta de Métricas \textit{Tracking API}, página 1}
+  \label{fig:metricas-pag1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image13.png}
+  \caption{Proposta de Métricas \textit{Tracking API}, página 2}
+  \label{fig:metricas-pag2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image14.png}
+  \caption{Proposta de Métricas \textit{Tracking API}, página 3}
+  \label{fig:metricas-pag3}
+\end{figure}
+
+% --- Anexo 7: Preparação do Ambiente 4GL (2 figuras) ---
+\chapter{Preparação do Ambiente 4GL}
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image15.png}
+  \caption{Ambiente exemplo de desenvolvimento 4GL}
+  \label{fig:4gl-exemplo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image16.png}
+  \caption{Ambiente de desenvolvimento 4GL configurado}
+  \label{fig:4gl-configurado}
+\end{figure}
+
+% --- Anexo 8: Capturas de Ecrã da Solução (8 figuras) ---
+\chapter{Capturas de Ecrã da Solução}
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image17.png}
+  \caption{Menu lateral e gestão de utilizadores}
+  \label{fig:solucao-menu}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image18.png}
+  \caption{Listagem de envios}
+  \label{fig:solucao-envios}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image19.png}
+  \caption{Movimentos do envio}
+  \label{fig:solucao-movimentos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image20.png}
+  \caption{Posição de envio finalizado}
+  \label{fig:solucao-finalizado}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image21.png}
+  \caption{Posição de envio em tempo real}
+  \label{fig:solucao-temporeal}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image22.png}
+  \caption{Estatística do cliente}
+  \label{fig:solucao-cliente}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image23.png}
+  \caption{Estatística financeira da plataforma}
+  \label{fig:solucao-financeira}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image24.png}
+  \caption{Estatística técnica da plataforma}
+  \label{fig:solucao-tecnica}
+\end{figure}
+
+% --- Anexo 9: Integração com a SeaRates (3 figuras) ---
+\chapter{Integração com a \textit{SeaRates}}
+\newpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image25.png}
+  \caption{Simulação da \textit{SeaRates} API com Prism}
+  \label{fig:searates-prism}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image26.png}
+  \caption{Ativação do ambiente de teste da \textit{SeaRates}}
+  \label{fig:searates-teste}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/image27.png}
+  \caption{Dados dos navios reais}
+  \label{fig:searates-navios}
+\end{figure}
 
 \end{appendices}
 
