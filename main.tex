@@ -300,7 +300,6 @@ In the final phase of the internship, although the environment was prepared for 
   \acro{JWT}{JSON Web Token}
   \acro{KPI}{Key Performance Indicator}
   \acro{PaaS}{Platform as a Service}
-  \acro{PALOP}{Países Africanos de Língua Oficial Portuguesa}
   \acro{PIT}{Plano Individual de Trabalho}
   \acro{PME}{Pequenas e Médias Empresas}
   \acro{REST}{Representational State Transfer}
@@ -322,7 +321,7 @@ In the final phase of the internship, although the environment was prepared for 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas de transportes, logística e distribuição. Fundada em 1999, conta com 26 anos de experiência no mercado nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, assim como para PME em Portugal e nos PALOP (Países Africanos de Língua Oficial Portuguesa). A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
+A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas de transportes, logística e distribuição. Fundada em 1999, conta com 26 anos de experiência no mercado nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, assim como para PME em Portugal e nos Países Africanos de Língua Oficial Portuguesa. A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
 
 No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
 
@@ -337,7 +336,7 @@ No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão
 
 Ao nível da infraestrutura, fornece serviços de alojamento em nuvem, cibersegurança (em parceria com a Sophos) e suporte técnico.
 
-Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e bases de dados SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
+Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e BD SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
 
 \subsection{Situação Atual do Projeto}
 
@@ -442,7 +441,7 @@ No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos 
 
 \section{Formação e Preparação Técnica}
 
-O estágio teve início com um período de adaptação à \textit{stack} tecnológica da Devlop e ao ambiente de desenvolvimento utilizado na empresa. Para adquirir os conhecimentos práticos necessários à compreensão da base de código existente, foram frequentados os cursos de EF Core e de \textit{SQL Server Database Design} referidos no planeamento (Anexo~1, \autoref{tab:resumo-plano}). Complementarmente, foi desenvolvido um projeto prático \textit{CRUD} envolvendo \textit{backend} em .NET, \textit{frontend} em React e base de dados SQL Server, o que permitiu configurar um ambiente de desenvolvimento funcional e compreender a interação entre as diferentes camadas tecnológicas.
+O estágio teve início com um período de adaptação à \textit{stack} tecnológica da Devlop e ao ambiente de desenvolvimento utilizado na empresa. Para adquirir os conhecimentos práticos necessários à compreensão da base de código existente, foram frequentados os cursos de EF Core e de \textit{SQL Server Database Design} referidos no planeamento (Anexo~1, \autoref{tab:resumo-plano}). Complementarmente, foi desenvolvido um projeto prático \textit{CRUD} envolvendo \textit{backend} em .NET, \textit{frontend} em React e BD SQL Server, o que permitiu configurar um ambiente de desenvolvimento funcional e compreender a interação entre as diferentes camadas tecnológicas.
 
 Esta preparação inicial revelou-se essencial para abordar com segurança o código do projeto principal.
 
@@ -533,7 +532,7 @@ A migração do sistema de autenticação para Keycloak e a correção de anomal
 
 Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates, integrado pelo autor, e o OpenSyllo~\cite{opensyllo}, integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
 
-A API expõe 37 \textit{controllers} organizados em 10 domínios funcionais, suportados por 26 entidades na base de dados SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (Português, Inglês e Espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
+A API expõe 37 \textit{controllers} organizados em 10 domínios funcionais, suportados por 26 entidades na BD SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (Português, Inglês e Espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
 
 A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e as horas efetivamente executadas em cada uma das seis fases do estágio.
 
@@ -662,7 +661,7 @@ Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: f
 
 A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
 
-A implementação do motor de estatísticas apresentou ainda um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade -- e consequente aprendizagem -- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando os dados diretamente da base de dados.
+A implementação do motor de estatísticas apresentou ainda um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade -- e consequente aprendizagem -- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando os dados diretamente da BD.
 
 Esta simplificação, orientada pela manutenibilidade, trouxe ainda um benefício adicional: ao operar sobre dados em bruto, o sistema ganhou maior granularidade, facilitando a introdução da funcionalidade de exportação para Excel.
 
@@ -670,13 +669,13 @@ Esta simplificação, orientada pela manutenibilidade, trouxe ainda um benefíci
 
 Como propostas para desenvolvimentos futuros e otimização do ecossistema desenvolvido, identificam-se três linhas de ação prioritárias.
 
-Em primeiro lugar, recomenda-se a implementação de um mecanismo de armazenamento em \textit{cache} e de persistência local para os dados da SeaRates. Dado que esta API opera num modelo sem estado, a criação de uma \textit{cache} na base de dados interna da Devlop permitiria reter o histórico de estados e trajetórias dos navios por períodos mais longos, reduzindo o volume de consultas redundantes à API externa e minimizando os custos operacionais associados.
+Em primeiro lugar, recomenda-se a implementação de um mecanismo de armazenamento em \textit{cache} e de persistência local para os dados da SeaRates. Dado que esta API opera num modelo sem estado, a criação de uma \textit{cache} na BD interna da Devlop permitiria reter o histórico de estados e trajetórias dos navios por períodos mais longos, reduzindo o volume de consultas redundantes à API externa e minimizando os custos operacionais associados.
 
 Em segundo lugar, sugere-se a retoma da integração com o sistema i-Forwarder. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de gatilhos automáticos entre o ecossistema 4GL do i-Forwarder e a Tracking API permitiria que qualquer atualização de estado refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
 
-Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à base de dados simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
+Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à BD simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
 
-Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da base de dados -- como vistas materializadas -- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
+Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da BD -- como vistas materializadas -- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
 
 % ===================== BIBLIOGRAFIA ===========================================
 \printbibliography
