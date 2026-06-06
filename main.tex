@@ -108,6 +108,20 @@
 \usepackage{multirow}
 \usepackage{url}
 \usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  language=[Sharp]C,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  aboveskip=6pt,
+  belowskip=6pt
+}
 
 % =============================================================================
 \begin{document}
@@ -417,7 +431,28 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
 
 A API de tracking comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de DTOs para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de tracking marítimo, aéreo e de transportadoras.
 
-O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
+O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. A \autoref{fig:orchestrator} ilustra o método após a integração.
+
+\begin{figure}[H]
+  \centering
+  \begin{lstlisting}[frame=single]
+private object ResolveProviderService(string normalizedProviderCode)
+{
+    return normalizedProviderCode switch
+    {
+        "SHIPSGO"  => _serviceProvider
+            .GetRequiredService<IShipsgoTrackingService>(),
+        "SEARATES" => _serviceProvider
+            .GetRequiredService<ISeaRatesTrackingService>(),
+        _          => throw new NotFoundException("Not found.")
+    };
+}
+  \end{lstlisting}
+  \caption{Método \texttt{ResolveProviderService} com o fornecedor SeaRates integrado}
+  \label{fig:orchestrator}
+\end{figure}
+
+Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
 
 No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de tracking operacionais e a comunicação com a API externa validada. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores. Uma visão global da arquitetura do sistema é apresentada no Anexo~4 (\autoref{fig:arquitetura}).
 
