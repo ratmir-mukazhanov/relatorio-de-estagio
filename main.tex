@@ -247,7 +247,7 @@ Por fim, agradeço aos meus colegas pelo apoio, espírito de entreajuda e partil
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu na evolução de uma API de seguimento de envios marítimos pré-existente (Tracking API), através da integração de um novo fornecedor de dados, a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado em .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema de forma agnóstica e determinística. Adicionalmente, foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, englobando operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
+Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de rastreamento de envios marítimos pré-existente (Tracking API) por meio da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma agnóstica e determinística. Adicionalmente, foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
 
 Na fase final do estágio, embora o ambiente tenha sido preparado para a integração com o sistema interno de gestão de trânsitos (i-Forwarder) da empresa num ecossistema Four Js Genero (4GL), as prioridades do projeto foram reorientadas para garantir a estabilidade e a segurança da solução desenvolvida. Consequentemente, o trabalho focou-se na consolidação da integração com a SeaRates, na correção de anomalias complexas de dados geográficos no mapa de seguimento em tempo real e na migração integral do sistema de autenticação para o Keycloak. Os resultados evidenciaram a eficácia da arquitetura implementada, dotando a empresa de uma solução estável, escalável e segura para a monitorização logística.
 
@@ -260,9 +260,9 @@ Na fase final do estágio, embora o ambiente tenha sido preparado para a integra
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-This report describes the work conducted during the curricular internship for the Bachelor's Degree in Information Technologies at Devlop. The main objective of the project was the evolution of a pre-existing maritime shipment tracking API by integrating a new data provider, the SeaRates platform. The development involved backend components using .NET and EF Core, extending the system's service orchestrator and capabilities registry in an agnostic and deterministic manner. Additionally, a frontend interface was designed and implemented in React to support the platform's operational and administrative management, including CRUD operations for multiple entities, internationalization, and commercial credit management.
+This report describes the work conducted during the curricular internship for the Bachelor's Degree in Information Technologies at Devlop. The main objective of the project was to evolve a pre-existing maritime shipment-tracking API by integrating a new data provider, the SeaRates platform. The development involved backend components using .NET and EF Core, extending the system's service orchestrator and capabilities registry in an agnostic and deterministic manner. Additionally, a frontend interface was designed and implemented in React to support the platform's operational and administrative management, including CRUD operations for multiple entities, internationalization, and commercial credit management.
 
-In the final phase of the internship, although the environment was prepared for integration with the company's internal freight forwarding system (i-Forwarder) within a Four Js Genero (4GL) ecosystem, the project's priorities were redirected to ensure stability and security of the developed solution. Consequently, the work focused on consolidating the SeaRates integration, fixing complex geographic data anomalies on the live tracking map, and fully migrating the authentication system to Keycloak. The results demonstrated the effectiveness of the implemented architecture, providing the company with a stable, scalable, and secure multi-provider solution for logistics monitoring.
+In the final phase of the internship, we prepared the environment for integration with the company's internal freight-forwarding system (i-Forwarder) within the Four Js Genero (4GL) ecosystem. However, priorities shifted to ensure the stability and security of the developed solution. Consequently, the work focused on consolidating the SeaRates integration, fixing complex geographic data anomalies on the live tracking map, and fully migrating the authentication system to Keycloak. The results show the implemented architecture is effective, delivering a stable, scalable, and secure multi-provider solution for logistics monitoring.
 
 \vspace{1cm}
 \noindent\textbf{Keywords:} API Integration, .NET, React, Maritime Tracking, Keycloak.
@@ -321,7 +321,7 @@ In the final phase of the internship, although the environment was prepared for 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas de transportes, logística e distribuição. Fundada em 1999, conta com 26 anos de experiência no mercado nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, assim como para PME em Portugal e nos Países Africanos de Língua Oficial Portuguesa. A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
+A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas dos setores de transportes, logística e distribuição. Fundada em 1999, conta com 26 anos de experiência nos mercados nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, bem como para PME em Portugal e nos Países Africanos de Língua Oficial Portuguesa. A Devlop é detentora da propriedade intelectual de seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
 
 No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
 
@@ -332,15 +332,15 @@ No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes
   \label{fig:devlop-logo}
 \end{figure}
 
-No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão de transporte e armazenamento, como o Transporter, WebSHoT, WebTrans e WebDepot, bem como WMS de suporte a operações de inventário e distribuição. Nas soluções corporativas, atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera, incluindo a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de dashboards com Power BI.
+No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão de transporte e armazenamento, como o Transporter, WebSHoT, WebTrans e WebDepot, bem como WMS para suporte às operações de inventário e de distribuição. Nas soluções corporativas, atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera, incluindo a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de dashboards com Power BI.
 
-Ao nível da infraestrutura, fornece serviços de alojamento em nuvem, cibersegurança (em parceria com a Sophos) e suporte técnico.
+Ao nível da infraestrutura, fornece serviços de alojamento em nuvem, de cibersegurança (em parceria com a Sophos) e de suporte técnico.
 
-Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e BD SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
+Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{Backend} e BD SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
 
 \subsection{Situação Atual do Projeto}
 
-O integrador de \textit{tracking}, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma API que atuava como ponte entre clientes externos e fornecedores de \textit{tracking}, comunicando, à data de início do estágio, exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}. Esta API registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de \textit{tracking} e os \textit{logs} de pedidos para posterior faturação, suportando ainda o cálculo de custos associados ao consumo da API.
+O integrador de \textit{tracking}, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma API que atuava como ponte entre clientes externos e fornecedores de \textit{tracking}, comunicando-se, à data de início do estágio, exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}. Esta API registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de \textit{tracking} e os \textit{logs} de pedidos para posterior faturação, e ainda suportava o cálculo dos custos associados ao consumo da API.
 
 Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando-se na expansão das capacidades do sistema existente.
 
@@ -349,20 +349,20 @@ Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando
 
 \subsection{Objetivos gerais}
 
-O estágio teve como tema \enquote{Integrador Tracking -- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos utilizando as APIs da ShipsGo e SeaRates~\cite{searates}, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores, e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
+O estágio teve como tema \enquote{Integrador Tracking -- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos, utilizando as APIs da ShipsGo e da SeaRates~\cite{searates}, disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
 
 \subsection{Objetivos específicos}
 
 De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na Tracking API existente, respeitando o padrão de orquestração já implementado para o ShipsGo e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte a operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, EF Core~\cite{efcore}, SQL Server e React.
 
-Adicionalmente, previa-se a preparação da integração da solução com os sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se ainda que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs em contexto empresarial real.
+Adicionalmente, prevê-se a preparação da integração da solução aos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs em um contexto empresarial real.
 
 % --- Metodologia ---
 \section{Metodologias de Trabalho}
 
 Durante o estágio, o planeamento do trabalho seguiu uma abordagem em cascata (\textit{waterfall}), com as seis fases bem definidas à partida e calendarizadas de acordo com o PIT. A execução, por sua vez, foi organizada em ciclos semanais nos quais eram definidos objetivos e tarefas a desenvolver, à semelhança de \textit{sprints} ágeis. No final de cada ciclo, realizava-se um ponto de situação para avaliar o progresso e identificar os próximos passos.
 
-A comunicação técnica e o acompanhamento diário foram realizados principalmente com Sandro Cunha, colega de equipa que desempenhou o papel de colega de integração, apoiando a integração no projeto e o esclarecimento de dúvidas. Adicionalmente, realizavam-se reuniões semanais com o orientador da empresa, Bruno Leitão, para validação de decisões técnicas e alinhamento do trabalho com os objetivos definidos. A comunicação foi efetuada maioritariamente através do Microsoft Teams.
+A comunicação técnica e o acompanhamento diário foram realizados principalmente com Sandro Cunha, colega de equipa que desempenhou o papel de colega de integração, apoiando a integração no projeto e esclarecendo dúvidas. Adicionalmente, realizavam-se reuniões semanais com o orientador da empresa, Bruno Leitão, para a validação de decisões técnicas e o alinhamento do trabalho aos objetivos definidos. A comunicação foi efetuada maioritariamente através do Microsoft Teams.
 
 Para o acompanhamento formal do progresso, foi elaborado um relatório técnico semanal no modelo oficial da Devlop, documentando as atividades realizadas, os resultados alcançados e as dificuldades encontradas ao longo das 16 semanas de estágio (Anexo~10, \autoref{fig:relatorio-devlop}).
 
@@ -371,18 +371,18 @@ Para o acompanhamento formal do progresso, foi elaborado um relatório técnico 
 
 O presente relatório está estruturado em cinco capítulos, complementados pela bibliografia e pelos anexos.
 
-O presente capítulo introduz o enquadramento do estágio, apresentando a entidade de acolhimento, os objetivos gerais e específicos do projeto e a metodologia de trabalho adotada. O Capítulo~2 descreve o planeamento original, detalhando as seis fases previstas, a sua calendarização e as atividades planeadas. O Capítulo~3 constitui o núcleo descritivo do documento, relatando as atividades efetivamente desenvolvidas ao longo das 16 semanas de estágio, organizadas por fase técnica.
+O presente capítulo introduz o enquadramento do estágio, apresentando a entidade de acolhimento, os objetivos gerais e específicos do projeto e a metodologia de trabalho adotada. O Capítulo~2 descreve o planeamento original, detalhando as seis fases previstas, a respetiva calendarização e as respetivas atividades. O Capítulo~3 constitui o núcleo descritivo do documento, relatando as atividades efetivamente desenvolvidas ao longo das 16 semanas de estágio, organizadas em fases técnicas.
 
-O Capítulo~4 analisa o grau de cumprimento dos objetivos face ao plano inicial, discute os principais desvios e resultados alcançados e inventaria as tecnologias e ferramentas utilizadas. Por fim, o Capítulo~5 apresenta uma reflexão crítica sobre as competências adquiridas, as estratégias de trabalho e as dificuldades enfrentadas, concluindo com propostas de trabalho futuro.
+O Capítulo~4 analisa o grau de cumprimento dos objetivos face ao plano inicial, discute os principais desvios e os resultados alcançados e inventaria as tecnologias e ferramentas utilizadas. Por fim, o Capítulo~5 apresenta uma reflexão crítica sobre as competências adquiridas, as estratégias de trabalho e as dificuldades enfrentadas, concluindo com propostas de trabalho futuro.
 
-Os anexos complementam o relatório com documentação de suporte, incluindo o PIT, o registo da execução real e o diagrama de arquitetura do sistema.
+Os anexos complementam o relatório com documentação de suporte, incluindo o PIT, o registo da execução efetiva e o diagrama de arquitetura do sistema.
 
 % ===================== CAPÍTULO 2 - PLANEAMENTO DO TRABALHO ===================
 \chapter{Planeamento do Trabalho}
 
 \section{Plano de Trabalho}
 
-O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no PIT, apresentado no Anexo~1 (\autoref{tab:resumo-plano}), e detalhada na Descrição Técnica de Tarefas, constante do Anexo~2 (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A \autoref{tab:resumo-fases} sintetiza a estrutura global do plano de trabalhos.
+O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no PIT, apresentado no Anexo~1 (\autoref{tab:resumo-plano}), e detalhada na Descrição Técnica de Tarefas, constante do Anexo~2 (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A \autoref{tab:resumo-fases} sintetiza a estrutura geral do plano de trabalhos.
 
 \begin{table}[H]
 \centering
@@ -416,25 +416,25 @@ A primeira fase, com a duração prevista de 32 horas (aproximadamente 4 dias ú
 
 \subsection{Fase 2 --- Análise da API Existente e Arquitetura Atual}
 
-Com a duração de 5 dias úteis (16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da Tracking API, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
+Com duração de 5 dias úteis (de 16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da Tracking API, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
 
 \subsection{Fase 3 --- Integração do Novo Fornecedor SeaRates}
 
-A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas, de 23 de fevereiro a 20 de março). As atividades incluíram o estudo da documentação da API SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}--\autoref{fig:tarefas-pag3}).
+A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas), de 23 de fevereiro a 20 de março. As atividades incluíram o estudo da documentação da API SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}--\autoref{fig:tarefas-pag3}).
 
 \subsection{Fase 4 --- Desenvolvimento da Interface da Plataforma de Tracking}
 
-A quarta fase, correspondente ao desenvolvimento \textit{frontend}, foi a mais longa do estágio, com a duração estimada de 40 dias úteis (aproximadamente 320 horas, de 23 de março a 18 de maio). Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de \textit{tracking}, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a API existente, e a realização de testes e melhorias (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag3}--\autoref{fig:tarefas-pag4}).
+A quarta fase, correspondente ao desenvolvimento \textit{Frontend}, foi a mais longa do estágio, com duração estimada de 40 dias úteis (aproximadamente 320 horas), de 23 de março a 18 de maio. Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de \textit{tracking}, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a API existente e a realização de testes e melhorias (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag3}--\autoref{fig:tarefas-pag4}).
 
 \subsection{Fase 5 --- Integração com Aplicação Interna (i-Forwarder)}
 
-Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da Tracking API com o sistema interno, os testes de integração e a correção de erros e otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}--\autoref{fig:tarefas-pag5}).
+Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da Tracking API com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}--\autoref{fig:tarefas-pag5}).
 
 \subsection{Fase 6 --- Testes Finais, Documentação e Conclusão}
 
-A sexta e última fase, com a duração de 5 dias úteis (1 a 5 de junho), foi reservada para a finalização e entrega do trabalho. As atividades englobaram os testes finais da solução completa, a elaboração da documentação técnica e funcional, e a preparação da entrega final (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag5}).
+A sexta e última fase, com duração de 5 dias úteis (de 1 a 5 de junho), foi reservada à finalização e à entrega do trabalho. As atividades englobaram os testes finais da solução completa, a elaboração da documentação técnica e funcional e a preparação da entrega final (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag5}).
 
-No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontram-se detalhadas no PIT (Anexo~1). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no Anexo~5 (\autoref{fig:horario}).
+No cômputo geral, o plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontra-se detalhada no PIT (Anexo~1). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no Anexo~5 (\autoref{fig:horario}).
 
 % ===================== CAPÍTULO 3 - ATIVIDADES DESENVOLVIDAS ==================
 \chapter{Descrição das Atividades Desenvolvidas}
@@ -447,7 +447,7 @@ Esta preparação inicial revelou-se essencial para abordar com segurança o có
 
 \section{Análise da Arquitetura Existente}
 
-Antes de qualquer implementação, procedeu-se ao estudo aprofundado da Tracking API existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos para o fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (Anexo~2, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API SeaRates.
+Antes de qualquer implementação, procedeu-se a um estudo aprofundado da Tracking API existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos ao fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (Anexo~2, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API da SeaRates.
 
 Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores -- com destaque para o modelo \textit{stateless} da SeaRates -- e dos desafios que a integração implicaria.
 
@@ -462,7 +462,7 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
 
 A Tracking API comunicava exclusivamente com o fornecedor ShipsGo, sendo necessário acrescentar o suporte à SeaRates (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de \textit{DTOs} para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de \textit{tracking} marítimo, aéreo e de transportadoras.
 
-O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado para o ShipsGo. A \autoref{fig:orchestrator} ilustra o método após a integração.
+O novo fornecedor foi integrado ao orquestrador por meio da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado no ShipsGo. A \autoref{fig:orchestrator} ilustra o método após a integração.
 
 \begin{figure}[H]
   \centering
@@ -483,17 +483,17 @@ private object ResolveProviderService(string normalizedProviderCode)
   \label{fig:orchestrator}
 \end{figure}
 
-Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizado o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API SeaRates durante o desenvolvimento.
+Para garantir a qualidade da integração, foram desenvolvidos testes unitários e utilizou-se o Prism~\cite{prism} como ferramenta de \textit{mocking} para simular a API da SeaRates durante o desenvolvimento.
 
-No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de \textit{tracking} operacionais e a comunicação com a API externa validada. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores. Uma visão global da arquitetura do sistema é apresentada no Anexo~4 (\autoref{fig:arquitetura}).
+No final desta fase, a API passou a suportar ambos os fornecedores de forma transparente, com os serviços de \textit{tracking} operacionais e a comunicação com a API externa já validados. A arquitetura manteve-se compatível com os \textit{endpoints} em produção, ficando preparada para a adição de futuros fornecedores. Uma visão global da arquitetura do sistema é apresentada no Anexo~4 (\autoref{fig:arquitetura}).
 
 \section{Desenvolvimento da Interface da Plataforma}
 
-Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de uma interface \textit{web} em React para interação com a Tracking API. Foram implementadas operações \textit{CRUD} para as principais entidades do sistema e desenvolvidas páginas dedicadas ao \textit{tracking} e ao detalhe de envios, integradas com a API através de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo um controlo de acessos granular entre perfis de administrador e de cliente.
+Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de uma interface \textit{web} em React para interagir com a Tracking API. Foram implementadas operações \textit{CRUD} para as principais entidades do sistema e desenvolvidas páginas dedicadas ao \textit{tracking} e ao detalhe de envios, integradas à API por meio de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo controlo granular de acesso entre perfis de administrador e de cliente.
 
-Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a Português, Inglês e Espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (Anexo~6, \autoref{fig:metricas-pag1} a \autoref{fig:metricas-pag3}), que serviu de base aos \textit{dashboards} do painel administrativo. A organização do código foi sendo melhorada através de refatorações sucessivas dos componentes React.
+Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a português, inglês e espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (Anexo~6, \autoref{fig:metricas-pag1} a \autoref{fig:metricas-pag3}), que serviu de base para os \textit{dashboards} do painel administrativo. A organização do código foi melhorando por meio de refatorações sucessivas dos componentes React.
 
-A interface resultante (Anexo~8) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada com o \textit{backend}, com suporte multi-idioma e um sistema de permissões robusto. Entre os ecrãs desenvolvidos, destacam-se o menu lateral e a gestão de utilizadores (\autoref{fig:solucao-menu}), a listagem de envios (\autoref{fig:solucao-envios}), a visualização dos movimentos de cada envio (\autoref{fig:solucao-movimentos}), a posição de um envio finalizado (\autoref{fig:solucao-finalizado}), o seguimento em tempo real (\autoref{fig:solucao-temporeal}), as estatísticas por cliente (\autoref{fig:solucao-cliente}) e os painéis financeiro (\autoref{fig:solucao-financeira}) e técnico (\autoref{fig:solucao-tecnica}).
+A interface resultante (Anexo~8) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada ao \textit{Backend}, com suporte multilíngue e um sistema de permissões robusto. Entre os ecrãs desenvolvidos, destacam-se o menu lateral e a gestão de utilizadores (\autoref{fig:solucao-menu}), a listagem de envios (\autoref{fig:solucao-envios}), a visualização dos movimentos de cada envio (\autoref{fig:solucao-movimentos}), a posição de um envio finalizado (\autoref{fig:solucao-finalizado}), o seguimento em tempo real (\autoref{fig:solucao-temporeal}), as estatísticas por cliente (\autoref{fig:solucao-cliente}) e os painéis financeiros (\autoref{fig:solucao-financeira}) e técnicos (\autoref{fig:solucao-tecnica}).
 
 \section{Integrações e Testes Finais}
 
@@ -501,38 +501,38 @@ Na fase final do estágio, iniciou-se a preparação para a integração com o s
 
 O esforço de consolidação da integração com a SeaRates centrou-se na adição de exceções específicas para este fornecedor e na unificação e tradução das mensagens de movimento dos envios. Foram também resolvidos constrangimentos de paginação em pontos críticos do sistema, como as listagens de envios e de consumos.
 
-O motor de estatísticas foi alvo de uma refatoração profunda: a remoção de agregações pré-calculadas simplificou a arquitetura e permitiu uma maior granularidade dos dados, viabilizando a exportação de dados para Excel.
+O motor de estatísticas foi alvo de uma refatoração profunda: a remoção de agregações pré-calculadas simplificou a arquitetura e permitiu maior granularidade dos dados, viabilizando a exportação para o Excel.
 
-Um dos principais desafios técnicos desta fase relacionou-se com a renderização geográfica em tempo real. O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (Anexo~9, \autoref{fig:searates-prism}), refletindo apenas rotas de envios já finalizados.
+Um dos principais desafios técnicos desta fase foi a renderização geográfica em tempo real. O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (Anexo~9, \autoref{fig:searates-prism}), refletindo apenas rotas de envio já finalizadas.
 
-Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~9, \autoref{fig:searates-teste}), a transição para dados reais -- facilitada pelo fornecimento interno de contentores de teste (Anexo~9, \autoref{fig:searates-navios}) -- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de \textit{tracking} de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas numericamente representa um salto de 358°.
+Quando a Devlop obteve acesso à API de testes da SeaRates (Anexo~9, \autoref{fig:searates-teste}), a transição para dados reais -- facilitada pelo fornecimento interno de contentores de teste (Anexo~9, \autoref{fig:searates-navios}) -- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de \textit{tracking} de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas, numericamente, representa um salto de 358°.
 
-Antes da correção, os \textit{mappers} GeoJSON ligavam os pontos consecutivos na ordem ingénua das longitudes, fazendo com que uma rota como [179°E] → [-179°W] fosse renderizada como uma linha que contornava quase todo o planeta, em vez do curto salto sobre o meridiano 180°. A solução consistiu em detetar saltos superiores a 180° entre longitudes consecutivas e normalizar as coordenadas para uma mesma reta numérica contínua, interpolando o ponto exato de cruzamento com o antimeridiano e dividindo a \textit{LineString} em dois segmentos independentes, um em cada hemisfério. Como resultado, as rotas que cruzam a Linha Internacional de Data passaram a ser representadas corretamente nos mapas, exibindo a verdadeira travessia do Pacífico.
+Antes da correção, os \textit{mappers} GeoJSON ligavam os pontos consecutivos na ordem ingénua das longitudes, fazendo com que uma rota como [179°E] → [-179°W] fosse renderizada como uma linha que contornava quase todo o planeta, em vez do curto salto sobre o meridiano 180°. A solução consistiu em detetar saltos superiores a 180° entre longitudes consecutivas, normalizar as coordenadas para uma mesma reta numérica contínua, interpolar o ponto exato de cruzamento com o antimeridiano e dividir a \textit{LineString} em dois segmentos independentes, um em cada hemisfério. Como resultado, as rotas que cruzam a Linha Internacional de Data passaram a ser representadas corretamente nos mapas, exibindo a verdadeira travessia do Pacífico.
 
-Ao nível da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o anterior modelo baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} -- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação -- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
+No âmbito da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o modelo anterior baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} -- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação -- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
 
-No termo desta fase, a plataforma apresentava uma API estabilizada face a exceções do novo fornecedor, representação geográfica correta dos trajetos marítimos, autenticação centralizada e segura, e melhorias significativas na fiabilidade e na apresentação de dados analíticos.
+No termo desta fase, a plataforma apresentava uma API estabilizada face às exceções do novo fornecedor, representação geográfica correta dos trajetos marítimos, autenticação centralizada e segura, e melhorias significativas na fiabilidade e na apresentação de dados analíticos.
 
 % ===================== CAPÍTULO 4 - ANÁLISE DE RESULTADOS =====================
 \chapter{Análise de Resultados}
 
 \section{Cumprimento dos Objetivos}
 
-O balanço global do estágio revela um elevado índice de concretização das metas estabelecidas no plano de trabalho inicial, complementado por uma adaptação eficaz aos desafios técnicos que surgiram na fase final. A avaliação do cumprimento dos objetivos organiza-se em torno das três macrofases de desenvolvimento que estruturaram o projeto.
+O balanço global do estágio revela um elevado índice de concretização das metas estabelecidas no plano de trabalho inicial, complementado por uma adaptação eficaz aos desafios técnicos surgidos na fase final. A avaliação do cumprimento dos objetivos organiza-se em torno das três macrofases de desenvolvimento que estruturaram o projeto.
 
-No que respeita ao \textit{backend}, correspondente às Fases~1 a~3 do planeamento, o objetivo central de integrar o fornecedor SeaRates na Tracking API existente foi plenamente alcançado. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o roteamento determinístico de pedidos para o novo fornecedor, sem qualquer alteração aos \textit{endpoints} públicos já expostos a clientes externos.
+No que respeita ao \textit{backend}, correspondente às Fases~1 a~3 do planeamento, o objetivo central de integrar o fornecedor SeaRates à Tracking API existente foi plenamente alcançado. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o roteamento determinístico de pedidos ao novo fornecedor, sem qualquer alteração nos \textit{endpoints} públicos já expostos a clientes externos.
 
-A validação em ambiente simulado, com recurso ao Prism para \textit{mocking} da API SeaRates, permitiu garantir a estabilidade da integração e a conformidade dos contratos de dados definidos através dos \textit{DTOs} implementados. Deste modo, foi cumprido o objetivo de expandir a API sem quebrar a retrocompatibilidade com os consumidores existentes.
+A validação em ambiente simulado, com recurso ao Prism para \textit{mocking} da API SeaRates, permitiu garantir a estabilidade da integração e a conformidade com os contratos de dados definidos por meio dos \textit{DTOs} implementados. Deste modo, foi cumprido o objetivo de expandir a API sem comprometer a retrocompatibilidade com os consumidores existentes.
 
-Relativamente ao \textit{frontend}, desenvolvido no âmbito da Fase~4, a interface ultrapassou o propósito inicial de uma ferramenta de consulta de \textit{tracking}, consolidando-se como um painel administrativo completo em React. Foram validadas com sucesso as operações \textit{CRUD} dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo tipado de acessos através de enumerados e a gestão detalhada de créditos e de integrações visuais. O objetivo de criar uma plataforma funcional para clientes finais e para a administração da Devlop foi, assim, concretizado.
+Relativamente ao \textit{Frontend}, desenvolvido no âmbito da Fase~4, a interface ultrapassou o propósito inicial de uma ferramenta de consulta de \textit{tracking}, consolidando-se como um painel administrativo completo em React. Foram validadas com sucesso as operações \textit{CRUD} dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo tipado de acessos através de enumerados e a gestão detalhada de créditos e de integrações visuais. O objetivo de criar uma plataforma funcional para clientes finais e para a administração da Devlop foi, assim, concretizado.
 
-Quanto às Fases~5 e~6, dedicadas às integrações e à estabilização, o plano original previa uma integração aprofundada com a aplicação corporativa i-Forwarder. Embora este objetivo não tenha sido atingido na sua totalidade, a reorientação estratégica das prioridades revelou-se acertada. O foco foi redirecionado para necessidades críticas da plataforma, resultando numa API estabilizada, com tratamento de exceções específico para a SeaRates e mensagens de movimento normalizadas.
+Quanto às Fases~5 e~6, dedicadas às integrações e à estabilização, o plano original prévia uma integração aprofundada com a aplicação corporativa i-Forwarder. Embora este objetivo não tenha sido atingido na sua totalidade, a reorientação estratégica das prioridades revelou-se acertada. O foco foi redirecionado para as necessidades críticas da plataforma, resultando numa API estabilizada, com tratamento de exceções específico para a SeaRates e mensagens de movimento normalizadas.
 
 A migração do sistema de autenticação para Keycloak e a correção de anomalias na renderização geográfica asseguraram que a solução final reunisse as condições de segurança, fiabilidade e usabilidade necessárias à sua adoção interna.
 
-Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates, integrado pelo autor, e o OpenSyllo~\cite{opensyllo}, integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
+Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates, integrado pelo autor, e o OpenSyllo~\cite{opensyllo}, integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por meio de três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
 
-A API expõe 37 \textit{controllers} organizados em 10 domínios funcionais, suportados por 26 entidades na BD SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (Português, Inglês e Espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
+A API expõe 37 \textit{controllers}, organizados em 10 domínios funcionais, e é suportada por 26 entidades na BD do SQL Server. No \textit{Frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (português, inglês e espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
 
 A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e as horas efetivamente executadas em cada uma das seis fases do estágio.
 
@@ -566,11 +566,11 @@ Fase 6 -- Testes finais, documentação e conclusão & 40 & 52 & +30\,\% \\
 
 A execução do plano de trabalhos decorreu, no essencial, em conformidade com a calendarização prevista no PIT (Anexo~1), registando-se, contudo, desvios na fase final que merecem reflexão. O principal desvio face ao planeamento inicial consistiu na redução do âmbito da integração com o sistema i-Forwarder, em favor de um investimento mais aprofundado na estabilização da plataforma e no reforço da sua segurança.
 
-Esta decisão, tomada em articulação com o orientador da empresa, demonstrou ser a mais adequada ao estado de maturidade do produto, garantindo que a solução entregue se encontrasse robusta e pronta para utilização em ambiente interno.
+Esta decisão, tomada em articulação com o orientador da empresa, demonstrou ser a mais adequada ao estágio de maturidade do produto, garantindo que a solução entregue fosse robusta e pronta para uso em ambiente interno.
 
-Entre as dificuldades técnicas encontradas, destaca-se a resolução do problema do antimeridiano na renderização geográfica de trajetos marítimos, cuja descrição técnica foi apresentada no Capítulo~3. Também a migração do sistema de autenticação para Keycloak constituiu um desafio relevante, exigindo adaptações profundas na lógica de autorização e no fluxo de autenticação do \textit{frontend} e do \textit{backend}. Em ambos os casos, os obstáculos foram superados com sucesso, contribuindo para a robustez da solução final.
+Entre as dificuldades técnicas encontradas, destaca-se a resolução do problema do antimeridiano na renderização geográfica de trajetos marítimos, cuja descrição técnica foi apresentada no Capítulo~3. A migração do sistema de autenticação para Keycloak também representou um desafio relevante, exigindo adaptações profundas na lógica de autorização e no fluxo de autenticação do \textit{frontend} e do \textit{Backend}. Em ambos os casos, os obstáculos foram superados com sucesso, o que contribuiu para a robustez da solução final.
 
-Globalmente, os resultados obtidos evidenciam que os objetivos gerais do estágio foram cumpridos, com a integração do novo fornecedor SeaRates plenamente operacional e a plataforma de \textit{tracking} dotada de uma interface funcional e segura. Os desvios pontuais ao planeamento inicial foram geridos de forma adaptativa, privilegiando a qualidade e a estabilidade da solução entregue.
+Globalmente, os resultados obtidos evidenciam que os objetivos gerais do estágio foram cumpridos, com a integração do novo fornecedor SeaRates plenamente operacional e a plataforma de \textit{tracking} dotada de uma interface funcional e segura. Os desvios pontuais em relação ao planeamento inicial foram geridos de forma adaptativa, privilegiando a qualidade e a estabilidade da solução entregue.
 
 \section{Tecnologias e Ferramentas}
 
@@ -625,27 +625,27 @@ O conjunto de tecnologias e ferramentas que suportaram o desenvolvimento do proj
 
 \subsection{Atividades Desenvolvidas e Competências Adquiridas}
 
-Ao longo do estágio, foram adquiridas e consolidadas competências técnicas e pessoais diretamente relacionadas com as atividades realizadas. No domínio técnico, o trabalho na Tracking API permitiu aprofundar conhecimentos em desenvolvimento \textit{backend} com .NET, incluindo a implementação de serviços \textit{REST}, a integração com APIs externas e o mapeamento de \textit{DTOs}. A utilização do EF Core para acesso a dados em SQL Server e o desenvolvimento \textit{frontend} com React, abrangendo a criação de interfaces, a integração com APIs e a gestão de estado, completaram o leque de competências técnicas desenvolvidas.
+Ao longo do estágio, foram adquiridas e consolidadas competências técnicas e pessoais diretamente relacionadas às atividades realizadas. No domínio técnico, o trabalho na Tracking API permitiu aprofundar conhecimentos em desenvolvimento \textit{backend} com .NET, incluindo a implementação de serviços \textit{REST}, a integração com APIs externas e o mapeamento de \textit{DTOs}. A utilização do EF Core para acesso a dados no SQL Server e o desenvolvimento de \textit{frontend} com React, abrangendo a criação de interfaces, a integração com APIs e a gestão de estado, completaram o leque de competências técnicas desenvolvidas.
 
 Foram ainda utilizadas ferramentas de desenvolvimento profissional como Git, Azure DevOps, Swagger e as ferramentas de desenvolvimento do navegador, para além da adaptação a arquiteturas de \textit{software} existentes e consolidadas.
 
-No plano pessoal, o estágio proporcionou o desenvolvimento da capacidade de adaptação a novas tecnologias e contextos técnicos, da autonomia na resolução de problemas e na aprendizagem contínua, e da gestão de tempo e organização de tarefas em regime de trabalho parcial. A comunicação em contexto de equipa, incluindo a discussão de soluções técnicas e o esclarecimento de dúvidas, bem como a capacidade de integrar e compreender código existente, foram também aspetos relevantes do crescimento profissional alcançado.
+No plano pessoal, o estágio proporcionou o desenvolvimento da capacidade de adaptação a novas tecnologias e contextos técnicos, da autonomia na resolução de problemas e na aprendizagem contínua, e da gestão do tempo e da organização de tarefas em regime de trabalho parcial. A comunicação em contexto de equipa, incluindo a discussão de soluções técnicas e o esclarecimento de dúvidas, bem como a capacidade de integrar e compreender código existente, foram também aspetos relevantes do crescimento profissional alcançado.
 
 \subsection{Estratégias de Trabalho Adotadas}
 
-A execução do projeto assentou numa metodologia ágil adaptada à realidade corporativa da Devlop. O fluxo de trabalho foi estruturado em iterações semanais com definição prévia de objetivos operacionais, em moldes semelhantes a \textit{sprints} de desenvolvimento. No final de cada ciclo, realizavam-se sessões de alinhamento com o orientador da entidade de acolhimento para validação das decisões de arquitetura e demonstração dos resultados alcançados.
+A execução do projeto assentou numa metodologia ágil adaptada à realidade corporativa da Devlop. O fluxo de trabalho foi estruturado em iterações semanais, com definição prévia de objetivos operacionais, em moldes semelhantes aos \textit{sprints} de desenvolvimento. No final de cada ciclo, realizavam-se sessões de alinhamento com o orientador da entidade de acolhimento para a validação das decisões de arquitetura e a demonstração dos resultados alcançados.
 
-Adicionalmente, a estratégia de integração foi acelerada pela partilha diária de conhecimento com o colega de equipa, Sandro Cunha, o que permitiu desmistificar com maior celeridade a base de código pré-existente e mitigar os constrangimentos associados à curva de aprendizagem das ferramentas.
+Adicionalmente, a estratégia de integração foi acelerada pela partilha diária de conhecimento com o colega de equipa, Sandro Cunha, o que permitiu desmistificar, com maior celeridade, a base de código pré-existente e mitigar os constrangimentos associados à curva de aprendizagem das ferramentas.
 
 \subsection{Tecnologias e Ferramentas Utilizadas}
 
-A \autoref{tab:tecnologias} (Secção~4.3) sistematiza o conjunto de tecnologias e ferramentas utilizadas ao longo do estágio, organizadas por categoria e âmbito de aplicação. A escolha da \textit{stack} tecnológica foi determinada pelo contexto da empresa, que privilegia o ecossistema Microsoft (.NET, SQL Server) no \textit{backend} e React no \textit{frontend}, complementado por ferramentas de integração contínua (Azure DevOps), autenticação (Keycloak) e produtividade (GitHub Copilot). Para teste e validação, recorreu-se a um ecossistema consolidado de \textit{mocking} (Prism) e de testes automatizados (xUnit, Moq, FluentAssertions), assegurando a qualidade e a fiabilidade da solução desenvolvida.
+A \autoref{tab:tecnologias} (Secção~4.3) sistematiza o conjunto de tecnologias e ferramentas utilizadas ao longo do estágio, organizadas por categoria e por âmbito de aplicação. A escolha da \textit{stack} tecnológica foi determinada pelo contexto da empresa, que privilegia o ecossistema Microsoft (.NET, SQL Server) no \textit{backend} e React no \textit{frontend}, complementada por ferramentas de integração contínua (Azure DevOps), autenticação (Keycloak) e produtividade (GitHub Copilot). Para teste e validação, recorreu-se a um ecossistema consolidado de \textit{mocking} (Prism) e de testes automatizados (xUnit, Moq, FluentAssertions), assegurando a qualidade e a fiabilidade da solução desenvolvida.
 
 \subsection{Planeamento Previsto e Executado}
 
-A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de \textit{tracking} de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, repartido ao longo de 16 semanas. O Anexo~3 (\autoref{tab:execucao-real}) apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a calendarização correspondente.
+A execução do projeto exigiu adaptações face ao plano de trabalho inicialmente delineado no Capítulo~2. Embora o objetivo não passasse por implementar um sistema de \textit{tracking} de raiz, a complexidade de adicionar um novo fornecedor ao ecossistema existente exigiu um esforço de análise e desenvolvimento substancial, distribuído ao longo de 16 semanas. O Anexo~3 (\autoref{tab:execucao-real}) apresenta o registo detalhado da execução real do estágio, cruzando as atividades efetivamente desenvolvidas com a respetiva calendarização.
 
-Comparativamente ao PIT, verifica-se que as Fases~1 e~2 decorreram em conformidade com o previsto, totalizando 56 horas nas duas primeiras semanas. A Fase~3, embora tenha mantido a sua duração global, foi concluída antecipadamente (72 horas em três semanas, face às 160 horas e quatro semanas planeadas), beneficiando da utilização de ferramentas de simulação que agilizaram o desenvolvimento e os testes. A Fase~4, relativa ao \textit{frontend}, registou o maior desvio: as 320 horas inicialmente estimadas foram ajustadas para 168 horas reais, distribuídas por seis semanas, refletindo uma maior eficiência na implementação e uma delimitação mais precisa do âmbito funcional.
+Comparativamente ao PIT, verifica-se que as Fases~1 e~2 decorreram conforme o previsto, totalizando 56 horas nas duas primeiras semanas. A Fase~3, embora tenha mantido a sua duração global, foi concluída antecipadamente (72 horas em três semanas, face às 160 horas e quatro semanas planeadas), beneficiando da utilização de ferramentas de simulação que agilizaram o desenvolvimento e os testes. A Fase~4, relativa ao \textit{Frontend}, registou o maior desvio: as 320 horas inicialmente estimadas foram ajustadas para 168 horas reais, distribuídas ao longo de seis semanas, o que reflete maior eficiência na implementação e uma delimitação mais precisa do âmbito funcional.
 
 A Fase~5, originalmente dedicada à integração com o i-Forwarder, foi reorientada para incluir também a preparação do ambiente 4GL e a resolução de problemas de paginação, totalizando 68 horas em três semanas. Por fim, a Fase~6 alargou o seu âmbito para acomodar a migração para Keycloak e a refatoração do motor de estatísticas, ocupando 52 horas em duas semanas.
 
@@ -655,27 +655,27 @@ A \autoref{tab:comparacao-horas} (Secção~4.1) apresenta a comparação detalha
 
 Ao longo do estágio, foram identificadas dificuldades de natureza organizacional e técnica. No plano organizacional, a gestão do tempo constituiu um desafio relevante, uma vez que o estágio decorreu em regime parcial durante a maior parte do semestre. A disponibilidade esteve condicionada pelo horário letivo da licenciatura, que ocupava as segundas e terças-feiras quase na totalidade (Anexo~5, \autoref{fig:horario}), exigindo uma rigorosa organização de tarefas e um foco redobrado nas atividades críticas nos restantes dias úteis.
 
-No plano técnico, uma das principais dificuldades esteve relacionada com o desenvolvimento \textit{frontend}, área na qual existia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica.
+No plano técnico, uma das principais dificuldades esteve relacionada ao desenvolvimento de \textit{Frontend}, área na qual havia menor experiência prévia. A assimilação do template React disponibilizado pela equipa revelou-se desafiante, dada a sua complexidade e arquitetura específica.
 
-Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: foram dedicados três dias úteis à implementação isolada de uma interface \textit{CRUD} completa com React Admin~\cite{reactadmin}, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
+Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: dedicaram-se três dias úteis à implementação isolada de uma interface \textit{CRUD} completa com React Admin~\cite{reactadmin}, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
 
-A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
+A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado representaram outro desafio, ultrapassado por meio da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
 
-A implementação do motor de estatísticas apresentou ainda um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade -- e consequente aprendizagem -- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando os dados diretamente da BD.
+A implementação do motor de estatísticas também apresentou um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade -- e consequente aprendizagem -- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando diretamente os dados da BD.
 
-Esta simplificação, orientada pela manutenibilidade, trouxe ainda um benefício adicional: ao operar sobre dados em bruto, o sistema ganhou maior granularidade, facilitando a introdução da funcionalidade de exportação para Excel.
+Esta simplificação, orientada pela manutenibilidade, trouxe um benefício adicional: ao operar com dados em bruto, o sistema ganhou maior granularidade, facilitando a implementação da funcionalidade de exportação para o Excel.
 
 \section{Trabalho Futuro}
 
-Como propostas para desenvolvimentos futuros e otimização do ecossistema desenvolvido, identificam-se três linhas de ação prioritárias.
+Como propostas para desenvolvimentos futuros e para a otimização do ecossistema desenvolvido, identificam-se três linhas de ação prioritárias.
 
 Em primeiro lugar, recomenda-se a implementação de um mecanismo de armazenamento em \textit{cache} e de persistência local para os dados da SeaRates. Dado que esta API opera num modelo sem estado, a criação de uma \textit{cache} na BD interna da Devlop permitiria reter o histórico de estados e trajetórias dos navios por períodos mais longos, reduzindo o volume de consultas redundantes à API externa e minimizando os custos operacionais associados.
 
-Em segundo lugar, sugere-se a retoma da integração com o sistema i-Forwarder. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de \textit{triggers} automáticos entre o ecossistema 4GL do i-Forwarder e a Tracking API permitiria que qualquer atualização de estado refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
+Em segundo lugar, sugere-se retomar a integração com o sistema i-Forwarder. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de \textit{triggers} automáticos entre o ecossistema 4GL do i-Forwarder e a Tracking API permitiria que qualquer atualização de estado se refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
 
 Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à BD simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
 
-Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da BD -- como vistas materializadas -- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
+Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da BD -- como as vistas materializadas -- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
 
 % ===================== BIBLIOGRAFIA ===========================================
 \printbibliography
@@ -730,7 +730,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Testes unitários e funcionais; validação e correção de erros. & \\
 \hline
 \multirow{8}{0.19\textwidth}{Fase 4 -- Desenvolvimento da Interface da Plataforma de Tracking}
-& Definição da arquitetura do \textit{frontend}.
+& Definição da arquitetura do \textit{Frontend}.
 & \multirow{8}{0.17\textwidth}{40 dias úteis (320 h) \\ Período: 23-03 a 18-05} \\
 \cline{2-2}
 & Implementação do sistema de autenticação. & \\
@@ -829,7 +829,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Realização de formação na Udemy (EF Core e MS SQL). & \\
 \cline{2-2}
-& Desenvolvimento de um projeto prático \textit{CRUD} utilizando .NET no \textit{backend} e React no \textit{frontend}. & \\
+& Desenvolvimento de um projeto prático \textit{CRUD} utilizando .NET no \textit{backend} e React no \textit{Frontend}. & \\
 \hline
 \multirow{3}{0.21\textwidth}{Fase 2 -- Análise da API existente e arquitetura atual}
 & Estudo da arquitetura, do orquestrador de serviços e do integrador ShipsGo.
@@ -845,7 +845,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Desenvolvimento do cliente da API SeaRates e dos serviços de \textit{tracking} marítimo e aéreo. & \\
 \cline{2-2}
-& Testes unitários recorrendo à ferramenta Prism para simulação da API. & \\
+& Testes unitários recorrendo à ferramenta Prism para simular a API. & \\
 \cline{2-2}
 & Finalização da integração com o mapeamento de coordenadas. & \\
 \hline
@@ -860,7 +860,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Internacionalização do portal (PT, EN, ES). & \\
 \hline
 \multirow{3}{0.21\textwidth}{Fase 5 -- Integração com Aplicação Interna (i-Forwarder)}
-& Preparação do ambiente para desenvolvimento Four Js Genero (4GL).
+& Preparação do ambiente para desenvolvimento em Four Js Genero (4GL).
 & \multirow{3}{0.12\textwidth}{12 a 14} \\
 \cline{2-2}
 & Reuniões de alinhamento, demonstração do produto e primeiras integrações com a equipa i-Forwarder. & \\
@@ -871,7 +871,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Migração da autenticação para Keycloak.
 & \multirow{4}{0.12\textwidth}{15 e 16} \\
 \cline{2-2}
-& Refatoração de estatísticas, exportação Excel e correção do seguimento em tempo real. & \\
+& Refatoração de estatísticas, exportação para Excel e correção do seguimento em tempo real. & \\
 \cline{2-2}
 & Realização de testes finais (manuais e automatizados) e documentação de código. & \\
 \cline{2-2}
