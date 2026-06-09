@@ -350,7 +350,7 @@ Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando
 
 \subsection{Objetivos gerais}
 
-O estágio teve como tema \enquote{Integrador Tracking -- APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos, utilizando as APIs da ShipsGo e da SeaRates~\cite{searates} (\autoref{fig:searates-logo}), disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
+O estágio teve como tema \enquote{Integrador Tracking - APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos, utilizando as APIs da ShipsGo e da SeaRates~\cite{searates} (\autoref{fig:searates-logo}), disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
 
 \subsection{Objetivos específicos}
 
@@ -394,44 +394,44 @@ O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo 
 \hline
 \textbf{Fase} & \textbf{Período} & \textbf{Dias úteis} & \textbf{Horas} & \textbf{Principais Atividades} \\
 \hline
-Fase 1 -- Formação Técnica & 09-02 a 13-02 & 4 & 32 & Cursos Udemy (EF Core, SQL Server); projeto \textit{CRUD} .NET + React \\
+Fase 1 - Formação Técnica & 09-02 a 13-02 & 4 & 32 & Cursos Udemy (EF Core, SQL Server); projeto \textit{CRUD} .NET + React \\
 \hline
-Fase 2 -- Análise da API & 16-02 a 20-02 & 5 & 40 & Estudo da arquitetura, orquestrador, \textit{ProviderCapabilitiesRegistry} e API SeaRates \\
+Fase 2 - Análise da API & 16-02 a 20-02 & 5 & 40 & Estudo da arquitetura, orquestrador, \textit{ProviderCapabilitiesRegistry} e API SeaRates \\
 \hline
-Fase 3 -- Integração SeaRates & 23-02 a 20-03 & 20 & 160 & Implementação do \textit{provider} SeaRates, \textit{DTOs}, cliente HTTP, serviços de \textit{tracking}, testes \\
+Fase 3 - Integração SeaRates & 23-02 a 20-03 & 20 & 160 & Implementação do \textit{provider} SeaRates, \textit{DTOs}, cliente HTTP, serviços de \textit{tracking}, testes \\
 \hline
-Fase 4 -- Desenvolvimento \textit{Frontend} & 23-03 a 18-05 & 40 & 320 & Interface React: \textit{CRUD}, \textit{tracking}, permissões, créditos, \textit{dashboards}, multi-idioma \\
+Fase 4 - Desenvolvimento \textit{Frontend} & 23-03 a 18-05 & 40 & 320 & Interface React: \textit{CRUD}, \textit{tracking}, permissões, créditos, \textit{dashboards}, multi-idioma \\
 \hline
-Fase 5 -- Integração Interna & 18-05 a 29-05 & 10 & 80 & Preparação ambiente 4GL, integração com i-Forwarder, correção de paginação \\
+Fase 5 - Integração Interna & 18-05 a 29-05 & 10 & 80 & Preparação ambiente 4GL, integração com i-Forwarder, correção de paginação \\
 \hline
-Fase 6 -- Testes e Conclusão & 01-06 a 05-06 & 5 & 40 & Testes finais, migração Keycloak, documentação, relatório \\
+Fase 6 - Testes e Conclusão & 01-06 a 05-06 & 5 & 40 & Testes finais, migração Keycloak, documentação, relatório \\
 \hline
 \textbf{Total} & \textbf{09-02 a 05-06} & \textbf{84} & \textbf{672} & \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Fase 1 --- Formação Técnica na Stack Devlop}
+\subsection{Fase 1 - Formação Técnica na Stack Devlop}
 
-A primeira fase, com a duração prevista de 32 horas (aproximadamente 4 dias úteis, de 9 a 13 de fevereiro), foi dedicada à capacitação técnica na \textit{stack} tecnológica da Devlop. As atividades incluíram a frequência dos cursos \textit{Entity Framework Core --- The Complete Guide [2025]} e \textit{Complete Microsoft SQL Server Database Design Masterclass}, complementadas pela exploração opcional do curso \textit{React --- The Complete Guide}, caso se revelasse necessário para o desenvolvimento da interface prevista na Fase~4 (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag1}).
+A primeira fase, com a duração prevista de 32 horas (aproximadamente 4 dias úteis, de 9 a 13 de fevereiro), foi dedicada à capacitação técnica na \textit{stack} tecnológica da Devlop. As atividades incluíram a frequência dos cursos \textit{Entity Framework Core - The Complete Guide [2025]} e \textit{Complete Microsoft SQL Server Database Design Masterclass}, complementadas pela exploração opcional do curso \textit{React - The Complete Guide}, caso se revelasse necessário para o desenvolvimento da interface prevista na Fase~4 (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag1}).
 
-\subsection{Fase 2 --- Análise da API Existente e Arquitetura Atual}
+\subsection{Fase 2 - Análise da API Existente e Arquitetura Atual}
 
 Com duração de 5 dias úteis (de 16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da Tracking API, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\anexoref{anx:tarefas}, \autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
 
-\subsection{Fase 3 --- Integração do Novo Fornecedor SeaRates}
+\subsection{Fase 3 - Integração do Novo Fornecedor SeaRates}
 
-A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas), de 23 de fevereiro a 20 de março. As atividades incluíram o estudo da documentação da API SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}--\autoref{fig:tarefas-pag3}).
+A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas), de 23 de fevereiro a 20 de março. As atividades incluíram o estudo da documentação da API SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}-\autoref{fig:tarefas-pag3}).
 
-\subsection{Fase 4 --- Desenvolvimento da Interface da Plataforma de Tracking}
+\subsection{Fase 4 - Desenvolvimento da Interface da Plataforma de Tracking}
 
-A quarta fase, correspondente ao desenvolvimento \textit{Frontend}, foi a mais longa do estágio, com duração estimada de 40 dias úteis (aproximadamente 320 horas), de 23 de março a 18 de maio. Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de \textit{tracking}, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a API existente e a realização de testes e melhorias (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag3}--\autoref{fig:tarefas-pag4}).
+A quarta fase, correspondente ao desenvolvimento \textit{Frontend}, foi a mais longa do estágio, com duração estimada de 40 dias úteis (aproximadamente 320 horas), de 23 de março a 18 de maio. Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de \textit{tracking}, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a API existente e a realização de testes e melhorias (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag3}-\autoref{fig:tarefas-pag4}).
 
-\subsection{Fase 5 --- Integração com Aplicação Interna (i-Forwarder)}
+\subsection{Fase 5 - Integração com Aplicação Interna (i-Forwarder)}
 
-Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da Tracking API com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}--\autoref{fig:tarefas-pag5}).
+Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da Tracking API com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}-\autoref{fig:tarefas-pag5}).
 
-\subsection{Fase 6 --- Testes Finais, Documentação e Conclusão}
+\subsection{Fase 6 - Testes Finais, Documentação e Conclusão}
 
 A sexta e última fase, com duração de 5 dias úteis (de 1 a 5 de junho), foi reservada à finalização e à entrega do trabalho. As atividades englobaram os testes finais da solução completa, a elaboração da documentação técnica e funcional e a preparação da entrega final (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag5}).
 
@@ -450,7 +450,7 @@ Esta preparação inicial revelou-se essencial para abordar com segurança o có
 
 Antes de qualquer implementação, procedeu-se a um estudo aprofundado da Tracking API existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos ao fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (\anexoref{anx:tarefas}, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API da SeaRates.
 
-Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores -- com destaque para o modelo \textit{stateless} da SeaRates -- e dos desafios que a integração implicaria.
+Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores - com destaque para o modelo \textit{stateless} da SeaRates - e dos desafios que a integração implicaria.
 
 \section{Integração do Fornecedor SeaRates}
 
@@ -506,11 +506,11 @@ O motor de estatísticas foi alvo de uma refatoração profunda: a remoção de 
 
 Um dos principais desafios técnicos desta fase foi a renderização geográfica em tempo real (\autoref{fig:solucao-temporeal}). O componente de mapeamento fora inicialmente desenvolvido com dados de simulação (\anexoref{anx:searates}, \autoref{fig:searates-prism}), refletindo apenas rotas de envio já finalizadas.
 
-Quando a Devlop obteve acesso à API de testes da SeaRates (\anexoref{anx:searates}, \autoref{fig:searates-teste}), a transição para dados reais -- facilitada pelo fornecimento interno de contentores de teste (\anexoref{anx:searates}, \autoref{fig:searates-navios}) -- expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de \textit{tracking} de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas, numericamente, representa um salto de 358°.
+Quando a Devlop obteve acesso à API de testes da SeaRates (\anexoref{anx:searates}, \autoref{fig:searates-teste}), a transição para dados reais - facilitada pelo fornecimento interno de contentores de teste (\anexoref{anx:searates}, \autoref{fig:searates-navios}) - expôs o problema do antimeridiano. A plataforma SeaRates fornece dados de \textit{tracking} de navios que, ao cruzar o Oceano Pacífico, transitam de longitudes positivas (por exemplo, +179°) para longitudes negativas (por exemplo, -179°). Fisicamente, trata-se de um trajeto curto, mas, numericamente, representa um salto de 358°.
 
 Antes da correção, os \textit{mappers} GeoJSON ligavam os pontos consecutivos na ordem ingénua das longitudes, fazendo com que uma rota como [179°E] → [-179°W] fosse renderizada como uma linha que contornava quase todo o planeta, em vez do curto salto sobre o meridiano 180°. A solução consistiu em detetar saltos superiores a 180° entre longitudes consecutivas, normalizar as coordenadas para uma mesma reta numérica contínua, interpolar o ponto exato de cruzamento com o antimeridiano e dividir a \textit{LineString} em dois segmentos independentes, um em cada hemisfério. Como resultado, as rotas que cruzam a Linha Internacional de Data passaram a ser representadas corretamente nos mapas, exibindo a verdadeira travessia do Pacífico.
 
-No âmbito da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o modelo anterior baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} -- colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação -- resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
+No âmbito da segurança, procedeu-se à migração do sistema de autenticação para o Keycloak~\cite{keycloak}, que passou a atuar como fornecedor de identidade único para utilizadores humanos, substituindo o modelo anterior baseado em ASP.NET Core Identity. O acesso máquina-a-máquina manteve o modelo de chaves de API, convergindo ambos os fluxos num contexto de utilizador unificado. A migração implicou a remoção de toda a infraestrutura legada de \textit{passwords} - colunas de \textit{hashes}, tokens de reposição e \textit{endpoints} de recuperação - resultando num sistema de autenticação seguro, centralizado e alinhado com práticas modernas de gestão de identidades.
 
 No termo desta fase, a plataforma apresentava uma API estabilizada face às exceções do novo fornecedor, representação geográfica correta dos trajetos marítimos, autenticação centralizada e segura, e melhorias significativas na fiabilidade e na apresentação de dados analíticos.
 
@@ -546,17 +546,17 @@ A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e
 \hline
 \textbf{Fase} & \textbf{Planeadas (h)} & \textbf{Reais (h)} & \textbf{Desvio} \\
 \hline
-Fase 1 -- Formação Técnica na \textit{stack} Devlop & 32 & 32 & 0\,\% \\
+Fase 1 - Formação Técnica na \textit{stack} Devlop & 32 & 32 & 0\,\% \\
 \hline
-Fase 2 -- Análise da API existente e arquitetura atual & 40 & 24 & $-$40\,\% \\
+Fase 2 - Análise da API existente e arquitetura atual & 40 & 24 & $-$40\,\% \\
 \hline
-Fase 3 -- Integração do novo fornecedor SeaRates & 160 & 72 & $-$55\,\% \\
+Fase 3 - Integração do novo fornecedor SeaRates & 160 & 72 & $-$55\,\% \\
 \hline
-Fase 4 -- Desenvolvimento do \textit{Frontend} da Plataforma de Tracking & 320 & 168 & $-$48\,\% \\
+Fase 4 - Desenvolvimento do \textit{Frontend} da Plataforma de Tracking & 320 & 168 & $-$48\,\% \\
 \hline
-Fase 5 -- Integração com Aplicação Interna (i-Forwarder) & 80 & 68 & $-$15\,\% \\
+Fase 5 - Integração com Aplicação Interna (i-Forwarder) & 80 & 68 & $-$15\,\% \\
 \hline
-Fase 6 -- Testes finais, documentação e conclusão & 40 & 52 & +30\,\% \\
+Fase 6 - Testes finais, documentação e conclusão & 40 & 52 & +30\,\% \\
 \hline
 \textbf{Total} & \textbf{672} & \textbf{416} & \textbf{$-$38\,\%} \\
 \hline
@@ -662,7 +662,7 @@ Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: d
 
 A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado (\anexoref{anx:arquitetura}, \autoref{fig:arquitetura}) representaram outro desafio, ultrapassado por meio da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
 
-A implementação do motor de estatísticas também apresentou um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade -- e consequente aprendizagem -- foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando diretamente os dados da BD.
+A implementação do motor de estatísticas também apresentou um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade - e consequente aprendizagem - foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando diretamente os dados da BD.
 
 Esta simplificação, orientada pela manutenibilidade, trouxe um benefício adicional: ao operar com dados em bruto, o sistema ganhou maior granularidade, facilitando a implementação da funcionalidade de exportação para o Excel.
 
@@ -676,7 +676,7 @@ Em segundo lugar, sugere-se retomar a integração com o sistema i-Forwarder. Um
 
 Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à BD simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
 
-Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da BD -- como as vistas materializadas -- ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
+Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a implementação de soluções ao nível da BD - como as vistas materializadas - ou a introdução de uma camada de \textit{cache} dedicada às métricas que não exijam atualização imediata.
 
 % ===================== BIBLIOGRAFIA ===========================================
 \printbibliography
@@ -698,15 +698,15 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \hline
 \textbf{Objetivos} & \textbf{Atividades a Desenvolver} & \textbf{Calendarização} \\
 \hline
-\multirow{3}{0.19\textwidth}{Fase 1 -- Formação Técnica na \textit{stack} Devlop}
-& Frequência do curso \textit{Entity Framework Core -- The Complete Guide} [2025].
+\multirow{3}{0.19\textwidth}{Fase 1 - Formação Técnica na \textit{stack} Devlop}
+& Frequência do curso \textit{Entity Framework Core - The Complete Guide} [2025].
 & \multirow{3}{0.17\textwidth}{4 dias úteis (32 h) \\ Período: 09-02 a 13-02} \\
 \cline{2-2}
 & Frequência do curso \textit{Complete Microsoft SQL Server Database Design Masterclass}. & \\
 \cline{2-2}
-& Exploração opcional do curso \textit{React -- The Complete Guide} (se necessário). & \\
+& Exploração opcional do curso \textit{React - The Complete Guide} (se necessário). & \\
 \hline
-\multirow{4}{0.19\textwidth}{Fase 2 -- Análise da API existente e arquitetura atual}
+\multirow{4}{0.19\textwidth}{Fase 2 - Análise da API existente e arquitetura atual}
 & Estudo da documentação interna da Tracking API.
 & \multirow{4}{0.17\textwidth}{5 dias úteis (40 h) \\ Período: 16-02 a 20-02} \\
 \cline{2-2}
@@ -716,7 +716,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Execução e testes locais da solução. & \\
 \hline
-\multirow{6}{0.19\textwidth}{Fase 3 -- Integração do novo fornecedor SeaRates}
+\multirow{6}{0.19\textwidth}{Fase 3 - Integração do novo fornecedor SeaRates}
 & Estudo da documentação da API SeaRates.
 & \multirow{6}{0.17\textwidth}{20 dias úteis (160 h) \\ Período: 23-02 a 20-03} \\
 \cline{2-2}
@@ -730,7 +730,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Testes unitários e funcionais; validação e correção de erros. & \\
 \hline
-\multirow{8}{0.19\textwidth}{Fase 4 -- Desenvolvimento da Interface da Plataforma de Tracking}
+\multirow{8}{0.19\textwidth}{Fase 4 - Desenvolvimento da Interface da Plataforma de Tracking}
 & Definição da arquitetura do \textit{Frontend}.
 & \multirow{8}{0.17\textwidth}{40 dias úteis (320 h) \\ Período: 23-03 a 18-05} \\
 \cline{2-2}
@@ -748,7 +748,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Integração com a API existente; testes e melhorias. & \\
 \hline
-\multirow{4}{0.19\textwidth}{Fase 5 -- Integração com Aplicação Interna (i-Forwarder)}
+\multirow{4}{0.19\textwidth}{Fase 5 - Integração com Aplicação Interna (i-Forwarder)}
 & Estudo da aplicação interna i-Forwarder.
 & \multirow{4}{0.17\textwidth}{10 dias úteis (80 h) \\ Período: 18-05 a 29-05} \\
 \cline{2-2}
@@ -758,7 +758,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Correção de erros e otimização. & \\
 \hline
-\multirow{4}{0.19\textwidth}{Fase 6 -- Testes finais, documentação e conclusão}
+\multirow{4}{0.19\textwidth}{Fase 6 - Testes finais, documentação e conclusão}
 & Testes finais da solução completa.
 & \multirow{4}{0.17\textwidth}{5 dias úteis (40 h) \\ Período: 01-06 a 05-06} \\
 \cline{2-2}
@@ -824,7 +824,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \hline
 \textbf{Objetivos} & \textbf{Atividades Desenvolvidas} & \textbf{Semanas} \\
 \hline
-\multirow{3}{0.21\textwidth}{Fase 1 -- Formação Técnica na \textit{stack} Devlop}
+\multirow{3}{0.21\textwidth}{Fase 1 - Formação Técnica na \textit{stack} Devlop}
 & Configuração do ambiente de desenvolvimento.
 & \multirow{3}{0.12\textwidth}{1} \\
 \cline{2-2}
@@ -832,7 +832,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Desenvolvimento de um projeto prático \textit{CRUD} utilizando .NET no \textit{backend} e React no \textit{Frontend}. & \\
 \hline
-\multirow{3}{0.21\textwidth}{Fase 2 -- Análise da API existente e arquitetura atual}
+\multirow{3}{0.21\textwidth}{Fase 2 - Análise da API existente e arquitetura atual}
 & Estudo da arquitetura, do orquestrador de serviços e do integrador ShipsGo.
 & \multirow{3}{0.12\textwidth}{2} \\
 \cline{2-2}
@@ -840,7 +840,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Análise técnica da documentação da API SeaRates. & \\
 \hline
-\multirow{4}{0.21\textwidth}{Fase 3 -- Integração do novo fornecedor SeaRates (\textit{Backend})}
+\multirow{4}{0.21\textwidth}{Fase 3 - Integração do novo fornecedor SeaRates (\textit{Backend})}
 & Definição de estruturas \textit{DTO} e configuração do novo fornecedor no sistema.
 & \multirow{4}{0.12\textwidth}{3 a 5} \\
 \cline{2-2}
@@ -850,7 +850,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Finalização da integração com o mapeamento de coordenadas. & \\
 \hline
-\multirow{4}{0.21\textwidth}{Fase 4 -- Desenvolvimento do \textit{Frontend} da Plataforma de Tracking}
+\multirow{4}{0.21\textwidth}{Fase 4 - Desenvolvimento do \textit{Frontend} da Plataforma de Tracking}
 & Implementação de um painel administrativo com React Admin, operações \textit{CRUD} e listagem de \textit{trackings}.
 & \multirow{4}{0.12\textwidth}{6 a 11} \\
 \cline{2-2}
@@ -860,7 +860,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Internacionalização do portal (PT, EN, ES). & \\
 \hline
-\multirow{3}{0.21\textwidth}{Fase 5 -- Integração com Aplicação Interna (i-Forwarder)}
+\multirow{3}{0.21\textwidth}{Fase 5 - Integração com Aplicação Interna (i-Forwarder)}
 & Preparação do ambiente para desenvolvimento em Four Js Genero (4GL).
 & \multirow{3}{0.12\textwidth}{12 a 14} \\
 \cline{2-2}
@@ -868,7 +868,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \cline{2-2}
 & Correção de problemas de paginação na API e adição de filtros automáticos. & \\
 \hline
-\multirow{4}{0.21\textwidth}{Fase 6 -- Testes finais, documentação e conclusão}
+\multirow{4}{0.21\textwidth}{Fase 6 - Testes finais, documentação e conclusão}
 & Migração da autenticação para Keycloak.
 & \multirow{4}{0.12\textwidth}{15 e 16} \\
 \cline{2-2}
