@@ -612,20 +612,20 @@ O conjunto de tecnologias e ferramentas que suportaram o desenvolvimento do proj
 \midrule
 \multirow{4}{=}{Ferramentas de apoio}
   & Swagger \cite{swagger} & Teste e exploração da API \\
-  & GitHub Copilot \cite{copilot} / OpenCode & Apoio à geração de código \\
+  & GitHub Copilot \cite{copilot} / OpenCode Desktop~\cite{opencode} & Apoio à geração de código (ver \ref{sec:ia}) \\
   & Microsoft Teams & Comunicação e acompanhamento \\
   & Microsoft Word & Relatórios e documentação \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Utilização de Ferramentas de Inteligência Artificial}
+\subsection{Utilização de Ferramentas de Inteligência Artificial}\label{sec:ia}
 
-Ao longo do estágio, recorreu-se a diversas ferramentas de inteligência artificial como apoio ao desenvolvimento. O GitHub Copilot~\cite{copilot}, integrado nos ambientes JetBrains Rider e WebStorm, foi utilizado de forma transversal para agilizar a escrita de código repetitivo, a geração de estruturas de dados e a sugestão de implementações. Para questões mais abrangentes de arquitetura, depuração de erros complexos e obtenção de trechos de código específicos, recorreu-se também ao ChatGPT e ao Gemini.
+Ao longo do estágio, recorreu-se a diversas ferramentas de inteligência artificial como apoio ao desenvolvimento. O GitHub Copilot~\cite{copilot}, integrado nos ambientes JetBrains Rider e WebStorm, foi utilizado de forma transversal para agilizar a escrita de código repetitivo, a geração de estruturas de dados e a sugestão de implementações. Para questões mais abrangentes de arquitetura, depuração de erros complexos e obtenção de trechos de código específicos, recorreu-se também ao ChatGPT~\cite{chatgpt} e ao Gemini~\cite{gemini}.
 
 Nas últimas semanas de cada ciclo de trabalho, quando os limites de utilização do GitHub Copilot eram atingidos, o Gemini Code Assist serviu como ferramenta de recurso para tarefas pontuais de código. Contudo, nas duas últimas semanas do estágio, a imposição de restrições mais severas aos \textit{tokens} do Copilot coincidiu com a fase final de desenvolvimento do \textit{frontend} - onde o volume de trabalho de implementação de componentes React, a correção da anomalia do antimeridiano e a migração para Keycloak exigiam um ritmo de produção elevado.
 
-Para fazer face a esta contingência e manter a produtividade sem interrupções, adotou-se a ferramenta OpenCode com o modelo DeepSeek como alternativa principal. Esta combinação revelou-se eficaz, permitindo dar continuidade ao trabalho e assegurar o cumprimento dos prazos estabelecidos para a conclusão do estágio.
+Para fazer face a esta contingência e manter a produtividade sem interrupções, adotou-se a versão desktop do OpenCode~\cite{opencode} com o modelo DeepSeek~\cite{deepseek} como alternativa principal. Esta combinação revelou-se eficaz, permitindo dar continuidade ao trabalho e assegurar o cumprimento dos prazos estabelecidos para a conclusão do estágio.
 
 % ===================== CAPÍTULO 5 - CONCLUSÕES ================================
 \chapter{Conclusões}\label{chap:conclusoes}
@@ -648,7 +648,7 @@ Adicionalmente, a estratégia de integração foi acelerada pela partilha diári
 
 \subsection{Tecnologias e Ferramentas Utilizadas}
 
-A \autoref{tab:tecnologias} (\autoref{sec:tecnologias}) sistematiza o conjunto de tecnologias e ferramentas utilizadas ao longo do estágio, organizadas por categoria e por âmbito de aplicação. A escolha da \textit{stack} tecnológica foi determinada pelo contexto da empresa, que privilegia o ecossistema Microsoft (.NET, SQL Server) no \textit{backend} e React no \textit{frontend}, complementada por ferramentas de integração contínua (Azure DevOps), autenticação (Keycloak) e produtividade (GitHub Copilot). Para teste e validação, recorreu-se a um ecossistema consolidado de \textit{mocking} (Prism) e de testes automatizados (xUnit, Moq, FluentAssertions), assegurando a qualidade e a fiabilidade da solução desenvolvida.
+A \autoref{tab:tecnologias} (\autoref{sec:tecnologias}) sistematiza o conjunto de tecnologias e ferramentas utilizadas ao longo do estágio, organizadas por categoria e por âmbito de aplicação. A escolha da \textit{stack} tecnológica foi determinada pelo contexto da empresa, que privilegia o ecossistema Microsoft (.NET, SQL Server) no \textit{backend} e React no \textit{frontend}, complementada por ferramentas de integração contínua (Azure DevOps), autenticação (Keycloak) e produtividade (Secção~\ref{sec:ia}). Para teste e validação, recorreu-se a um ecossistema consolidado de \textit{mocking} (Prism) e de testes automatizados (xUnit, Moq, FluentAssertions), assegurando a qualidade e a fiabilidade da solução desenvolvida.
 
 \subsection{Planeamento Previsto e Executado}
 
