@@ -582,7 +582,7 @@ O conjunto de tecnologias e ferramentas que suportaram o desenvolvimento do proj
 \caption{Tecnologias e ferramentas utilizadas no estágio}
 \label{tab:tecnologias}
 \small
-\begin{tabular}{@{}p{0.20\textwidth} p{0.40\textwidth} p{0.32\textwidth}@{}}
+\begin{tabular}{@{}p{0.20\textwidth} p{0.35\textwidth} p{0.37\textwidth}@{}}
 \toprule
 \textbf{Categoria} & \textbf{Tecnologia / Ferramenta} & \textbf{Âmbito} \\
 \midrule
@@ -590,11 +590,10 @@ O conjunto de tecnologias e ferramentas que suportaram o desenvolvimento do proj
   & C\# & \textit{Backend}: API, serviços de \textit{tracking}, lógica aplicacional \\
   & JavaScript (React) & \textit{Frontend}: interface da plataforma \\
 \midrule
-\multirow{4}{=}{Frameworks}
+\multirow{3}{=}{Frameworks}
   & .NET \cite{dotnet} & Base da API e lógica de negócio \\
   & EF Core \cite{efcore} & Acesso a dados (SQL Server) \\
   & React \cite{react} & Construção da interface de \textit{tracking} \\
-  & React Admin \cite{reactadmin} & Painel administrativo (\textit{CRUD}) \\
 \midrule
 \multirow{2}{=}{Testes}
   & xUnit, Moq, FluentAssertions \cite{xunit,moq,fluentassertions} & Testes unitários e de integração \\
@@ -861,7 +860,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Finalização da integração com o mapeamento de coordenadas. & \\
 \hline
 \multirow{4}{0.21\textwidth}{Fase 4 - Desenvolvimento do \textit{Frontend} da Plataforma de Tracking}
-& Implementação de um painel administrativo com React Admin, operações \textit{CRUD} e listagem de \textit{trackings}.
+& Exercício exploratório com React Admin (3 dias) para assimilação de conceitos de gestão de estado e integração com a API.
 & \multirow{4}{0.12\textwidth}{6 a 11} \\
 \cline{2-2}
 & Adaptação do sistema de permissões baseado em \textit{enums}. & \\
@@ -890,6 +889,8 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 \hline
 \end{tabular}
 \end{table}
+
+O React Admin~\cite{reactadmin} foi utilizado exclusivamente como ferramenta de aprendizagem durante três dias úteis, com o propósito de interiorizar a gestão de estado e a comunicação com a API, antes de abordar o template React da empresa. O painel administrativo final foi integralmente desenvolvido sobre o template da Devlop, sem recurso ao React Admin.
 
 % --- Anexo 4: Diagrama de Arquitetura do Sistema (1 figura) ---
 \chapter{Diagrama de Arquitetura do Sistema}
