@@ -248,9 +248,9 @@ Por fim, agradeço aos meus colegas pelo apoio, espírito de entreajuda e partil
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de seguimento de envios marítimos pré-existente (Tracking API) através da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma agnóstica e determinística. Foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
+Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de seguimento de envios marítimos pré-existente (\textit{Tracking API}) através da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma agnóstica e determinística. Foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
 
-Na fase final do estágio, embora o ambiente tenha sido preparado para a integração com o sistema interno de gestão de trânsitos (i-Forwarder) da empresa num ecossistema Four Js Genero (4GL), as prioridades do projeto foram reorientadas para garantir a estabilidade e a segurança da solução desenvolvida. O trabalho focou-se então na consolidação da integração com a SeaRates, na correção de anomalias complexas de dados geográficos no mapa de seguimento em tempo real e na migração integral do sistema de autenticação para o Keycloak. Os resultados validaram a arquitetura implementada perante os cenários reais de produção.
+Na fase final do estágio, embora o ambiente tenha sido preparado para a integração com o sistema interno de gestão de trânsitos (i-Forwarder) da empresa num ecossistema Four Js Genero (4GL), as prioridades do projeto foram reorientadas para garantir a estabilidade e a segurança da solução desenvolvida. O trabalho focou-se então na consolidação da integração com a SeaRates, na correção de anomalias complexas de dados geográficos no mapa de seguimento em tempo real e na migração integral do sistema de autenticação para o Keycloak. Os resultados validaram a arquitetura implementada em cenários reais de produção.
 
 \vspace{1cm}
 \noindent\textbf{Palavras-chave:} Integração de APIs, .NET, React, Seguimento Marítimo, Keycloak.
@@ -335,7 +335,7 @@ No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes
 
 No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão de transporte e armazenamento, como o Transporter, WebSHoT, WebTrans e WebDepot, bem como WMS para suporte às operações de inventário e de distribuição. Nas soluções corporativas, atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera, incluindo a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de dashboards com Power BI.
 
-Ao nível da infraestrutura, fornece serviços de alojamento em nuvem, de cibersegurança (em parceria com a Sophos) e de suporte técnico.
+No domínio da infraestrutura, fornece serviços de alojamento em nuvem, de cibersegurança (em parceria com a Sophos) e de suporte técnico.
 
 Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e BD SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
 
@@ -354,9 +354,9 @@ O estágio teve como tema \enquote{Integrador Tracking - APIs ShipsGo e SeaRates
 
 \subsection{Objetivos específicos}
 
-De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na Tracking API existente, respeitando o padrão de orquestração já implementado para o ShipsGo~\cite{shipsgo} e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte a operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, EF Core~\cite{efcore}, SQL Server e React.
+De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na \textit{Tracking API} existente, respeitando o padrão de orquestração já implementado para o ShipsGo~\cite{shipsgo} e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte para operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, EF Core~\cite{efcore}, SQL Server e React.
 
-Previa-se também a preparação da integração da solução nos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs em um contexto empresarial real.
+Previa-se também a preparação da integração da solução nos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs num contexto empresarial real.
 
 % --- Metodologia ---
 \section{Metodologias de Trabalho}
@@ -417,7 +417,7 @@ A primeira fase, com a duração prevista de 32 horas (aproximadamente 4 dias ú
 
 \subsection{Fase 2 - Análise da API Existente e Arquitetura Atual}
 
-Com a duração de 5 dias úteis (de 16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da Tracking API, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\anexoref{anx:tarefas}, \autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
+Com a duração de 5 dias úteis (de 16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da \textit{Tracking API}, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\anexoref{anx:tarefas}, \autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
 
 \subsection{Fase 3 - Integração do Novo Fornecedor SeaRates}
 
@@ -429,7 +429,7 @@ A quarta fase, correspondente ao desenvolvimento \textit{frontend}, foi a mais l
 
 \subsection{Fase 5 - Integração com Aplicação Interna (i-Forwarder)}
 
-Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da Tracking API com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}-\autoref{fig:tarefas-pag5}).
+Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da \textit{Tracking API} com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}-\autoref{fig:tarefas-pag5}).
 
 \subsection{Fase 6 - Testes Finais, Documentação e Conclusão}
 
@@ -448,7 +448,7 @@ Esta preparação inicial revelou-se essencial para abordar com segurança o có
 
 \section{Análise da Arquitetura Existente}
 
-Antes de qualquer implementação, procedeu-se a um estudo aprofundado da Tracking API existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos ao fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (\anexoref{anx:tarefas}, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API da SeaRates.
+Antes de qualquer implementação, procedeu-se a um estudo aprofundado da \textit{Tracking API} existente e do modelo de integração com o fornecedor ShipsGo. Foram analisados o orquestrador (\textit{ResolveProviderService}), responsável pelo encaminhamento de pedidos ao fornecedor adequado, e o \textit{ProviderCapabilitiesRegistry}, que define as capacidades suportadas por cada fornecedor (\anexoref{anx:tarefas}, \autoref{fig:tarefas-pag2} e \autoref{fig:tarefas-pag3}). Estudou-se ainda a lógica de registo de clientes, de \textit{shipments} e do sistema de \textit{logs} para faturação, bem como a documentação da API da SeaRates.
 
 Desta análise resultou uma compreensão clara dos componentes do sistema, das diferenças estruturais entre os dois fornecedores - com destaque para o modelo \textit{stateless} da SeaRates - e dos desafios que a integração implicaria.
 
@@ -461,9 +461,9 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
   \label{fig:searates-logo}
 \end{figure}
 
-A Tracking API comunicava exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}, sendo necessário acrescentar o suporte à SeaRates~\cite{searates} (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de \textit{DTOs} para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de \textit{tracking} marítimo, aéreo e de transportadoras.
+A \textit{Tracking API} comunicava exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}, sendo necessário acrescentar o suporte à SeaRates~\cite{searates} (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de \textit{DTOs} para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de \textit{tracking} marítimo, aéreo e de transportadoras.
 
-O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado no ShipsGo~\cite{shipsgo}. A \autoref{fig:orchestrator} ilustra o método após a integração.
+O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de encaminhamento determinístico já utilizado no ShipsGo~\cite{shipsgo}. A \autoref{fig:orchestrator} ilustra o método após a integração.
 
 \begin{figure}[H]
   \centering
@@ -490,9 +490,9 @@ No final desta fase, a API passou a suportar ambos os fornecedores de forma tran
 
 \section{Desenvolvimento da Interface da Plataforma}
 
-Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de uma interface \textit{web} em React para interagir com a Tracking API. Foram implementadas operações \textit{CRUD} para as principais entidades do sistema e desenvolvidas páginas dedicadas ao \textit{tracking} e ao detalhe de envios, integradas na API através de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo controlo granular de acesso entre perfis de administrador e de cliente.
+Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de uma interface \textit{web} em React para interagir com a \textit{Tracking API}. Foram implementadas operações \textit{CRUD} para as principais entidades do sistema e desenvolvidas páginas dedicadas ao \textit{tracking} e ao detalhe de envios, integradas na API através de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo controlo granular de acesso entre perfis de administrador e de cliente.
 
-Ao nível da experiência de utilizador, foram criados formulários e componentes personalizados e implementado um sistema de traduções com suporte a português, inglês e espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (\anexoref{anx:metricas}, \autoref{fig:metricas-pag1}, \autoref{fig:metricas-pag2} e \autoref{fig:metricas-pag3}), que serviu de base para os \textit{dashboards} do painel administrativo. A organização do código foi melhorando através de refatorações sucessivas dos componentes React.
+Do ponto de vista da experiência do utilizador, foram criados formulários e componentes personalizados e implementado um sistema de traduções com suporte para português, inglês e espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (\anexoref{anx:metricas}, \autoref{fig:metricas-pag1}, \autoref{fig:metricas-pag2} e \autoref{fig:metricas-pag3}), que serviu de base para os \textit{dashboards} do painel administrativo. A organização do código foi melhorando através de refatorações sucessivas dos componentes React.
 
 A interface resultante (\anexoref{anx:solucao}) oferece cobertura funcional da maioria das entidades do sistema, totalmente integrada no \textit{backend}, com suporte multilíngue e um sistema de permissões robusto. Entre os ecrãs desenvolvidos, destacam-se o menu lateral e a gestão de utilizadores (\autoref{fig:solucao-menu}), a listagem de envios (\autoref{fig:solucao-envios}), a visualização dos movimentos de cada envio (\autoref{fig:solucao-movimentos}), a posição de um envio finalizado (\autoref{fig:solucao-finalizado}), o seguimento em tempo real (\autoref{fig:solucao-temporeal}), as estatísticas por cliente (\autoref{fig:solucao-cliente}) e os painéis financeiros (\autoref{fig:solucao-financeira}) e técnicos (\autoref{fig:solucao-tecnica}).
 
@@ -521,11 +521,11 @@ No termo desta fase, a plataforma apresentava uma API estabilizada face às exce
 
 O balanço global do estágio revela um elevado índice de concretização das metas estabelecidas no plano de trabalho inicial, complementado por uma adaptação eficaz aos desafios técnicos surgidos na fase final. A avaliação do cumprimento dos objetivos organiza-se em torno das três macrofases de desenvolvimento que estruturaram o projeto.
 
-O \textit{backend} - correspondente às Fases~1 a~3 do planeamento - cumpriu integralmente o objetivo central de integrar o fornecedor SeaRates à Tracking API existente. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o roteamento determinístico de pedidos ao novo fornecedor, sem qualquer alteração nos \textit{endpoints} públicos já expostos a clientes externos (\autoref{fig:orchestrator}).
+O \textit{backend} - correspondente às Fases~1 a~3 do planeamento - cumpriu integralmente o objetivo central de integrar o fornecedor SeaRates à \textit{Tracking API} existente. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o encaminhamento determinístico de pedidos ao novo fornecedor, sem qualquer alteração nos \textit{endpoints} públicos já expostos a clientes externos (\autoref{fig:orchestrator}).
 
 A validação em ambiente simulado, com recurso ao Prism para \textit{mocking} da API SeaRates, permitiu garantir a estabilidade da integração e a conformidade com os contratos de dados definidos por meio dos \textit{DTOs} implementados, cumprindo o objetivo de expandir a API sem comprometer a retrocompatibilidade com os consumidores existentes.
 
-A Fase~4 produziu uma interface \textit{frontend} que ultrapassou o propósito inicial de uma ferramenta de consulta de \textit{tracking}, consolidando-se como um painel administrativo completo em React (\anexoref{anx:solucao}). Foram validadas com sucesso as operações \textit{CRUD} dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo de acessos baseado em tipos, através de enumerados e a gestão detalhada de créditos e de integrações visuais. O objetivo de criar uma plataforma funcional para clientes finais e para a administração da Devlop foi, assim, concretizado.
+A Fase~4 produziu uma interface \textit{frontend} que ultrapassou o propósito inicial de uma ferramenta de consulta de \textit{tracking}, consolidando-se como um painel administrativo completo em React (\anexoref{anx:solucao}). Foram validadas com sucesso as operações \textit{CRUD} dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo granular de acessos através de enumerados, bem como a gestão detalhada de créditos e de integrações visuais. O objetivo de criar uma plataforma funcional para clientes finais e para a administração da Devlop foi, assim, concretizado.
 
 As Fases~5 e~6, dedicadas às integrações e à estabilização, partiam de um plano que previa uma integração aprofundada com a aplicação corporativa i-Forwarder. Embora este objetivo não tenha sido atingido na sua totalidade, a reorientação estratégica das prioridades revelou-se acertada. O foco foi redirecionado para as necessidades críticas da plataforma, resultando numa API estabilizada, com tratamento de exceções específico para a SeaRates e mensagens de movimento normalizadas.
 
@@ -533,7 +533,7 @@ A migração do sistema de autenticação para Keycloak e a correção de anomal
 
 Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo~\cite{shipsgo}, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates~\cite{searates}, integrado pelo autor, e o OpenSyllo (API privada, sem documentação pública acessível), integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por meio de três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
 
-A API expõe 37 \textit{controllers}, organizados em 10 domínios funcionais, e é suportada por 26 entidades na BD do SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte a três idiomas (português, inglês e espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
+A API expõe 37 \textit{controllers}, organizados em 10 domínios funcionais, e é suportada por 26 entidades na BD do SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte para três idiomas (português, inglês e espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
 
 A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e as horas efetivamente executadas em cada uma das seis fases do estágio.
 
@@ -635,7 +635,7 @@ Para fazer face a esta contingência e manter a produtividade sem interrupções
 
 \subsection{Atividades Desenvolvidas e Competências Adquiridas}
 
-Ao longo do estágio, foram adquiridas e consolidadas competências técnicas e pessoais diretamente relacionadas com as atividades realizadas. O trabalho na Tracking API permitiu aprofundar a componente de desenvolvimento \textit{backend} com .NET - serviços \textit{REST}, integração com APIs externas e mapeamento de \textit{DTOs} - complementada pelo uso do EF Core no acesso a dados em SQL Server. O desenvolvimento de \textit{frontend} com React, abrangendo a criação de interfaces, a integração com APIs e a gestão de estado, completou o leque de competências técnicas desenvolvidas.
+Ao longo do estágio, foram adquiridas e consolidadas competências técnicas e pessoais diretamente relacionadas com as atividades realizadas. O trabalho na \textit{Tracking API} permitiu aprofundar a componente de desenvolvimento \textit{backend} com .NET - serviços \textit{REST}, integração com APIs externas e mapeamento de \textit{DTOs} - complementada pelo uso do EF Core no acesso a dados em SQL Server. O desenvolvimento de \textit{frontend} com React, abrangendo a criação de interfaces, a integração com APIs e a gestão de estado, completou o leque de competências técnicas desenvolvidas.
 
 Foram ainda utilizadas ferramentas de desenvolvimento profissional como Git, Azure DevOps~\cite{azuredevops}, Swagger~\cite{swagger} e as ferramentas de desenvolvimento do navegador, para além da adaptação a arquiteturas de \textit{software} existentes e consolidadas.
 
@@ -645,7 +645,7 @@ O regime de trabalho parcial, com disponibilidade condicionada pelo horário let
 
 A execução do projeto assentou numa metodologia ágil adaptada à realidade corporativa da Devlop. O fluxo de trabalho foi estruturado em iterações semanais, com definição prévia de objetivos operacionais, em moldes semelhantes aos \textit{sprints} de desenvolvimento. No final de cada ciclo, realizavam-se sessões de alinhamento com o orientador da entidade de acolhimento para a validação das decisões de arquitetura e a demonstração dos resultados alcançados.
 
-A estratégia de integração foi também acelerada pela partilha diária de conhecimento com o colega de equipa, Sandro Cunha, o que permitiu desmistificar, com maior celeridade, a base de código pré-existente e mitigar os constrangimentos associados à curva de aprendizagem das ferramentas.
+A estratégia de integração foi também acelerada pela partilha diária de conhecimento com o colega de equipa, Sandro Cunha, o que permitiu assimilar, com maior celeridade, a base de código pré-existente e mitigar os constrangimentos associados à curva de aprendizagem das ferramentas.
 
 \subsection{Tecnologias e Ferramentas Utilizadas}
 
@@ -681,7 +681,7 @@ Como propostas para desenvolvimentos futuros e para a otimização do ecossistem
 
 Em primeiro lugar, recomenda-se a implementação de um mecanismo de armazenamento em \textit{cache} e de persistência local para os dados da SeaRates. Dado que esta API opera num modelo sem estado, a criação de uma \textit{cache} na BD interna da Devlop permitiria reter o histórico de estados e trajetórias dos navios por períodos mais longos, reduzindo o volume de consultas redundantes à API externa e minimizando os custos operacionais associados.
 
-Em segundo lugar, sugere-se retomar a integração com o sistema i-Forwarder. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de \textit{triggers} automáticos entre o ecossistema 4GL do i-Forwarder e a Tracking API permitiria que qualquer atualização de estado se refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
+Em segundo lugar, sugere-se retomar a integração com o sistema i-Forwarder. Uma vez que o ambiente de desenvolvimento em Four Js Genero foi preparado e ocorreram os alinhamentos iniciais na fase final do estágio, a criação de \textit{triggers} automáticos entre o ecossistema 4GL do i-Forwarder e a \textit{Tracking API} permitiria que qualquer atualização de estado se refletisse instantaneamente em alertas operacionais nos ecrãs dos consultores, eliminando a necessidade de sincronização manual.
 
 Por último, propõe-se uma reavaliação do motor de estatísticas. A decisão de remover as agregações pré-calculadas em favor da consulta direta à BD simplificou o código atual, mas, à medida que a plataforma escalar e o volume de histórico aumentar, a execução destas consultas em tempo real poderá gerar estrangulamentos de desempenho.
 
@@ -716,7 +716,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Exploração opcional do curso \textit{React - The Complete Guide} (se necessário). & \\
 \hline
 \multirow{4}{0.19\textwidth}{Fase 2 - Análise da API existente e arquitetura atual}
-& Estudo da documentação interna da Tracking API.
+& Estudo da documentação interna da \textit{Tracking API}.
 & \multirow{4}{0.17\textwidth}{5 dias úteis (40 h) \\ Período: 16-02 a 20-02} \\
 \cline{2-2}
 & Análise da integração existente com o fornecedor ShipsGo. & \\
@@ -761,7 +761,7 @@ Para garantir a escalabilidade sem reintroduzir lógicas frágeis, sugere-se a i
 & Estudo da aplicação interna i-Forwarder.
 & \multirow{4}{0.17\textwidth}{10 dias úteis (80 h) \\ Período: 18-05 a 29-05} \\
 \cline{2-2}
-& Integração da Tracking API com o sistema interno. & \\
+& Integração da \textit{Tracking API} com o sistema interno. & \\
 \cline{2-2}
 & Testes de integração. & \\
 \cline{2-2}
