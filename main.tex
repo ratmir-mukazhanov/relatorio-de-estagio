@@ -248,7 +248,7 @@ Por fim, agradeço aos meus colegas pelo apoio, espírito de entreajuda e partil
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de rastreamento de envios marítimos pré-existente (Tracking API) por meio da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma agnóstica e determinística. Foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
+Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de rastreamento de envios marítimos pré-existente (Tracking API) através da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma agnóstica e determinística. Foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
 
 Na fase final do estágio, embora o ambiente tenha sido preparado para a integração com o sistema interno de gestão de trânsitos (i-Forwarder) da empresa num ecossistema Four Js Genero (4GL), as prioridades do projeto foram reorientadas para garantir a estabilidade e a segurança da solução desenvolvida. O trabalho focou-se então na consolidação da integração com a SeaRates, na correção de anomalias complexas de dados geográficos no mapa de seguimento em tempo real e na migração integral do sistema de autenticação para o Keycloak. Os resultados validaram a arquitetura implementada perante os cenários reais de produção.
 
@@ -356,14 +356,14 @@ O estágio teve como tema \enquote{Integrador Tracking - APIs ShipsGo e SeaRates
 
 De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na Tracking API existente, respeitando o padrão de orquestração já implementado para o ShipsGo~\cite{shipsgo} e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte a operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, EF Core~\cite{efcore}, SQL Server e React.
 
-Prevê-se também a preparação da integração da solução aos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs em um contexto empresarial real.
+Prevê-se também a preparação da integração da solução nos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs em um contexto empresarial real.
 
 % --- Metodologia ---
 \section{Metodologias de Trabalho}
 
 Durante o estágio, o planeamento do trabalho seguiu uma abordagem em cascata (\textit{waterfall}), com as seis fases bem definidas à partida e calendarizadas de acordo com o PIT. A execução, por sua vez, foi organizada em ciclos semanais nos quais eram definidos objetivos e tarefas a desenvolver, à semelhança de \textit{sprints} ágeis. No final de cada ciclo, realizava-se um ponto de situação para avaliar o progresso e identificar os próximos passos.
 
-A comunicação técnica e o acompanhamento diário foram realizados principalmente com Sandro Cunha, colega de equipa que desempenhou o papel de colega de integração, apoiando a integração no projeto e esclarecendo dúvidas. Realizavam-se ainda reuniões semanais com o orientador da empresa, Bruno Leitão, para a validação de decisões técnicas e o alinhamento do trabalho aos objetivos definidos. A comunicação foi efetuada maioritariamente através do Microsoft Teams.
+A comunicação técnica e o acompanhamento diário foram realizados principalmente com Sandro Cunha, colega de equipa que desempenhou o papel de colega de integração, apoiando a integração no projeto e esclarecendo dúvidas. Realizavam-se ainda reuniões semanais com o orientador da empresa, Bruno Leitão, para a validação de decisões técnicas e o alinhamento do trabalho com os objetivos definidos. A comunicação foi efetuada maioritariamente através do Microsoft Teams.
 
 Para o acompanhamento formal do progresso, foi elaborado um relatório técnico semanal no modelo oficial da Devlop, documentando as atividades realizadas, os resultados alcançados e as dificuldades encontradas ao longo das 16 semanas de estágio (\anexoref{anx:relatorio}, \autoref{fig:relatorio-devlop}).
 
@@ -463,7 +463,7 @@ Desta análise resultou uma compreensão clara dos componentes do sistema, das d
 
 A Tracking API comunicava exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}, sendo necessário acrescentar o suporte à SeaRates~\cite{searates} (\autoref{fig:searates-logo}) sem alterar os \textit{endpoints} já expostos a clientes externos. O trabalho de integração envolveu a expansão do \textit{ProviderCapabilitiesRegistry} com as novas capacidades, a criação de \textit{DTOs} para \textit{requests} e \textit{responses}, o desenvolvimento de um cliente HTTP para comunicação com a API externa e a implementação dos serviços de \textit{tracking} marítimo, aéreo e de transportadoras.
 
-O novo fornecedor foi integrado ao orquestrador por meio da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado no ShipsGo~\cite{shipsgo}. A \autoref{fig:orchestrator} ilustra o método após a integração.
+O novo fornecedor foi integrado no orquestrador através da expansão do \textit{ResolveProviderService}, mantendo o padrão de roteamento determinístico já utilizado no ShipsGo~\cite{shipsgo}. A \autoref{fig:orchestrator} ilustra o método após a integração.
 
 \begin{figure}[H]
   \centering
@@ -490,7 +490,7 @@ No final desta fase, a API passou a suportar ambos os fornecedores de forma tran
 
 \section{Desenvolvimento da Interface da Plataforma}
 
-Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de uma interface \textit{web} em React para interagir com a Tracking API. Foram implementadas operações \textit{CRUD} para as principais entidades do sistema e desenvolvidas páginas dedicadas ao \textit{tracking} e ao detalhe de envios, integradas na API por meio de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo controlo granular de acesso entre perfis de administrador e de cliente.
+Com a camada de \textit{backend} consolidada, procedeu-se ao desenvolvimento de uma interface \textit{web} em React para interagir com a Tracking API. Foram implementadas operações \textit{CRUD} para as principais entidades do sistema e desenvolvidas páginas dedicadas ao \textit{tracking} e ao detalhe de envios, integradas na API através de um \textit{data provider} personalizado. O sistema de permissões foi modelado com base em enumerados, garantindo controlo granular de acesso entre perfis de administrador e de cliente.
 
 Ao nível da experiência de utilizador, foram criados formulários e componentes customizados e implementado um sistema de traduções com suporte a português, inglês e espanhol. Foram ainda desenvolvidas funcionalidades de gestão de créditos e, de forma iterativa, uma proposta de métricas e KPIs para a plataforma (\anexoref{anx:metricas}, \autoref{fig:metricas-pag1}, \autoref{fig:metricas-pag2} e \autoref{fig:metricas-pag3}), que serviu de base para os \textit{dashboards} do painel administrativo. A organização do código foi melhorando através de refatorações sucessivas dos componentes React.
 
@@ -669,7 +669,7 @@ No plano técnico, uma das principais dificuldades esteve relacionada com o dese
 
 Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: dedicaram-se três dias úteis à implementação isolada de uma interface \textit{CRUD} completa com React Admin~\cite{reactadmin}, o que se revelou fundamental para interiorizar a gestão de estado e a integração com a API. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
 
-A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado (\anexoref{anx:arquitetura}, \autoref{fig:arquitetura}) representaram outro desafio, ultrapassado por meio da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
+A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado (\anexoref{anx:arquitetura}, \autoref{fig:arquitetura}) representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
 
 A implementação do motor de estatísticas também apresentou um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, revelou-se frágil e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade - e consequente aprendizagem - foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando diretamente os dados da BD.
 
