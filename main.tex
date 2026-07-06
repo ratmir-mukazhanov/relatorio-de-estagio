@@ -102,8 +102,30 @@
   \renewcommand{\appendixpagename}{Anexos}%
 }
 
-% ---------------------------- ACRONYMS ----------------------------------------
-\usepackage[nohyperlinks]{acronym}
+% ---------------------------- ACRONYMS / GLOSSARY -----------------------------
+\usepackage[toc]{glossaries}
+\makenoidxglossaries
+
+\newacronym{4GL}{4GL}{Fourth-Generation Programming Language}
+\newacronym{API}{API}{Application Programming Interface}
+\newacronym{ASPNET}{ASP.NET}{Active Server Pages .NET Framework}
+\newacronym{BD}{BD}{Base de Dados}
+\newacronym{CRUD}{CRUD}{Create, Read, Update, Delete}
+\newacronym{DTO}{DTO}{Data Transfer Object}
+\newacronym{EDI}{EDI}{Electronic Data Interchange}
+\newacronym{EFCore}{EF Core}{Entity Framework Core}
+\newacronym{ERP}{ERP}{Enterprise Resource Planning}
+\newacronym{GeoJSON}{GeoJSON}{Geographic JavaScript Object Notation}
+\newacronym{HTTP}{HTTP}{HyperText Transfer Protocol}
+\newacronym{JWT}{JWT}{JSON Web Token}
+\newacronym{KPI}{KPI}{Key Performance Indicator}
+\newacronym{PaaS}{PaaS}{Platform as a Service}
+\newacronym{PIT}{PIT}{Plano Individual de Trabalho}
+\newacronym{PME}{PME}{Pequenas e Médias Empresas}
+\newacronym{REST}{REST}{Representational State Transfer}
+\newacronym{SQL}{SQL}{Structured Query Language}
+\newacronym{UI}{UI}{User Interface}
+\newacronym{WMS}{WMS}{Sistema de Gestão de Armazéns (Warehouse Management System)}
 
 % ---------------------------- MISC --------------------------------------------
 \usepackage{multirow}
@@ -283,31 +305,7 @@ In the final phase of the internship, we prepared the environment for integratio
 
 % ===================== LISTA DE SIGLAS E ABREVIATURAS =========================
 \newpage
-\chapter*{Lista de Siglas e Abreviaturas}
-\addcontentsline{toc}{chapter}{Lista de Siglas e Abreviaturas}
-
-\begin{acronym}
-  \acro{4GL}{Fourth-Generation Programming Language}
-  \acro{API}{Application Programming Interface}
-  \acro{ASP.NET}{Active Server Pages .NET Framework}
-  \acro{BD}{Base de Dados}
-  \acro{CRUD}{Create, Read, Update, Delete}
-  \acro{DTO}{Data Transfer Object}
-  \acro{EDI}{Electronic Data Interchange}
-  \acro{EF Core}{Entity Framework Core}
-  \acro{ERP}{Enterprise Resource Planning}
-  \acro{GeoJSON}{Geographic JavaScript Object Notation}
-  \acro{HTTP}{HyperText Transfer Protocol}
-  \acro{JWT}{JSON Web Token}
-  \acro{KPI}{Key Performance Indicator}
-  \acro{PaaS}{Platform as a Service}
-  \acro{PIT}{Plano Individual de Trabalho}
-  \acro{PME}{Pequenas e Médias Empresas}
-  \acro{REST}{Representational State Transfer}
-  \acro{SQL}{Structured Query Language}
-  \acro{UI}{User Interface}
-  \acro{WMS}{Sistema de Gestão de Armazéns (Warehouse Management System)}
-\end{acronym}
+\printnoidxglossary[title=Lista de Siglas e Abreviaturas]
 
 \newpage
 
