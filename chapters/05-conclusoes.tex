@@ -5,7 +5,7 @@
 
 O estágio permitiu participar no desenvolvimento e evolução de uma plataforma de seguimento marítimo utilizada em contexto empresarial real, envolvendo a integração de fornecedores externos, o desenvolvimento de funcionalidades de frontend e backend e a adaptação de componentes críticos da arquitetura da solução.
 
-Os objetivos definidos para o estágio foram, de forma geral, cumpridos. Destacam-se a integração do fornecedor SeaRates, a migração do sistema de autenticação para Keycloak, a correção de problemas relacionados com a representação geográfica dos trajetos marítimos e a evolução do motor de estatísticas da plataforma.
+Os objetivos definidos para o estágio foram, de forma geral, cumpridos. Destacam-se a integração do fornecedor SeaRates, a migração do sistema de autenticação para Keycloak, a correção de problemas relacionados com a representação geográfica dos trajetos marítimos (\autoref{chap:descricao}) e a evolução do motor de estatísticas da plataforma.
 
 Para além dos resultados técnicos alcançados, a experiência proporcionou contacto direto com desafios característicos do desenvolvimento de software em ambiente empresarial, nomeadamente a necessidade de compreender sistemas existentes, adaptar prioridades em função das necessidades do produto e tomar decisões com impacto na manutenibilidade e evolução futura da solução.
 
@@ -49,7 +49,7 @@ No plano técnico, uma das principais dificuldades esteve relacionada com o dese
 
 Como forma de ganhar tração técnica, adotou-se uma abordagem exploratória: dedicaram-se três dias úteis à implementação isolada de uma interface \textit{\gls{crud}} completa com React Admin~\cite{reactadmin}, o que foi fundamental para interiorizar a gestão de estado e a integração com a \gls{api}. Com o tempo e o apoio pontual dos colegas, esta barreira inicial foi superada.
 
-A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado (\anexoref{anx:arquitetura}, \autoref{fig:arquitetura}) representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
+A complexidade da arquitetura de \textit{backend} e a necessidade de integrar um novo fornecedor num sistema já consolidado (\anexoref{anx:arquitetura}, \autoref{fig:arquitetura}) representaram outro desafio, ultrapassado através da análise detalhada do código e de testes progressivos. Na reta final, a migração para Keycloak e a resolução da anomalia do antimeridiano (\anexoref{anx:mapas}) exigiram um esforço analítico profundo, mas revelaram-se duas das experiências de aprendizagem mais marcantes do estágio.
 
 A implementação do motor de estatísticas também apresentou um desafio arquitetural inesperado. A lógica inicial, baseada em agregações pré-calculadas, apresentava fragilidades e, após uma primeira tentativa de refatoração, o sistema tornou-se excessivamente complexo. A principal dificuldade - e consequente aprendizagem - foi reconhecer esse excesso e redesenhar a solução para uma abordagem mais simples, consultando diretamente os dados da \gls{bd}.
 
