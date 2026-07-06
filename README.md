@@ -9,6 +9,11 @@ Topic: *Evolution of a Maritime Monitoring System: SeaRates API Integration*.
 latexmk -pdf main.tex
 ```
 
+```bash
+latexmk -C relatorio.tex
+latexmk -pdf relatorio.tex
+```
+
 This command automatically handles the `pdflatex` → `biber` → `pdflatex` → `pdflatex` passes
 needed to resolve citations, cross-references, table of contents, and bibliography.
 

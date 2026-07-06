@@ -16,3 +16,6 @@
 *.toc
 *.synctex.gz
 *.pdf
+*.acn
+*.glo
+*.ist
