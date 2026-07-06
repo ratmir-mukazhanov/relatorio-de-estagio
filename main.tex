@@ -263,7 +263,7 @@ Por fim, agradeço aos meus colegas pelo apoio, espírito de entreajuda e partil
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de seguimento de envios marítimos pré-existente (\textit{Tracking API}) através da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma agnóstica e determinística. Foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
+Este relatório descreve o trabalho desenvolvido durante o estágio curricular da Licenciatura em Tecnologias da Informação, realizado na empresa Devlop. O objetivo principal do projeto consistiu em evoluir uma API de seguimento de envios marítimos pré-existente (\textit{Tracking API}) através da integração com um novo fornecedor de dados: a plataforma SeaRates. O desenvolvimento de \textit{backend}, suportado por .NET e EF Core, envolveu a extensão do orquestrador de serviços e do registo de capacidades do sistema, de forma independente do fornecedor e com encaminhamento determinístico. Foi desenhada e implementada uma interface \textit{frontend} em React para suportar a gestão operacional e administrativa da plataforma, incluindo operações \textit{CRUD} para múltiplas entidades, internacionalização e gestão de créditos comerciais.
 
 Na fase final do estágio, embora o ambiente tenha sido preparado para a integração com o sistema interno de gestão de trânsitos (i-Forwarder) da empresa num ecossistema Four Js Genero (4GL), as prioridades do projeto foram reorientadas para garantir a estabilidade e a segurança da solução desenvolvida. O trabalho focou-se então na consolidação da integração com a SeaRates, na correção de anomalias complexas de dados geográficos no mapa de seguimento em tempo real e na migração integral do sistema de autenticação para o Keycloak. A utilização da solução em ambiente de produção permitiu observar o correto funcionamento da arquitetura implementada.
 
@@ -678,8 +678,8 @@ In the final phase of the internship, the environment was prepared for integrati
   \label{fig:searates-navios}
 \end{figure}
 
-% --- Anexo 10: Evolução da Correção do Antimeridiano ---
-\chapter{Evolução da Correção da Anomalia do Antimeridiano}\label{anx:mapas}
+% --- Anexo 10: Correção da Anomalia do Antimeridiano ---
+\chapter{Correção da Anomalia do Antimeridiano}\label{anx:mapas}
 \newpage
 \begin{figure}[H]
   \centering
