@@ -1,9 +1,9 @@
-% ===================== CAPÍTULO 2 - PLANEAMENTO DO TRABALHO ===================
+﻿% ===================== CAPÍTULO 2 - PLANEAMENTO DO TRABALHO ===================
 \chapter{Planeamento do Trabalho}\label{chap:planeamento}
 
 \section{Plano de Trabalho}
 
-O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no PIT, apresentado no \anexoref{anx:pit} (\autoref{tab:resumo-plano}), e detalhada na Descrição Técnica de Tarefas, constante do \anexoref{anx:tarefas} (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A \autoref{tab:resumo-fases} sintetiza a estrutura geral do plano de trabalhos.
+O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo o período de 9 de fevereiro a 5 de junho de 2026. A definição das fases, dos objetivos e da calendarização foi formalizada no \gls{pit}, apresentado no \anexoref{anx:pit} (\autoref{tab:resumo-plano}), e detalhada na Descrição Técnica de Tarefas, constante do \anexoref{anx:tarefas} (páginas~\pageref{fig:tarefas-pag1} a~\pageref{fig:tarefas-pag5}). A \autoref{tab:resumo-fases} sintetiza a estrutura geral do plano de trabalhos.
 
 \begin{table}[H]
 \centering
@@ -14,15 +14,15 @@ O planeamento do estágio foi estruturado em seis fases sequenciais, abrangendo 
 \hline
 \textbf{Fase} & \textbf{Período} & \textbf{Dias úteis} & \textbf{Horas} & \textbf{Principais Atividades} \\
 \hline
-Fase 1 - Formação Técnica & 09-02 a 13-02 & 4 & 32 & Cursos Udemy (EF Core, SQL Server); projeto \textit{CRUD} .NET + React \\
+Fase 1 - Formação Técnica & 09-02 a 13-02 & 4 & 32 & Cursos Udemy (\gls{efcore}, SQL Server); projeto \textit{\gls{crud}} .NET + React \\
 \hline
-Fase 2 - Análise da API & 16-02 a 20-02 & 5 & 40 & Estudo da arquitetura, orquestrador, \textit{ProviderCapabilitiesRegistry} e API SeaRates \\
+Fase 2 - Análise da \gls{api} & 16-02 a 20-02 & 5 & 40 & Estudo da arquitetura, orquestrador, \textit{ProviderCapabilitiesRegistry} e \gls{api} SeaRates \\
 \hline
-Fase 3 - Integração SeaRates & 23-02 a 20-03 & 20 & 160 & Implementação do \textit{provider} SeaRates, \textit{DTOs}, cliente HTTP, serviços de \textit{tracking}, testes \\
+Fase 3 - Integração SeaRates & 23-02 a 20-03 & 20 & 160 & Implementação do \textit{provider} SeaRates, \textit{\glspl{dto}}, cliente \gls{http}, serviços de \textit{tracking}, testes \\
 \hline
-Fase 4 - Desenvolvimento \textit{frontend} & 23-03 a 18-05 & 40 & 320 & Interface React: \textit{CRUD}, \textit{tracking}, permissões, créditos, \textit{dashboards}, suporte multilíngue \\
+Fase 4 - Desenvolvimento \textit{frontend} & 23-03 a 18-05 & 40 & 320 & Interface React: \textit{\gls{crud}}, \textit{tracking}, permissões, créditos, \textit{dashboards}, suporte multilíngue \\
 \hline
-Fase 5 - Integração Interna & 18-05 a 29-05 & 10 & 80 & Preparação ambiente 4GL, integração com i-Forwarder, correção de paginação \\
+Fase 5 - Integração Interna & 18-05 a 29-05 & 10 & 80 & Preparação ambiente \gls{4gl}, integração com i-Forwarder, correção de paginação \\
 \hline
 Fase 6 - Testes e Conclusão & 01-06 a 05-06 & 5 & 40 & Testes finais, migração Keycloak, documentação, relatório \\
 \hline
@@ -35,24 +35,25 @@ Fase 6 - Testes e Conclusão & 01-06 a 05-06 & 5 & 40 & Testes finais, migraçã
 
 A primeira fase, com a duração prevista de 32 horas (aproximadamente 4 dias úteis, de 9 a 13 de fevereiro), foi dedicada à capacitação técnica na \textit{stack} tecnológica da Devlop. As atividades incluíram a frequência dos cursos \textit{Entity Framework Core - The Complete Guide [2025]}~\cite{efcore-course} e \textit{Complete Microsoft SQL Server Database Design Masterclass}~\cite{sqlserver-course}, complementadas pela exploração opcional do curso \textit{React - The Complete Guide}~\cite{react-course}, caso se revelasse necessário para o desenvolvimento da interface prevista na Fase~4 (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag1}).
 
-\subsection{Fase 2 - Análise da API Existente e Arquitetura Atual}
+\subsection{Fase 2 - Análise da \gls{api} Existente e Arquitetura Atual}
 
-Com a duração de 5 dias úteis (de 16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da \textit{Tracking API}, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\anexoref{anx:tarefas}, \autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
+Com a duração de 5 dias úteis (de 16 a 20 de fevereiro), a segunda fase centrou-se na compreensão do sistema de \textit{tracking} existente. As atividades contemplaram o estudo da documentação interna da \textit{Tracking \gls{api}}, a análise da integração com o fornecedor ShipsGo, a compreensão da arquitetura do orquestrador e do \textit{ProviderCapabilitiesRegistry}, bem como a execução e os testes locais da solução (\anexoref{anx:tarefas}, \autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}).
 
 \subsection{Fase 3 - Integração do Novo Fornecedor SeaRates}
 
-A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas), de 23 de fevereiro a 20 de março. As atividades incluíram o estudo da documentação da API SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}-\autoref{fig:tarefas-pag3}).
+A terceira fase, a mais extensa no âmbito do desenvolvimento \textit{backend}, teve a duração prevista de 20 dias úteis (aproximadamente 160 horas), de 23 de fevereiro a 20 de março. As atividades incluíram o estudo da documentação da \gls{api} SeaRates, a implementação da camada de integração com este fornecedor, a expansão do orquestrador (\textit{ResolveProviderService}) e do \textit{ProviderCapabilitiesRegistry}, a garantia de compatibilidade com os \textit{endpoints} existentes, a realização de testes unitários e funcionais, e a validação e correção de erros (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag2}-\autoref{fig:tarefas-pag3}).
 
 \subsection{Fase 4 - Desenvolvimento da Interface da Plataforma de Tracking}
 
-A quarta fase, correspondente ao desenvolvimento \textit{frontend}, foi a mais longa do estágio, com duração estimada de 40 dias úteis (aproximadamente 320 horas), de 23 de março a 18 de maio. Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de \textit{tracking}, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a API existente e a realização de testes e melhorias (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag3}-\autoref{fig:tarefas-pag4}).
+A quarta fase, correspondente ao desenvolvimento \textit{frontend}, foi a mais longa do estágio, com duração estimada de 40 dias úteis (aproximadamente 320 horas), de 23 de março a 18 de maio. Esta fase abrangeu a definição da arquitetura do \textit{frontend}, a implementação do sistema de autenticação, o desenvolvimento da gestão de \textit{shipments}, a implementação da visualização de \textit{tracking}, o desenvolvimento do painel de administração, a gestão de clientes, aplicações e custos, a implementação de \textit{dashboards} e métricas, a integração com a \gls{api} existente e a realização de testes e melhorias (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag3}-\autoref{fig:tarefas-pag4}).
 
 \subsection{Fase 5 - Integração com Aplicação Interna (i-Forwarder)}
 
-Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da \textit{Tracking API} com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}-\autoref{fig:tarefas-pag5}).
+Com a duração prevista de 10 dias úteis (aproximadamente 80 horas, de 18 a 29 de maio), a quinta fase visou a integração da solução desenvolvida com a aplicação interna i-Forwarder da Devlop. As atividades incluíram o estudo da aplicação i-Forwarder, a integração da \textit{Tracking \gls{api}} com o sistema interno, os testes de integração, a correção de erros e a otimização (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag4}-\autoref{fig:tarefas-pag5}).
 
 \subsection{Fase 6 - Testes Finais, Documentação e Conclusão}
 
 A sexta e última fase, com duração de 5 dias úteis (de 1 a 5 de junho), foi reservada à finalização e à entrega do trabalho. As atividades englobaram os testes finais da solução completa, a elaboração da documentação técnica e funcional e a preparação da entrega final (\autoref{tab:resumo-plano} e \autoref{fig:tarefas-pag5}).
 
-O plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontra-se detalhada no PIT (\anexoref{anx:pit}). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no \anexoref{anx:horario} (\autoref{fig:horario}).
+O plano de trabalhos totalizou 84 dias úteis, distribuídos ao longo de aproximadamente quatro meses. A distribuição temporal das fases, bem como a sua sobreposição e dependências, encontra-se detalhada no \gls{pit} (\anexoref{anx:pit}). A disponibilidade horária semanal do estagiário, conciliando o horário laboral com o horário letivo, está documentada no \anexoref{anx:horario} (\autoref{fig:horario}).
+

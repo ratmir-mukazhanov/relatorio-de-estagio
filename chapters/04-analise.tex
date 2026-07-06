@@ -1,23 +1,23 @@
-% ===================== CAPÍTULO 4 - ANÁLISE DE RESULTADOS =====================
+﻿% ===================== CAPÍTULO 4 - ANÁLISE DE RESULTADOS =====================
 \chapter{Análise de Resultados}\label{chap:analise}
 
 \section{Cumprimento dos Objetivos}\label{sec:cumprimento}
 
 De forma geral, os objetivos definidos para o estágio foram cumpridos, tendo sido necessário ajustar algumas prioridades na fase final do projeto para responder a desafios técnicos entretanto identificados. A avaliação do cumprimento dos objetivos organiza-se em torno das três macrofases de desenvolvimento que estruturaram o projeto.
 
-O \textit{backend} - correspondente às Fases~1 a~3 do planeamento - cumpriu integralmente o objetivo central de integrar o fornecedor SeaRates à \textit{Tracking API} existente. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o encaminhamento determinístico de pedidos ao novo fornecedor, sem qualquer alteração nos \textit{endpoints} públicos já expostos a clientes externos (\autoref{fig:orchestrator}).
+O \textit{backend} - correspondente às Fases~1 a~3 do planeamento - cumpriu integralmente o objetivo central de integrar o fornecedor SeaRates à \textit{Tracking \gls{api}} existente. O mecanismo de orquestração (\textit{ResolveProviderService}) foi estendido para suportar o encaminhamento determinístico de pedidos ao novo fornecedor, sem qualquer alteração nos \textit{endpoints} públicos já expostos a clientes externos (\autoref{fig:orchestrator}).
 
-A validação em ambiente simulado, com recurso ao Prism para \textit{mocking} da API SeaRates, contribuiu para garantir a estabilidade da integração e a conformidade com os contratos de dados definidos por meio dos \textit{DTOs} implementados, cumprindo o objetivo de expandir a API sem comprometer a retrocompatibilidade com os consumidores existentes.
+A validação em ambiente simulado, com recurso ao Prism para \textit{mocking} da \gls{api} SeaRates, contribuiu para garantir a estabilidade da integração e a conformidade com os contratos de dados definidos por meio dos \textit{\glspl{dto}} implementados, cumprindo o objetivo de expandir a \gls{api} sem comprometer a retrocompatibilidade com os consumidores existentes.
 
-A Fase~4 produziu uma interface \textit{frontend} que ultrapassou o propósito inicial de uma ferramenta de consulta de \textit{tracking}, consolidando-se como um painel administrativo completo em React (\anexoref{anx:solucao}). Foram implementadas e testadas operações \textit{CRUD} dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo granular de acessos através de enumerados, bem como a gestão detalhada de créditos e de integrações visuais. As funcionalidades implementadas permitiram disponibilizar uma plataforma utilizável tanto por clientes finais como por utilizadores administrativos.
+A Fase~4 produziu uma interface \textit{frontend} que ultrapassou o propósito inicial de uma ferramenta de consulta de \textit{tracking}, consolidando-se como um painel administrativo completo em React (\anexoref{anx:solucao}). Foram implementadas e testadas operações \textit{\gls{crud}} dinâmicas baseadas em metadados para as várias entidades do sistema, o controlo granular de acessos através de enumerados, bem como a gestão detalhada de créditos e de integrações visuais. As funcionalidades implementadas permitiram disponibilizar uma plataforma utilizável tanto por clientes finais como por utilizadores administrativos.
 
-As Fases~5 e~6, dedicadas às integrações e à estabilização, partiam de um plano que previa uma integração aprofundada com a aplicação corporativa i-Forwarder. Embora este objetivo não tenha sido atingido na sua totalidade, a reorientação estratégica das prioridades mostrou-se acertada. O foco foi redirecionado para as necessidades críticas da plataforma, resultando numa API estabilizada, com tratamento de exceções específico para a SeaRates e mensagens de movimento normalizadas.
+As Fases~5 e~6, dedicadas às integrações e à estabilização, partiam de um plano que previa uma integração aprofundada com a aplicação corporativa i-Forwarder. Embora este objetivo não tenha sido atingido na sua totalidade, a reorientação estratégica das prioridades mostrou-se acertada. O foco foi redirecionado para as necessidades críticas da plataforma, resultando numa \gls{api} estabilizada, com tratamento de exceções específico para a SeaRates e mensagens de movimento normalizadas.
 
 A migração do sistema de autenticação para Keycloak e a correção de anomalias na renderização geográfica garantiram que a solução final cumprisse os requisitos de segurança, fiabilidade e usabilidade exigidos para adoção interna.
 
-Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo~\cite{shipsgo}, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates~\cite{searates}, integrado pelo autor, e o OpenSyllo (API privada, sem documentação pública acessível), integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por meio de três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
+Do ponto de vista quantitativo, o estágio totalizou 416 horas de trabalho efetivo ao longo de 16 semanas. Ao fornecedor ShipsGo~\cite{shipsgo}, já existente antes do estágio, foram acrescentados dois novos \textit{providers}: o SeaRates~\cite{searates}, integrado pelo autor, e o OpenSyllo (\gls{api} privada, sem documentação pública acessível), integrado em paralelo pelo colega de equipa Sandro Cunha. A comunicação com os fornecedores externos é uniformizada por meio de três interfaces base (\textit{ITrackingCoreProvider}, \textit{ICarrierProvider} e \textit{IAirlineProvider}).
 
-A API expõe 37 \textit{controllers}, organizados em 10 domínios funcionais, e é suportada por 26 entidades na BD do SQL Server. No \textit{frontend}, foram implementadas operações \textit{CRUD} para 14 entidades, com suporte para três idiomas (português, inglês e espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
+A \gls{api} expõe 37 \textit{controllers}, organizados em 10 domínios funcionais, e é suportada por 26 entidades na \gls{bd} do SQL Server. No \textit{frontend}, foram implementadas operações \textit{\gls{crud}} para 14 entidades, com suporte para três idiomas (português, inglês e espanhol). A qualidade do código foi assegurada por aproximadamente 55 ficheiros de testes unitários e de integração (xUnit~\cite{xunit}, Moq~\cite{moq} e FluentAssertions~\cite{fluentassertions}), com uma \textit{test suite} que cobre os principais fluxos do orquestrador de \textit{providers} e dos serviços de \textit{tracking}.
 
 A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e as horas efetivamente executadas em cada uma das seis fases do estágio.
 
@@ -32,7 +32,7 @@ A \autoref{tab:comparacao-horas} sintetiza os desvios entre as horas planeadas e
 \hline
 Fase 1 - Formação Técnica na \textit{stack} Devlop & 32 & 32 & 0\,\% \\
 \hline
-Fase 2 - Análise da API existente e arquitetura atual & 40 & 24 & $-$40\,\% \\
+Fase 2 - Análise da \gls{api} existente e arquitetura atual & 40 & 24 & $-$40\,\% \\
 \hline
 Fase 3 - Integração do novo fornecedor SeaRates & 160 & 72 & $-$55\,\% \\
 \hline
@@ -49,7 +49,7 @@ Fase 6 - Testes finais, documentação e conclusão & 40 & 52 & +30\,\% \\
 
 \section{Discussão}
 
-A execução do plano de trabalhos decorreu, no essencial, em conformidade com a calendarização prevista no PIT (\anexoref{anx:pit}), registando-se, contudo, desvios na fase final que merecem reflexão. O principal desvio face ao planeamento inicial consistiu na redução do âmbito da integração com o sistema i-Forwarder, em favor de um investimento mais aprofundado na estabilização da plataforma e no reforço da sua segurança.
+A execução do plano de trabalhos decorreu, no essencial, em conformidade com a calendarização prevista no \gls{pit} (\anexoref{anx:pit}), registando-se, contudo, desvios na fase final que merecem reflexão. O principal desvio face ao planeamento inicial consistiu na redução do âmbito da integração com o sistema i-Forwarder, em favor de um investimento mais aprofundado na estabilização da plataforma e no reforço da sua segurança.
 
 Esta decisão, tomada em articulação com o orientador da empresa, foi considerada a mais adequada tendo em conta o estado de desenvolvimento do produto.
 
@@ -71,17 +71,17 @@ O conjunto de tecnologias e ferramentas que suportaram o desenvolvimento do proj
 \textbf{Categoria} & \textbf{Tecnologia / Ferramenta} & \textbf{Âmbito} \\
 \midrule
 \multirow{2}{=}{Linguagens}
-  & C\# & \textit{backend}: API, serviços de \textit{tracking}, lógica aplicacional \\
+  & C\# & \textit{backend}: \gls{api}, serviços de \textit{tracking}, lógica aplicacional \\
   & JavaScript (React) & \textit{frontend}: interface da plataforma \\
 \midrule
 \multirow{3}{=}{Frameworks}
-  & .NET \cite{dotnet} & Base da API e lógica de negócio \\
-  & EF Core \cite{efcore} & Acesso a dados (SQL Server) \\
+  & .NET \cite{dotnet} & Base da \gls{api} e lógica de negócio \\
+  & \gls{efcore} \cite{efcore} & Acesso a dados (SQL Server) \\
   & React \cite{react} & Construção da interface de \textit{tracking} \\
 \midrule
 \multirow{2}{=}{Testes}
   & xUnit, Moq, FluentAssertions \cite{xunit,moq,fluentassertions} & Testes unitários e de integração \\
-  & Prism \cite{prism} & Simulação da API SeaRates \\
+  & Prism \cite{prism} & Simulação da \gls{api} SeaRates \\
 \midrule
 \multirow{2}{=}{Ambientes de desenvolvimento}
   & JetBrains Rider \cite{rider} & \textit{backend} (.NET) \\
@@ -91,10 +91,10 @@ O conjunto de tecnologias e ferramentas que suportaram o desenvolvimento do proj
   & Microsoft SQL Server \cite{sqlserver} & Base de dados \\
   & Git / Azure DevOps \cite{azuredevops} & Controlo de versões e colaboração \\
   & Keycloak \cite{keycloak} & Autenticação e gestão de identidades \\
-  & Four Js Genero (4GL) \cite{fourjs} & Integração com i-Forwarder \\
+  & Four Js Genero (\gls{4gl}) \cite{fourjs} & Integração com i-Forwarder \\
 \midrule
 \multirow{4}{=}{Ferramentas de apoio}
-  & Swagger \cite{swagger} & Teste e exploração da API \\
+  & Swagger \cite{swagger} & Teste e exploração da \gls{api} \\
   & GitHub Copilot \cite{copilot} / OpenCode Desktop~\cite{opencode} & Apoio à geração de código (ver \ref{sec:ia}) \\
   & Microsoft Teams & Comunicação e acompanhamento \\
   & Microsoft Word & Relatórios e documentação \\
@@ -106,8 +106,9 @@ A \autoref{tab:tecnologias} sistematiza o conjunto de tecnologias e ferramentas 
 
 \subsection{Utilização de Ferramentas de Inteligência Artificial}\label{sec:ia}
 
-Ao longo do estágio, recorreu-se a diversas ferramentas de inteligência artificial como apoio ao desenvolvimento. O GitHub Copilot~\cite{copilot}, integrado nos ambientes JetBrains Rider e WebStorm, foi utilizado de forma transversal para agilizar a escrita de código repetitivo, a geração de estruturas de dados e a sugestão de implementações. Estas ferramentas revelaram-se particularmente úteis na integração com a SeaRates, acelerando a criação dos \textit{DTOs} de pedido e resposta, dos modelos de domínio e dos testes unitários para os novos serviços de \textit{tracking}. Para questões mais abrangentes de arquitetura, depuração de erros complexos e obtenção de trechos de código específicos, recorreu-se também ao ChatGPT~\cite{chatgpt} e ao Gemini~\cite{gemini}.
+Ao longo do estágio, recorreu-se a diversas ferramentas de inteligência artificial como apoio ao desenvolvimento. O GitHub Copilot~\cite{copilot}, integrado nos ambientes JetBrains Rider e WebStorm, foi utilizado de forma transversal para agilizar a escrita de código repetitivo, a geração de estruturas de dados e a sugestão de implementações. Estas ferramentas revelaram-se particularmente úteis na integração com a SeaRates, acelerando a criação dos \textit{\glspl{dto}} de pedido e resposta, dos modelos de domínio e dos testes unitários para os novos serviços de \textit{tracking}. Para questões mais abrangentes de arquitetura, depuração de erros complexos e obtenção de trechos de código específicos, recorreu-se também ao ChatGPT~\cite{chatgpt} e ao Gemini~\cite{gemini}.
 
 Nas últimas semanas de cada ciclo de trabalho, quando os limites de utilização do GitHub Copilot eram atingidos, o Gemini Code Assist serviu como ferramenta de recurso para tarefas pontuais de código. Contudo, nas duas últimas semanas do estágio, a imposição de restrições mais severas aos \textit{tokens} do Copilot coincidiu com a fase final de desenvolvimento do \textit{frontend} - onde o volume de trabalho de implementação de componentes React, a correção da anomalia do antimeridiano e a migração para Keycloak exigiam um ritmo de produção elevado.
 
 Para fazer face a esta contingência e manter a produtividade sem interrupções, adotou-se a versão desktop do OpenCode~\cite{opencode} com o modelo DeepSeek~\cite{deepseek} como alternativa principal. Esta combinação constituiu uma alternativa eficaz, permitindo dar continuidade ao trabalho e assegurar o cumprimento dos prazos estabelecidos para a conclusão do estágio. Adicionalmente, estas ferramentas foram utilizadas como apoio na configuração e na estruturação do presente relatório em LaTeX.
+

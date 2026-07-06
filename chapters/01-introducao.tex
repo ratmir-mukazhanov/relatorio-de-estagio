@@ -1,10 +1,10 @@
-% ===================== CAPÍTULO 1 - INTRODUÇÃO ================================
+﻿% ===================== CAPÍTULO 1 - INTRODUÇÃO ================================
 \chapter{Introdução}\label{chap:introducao}
 
 % --- Apresentação do tema e da Entidade de Acolhimento ---
 \section{Enquadramento}
 
-A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas dos setores de transportes, logística e distribuição. Fundada em 1999, conta com 27 anos de experiência nos mercados nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, bem como para PME em Portugal e nos Países Africanos de Língua Oficial Portuguesa. A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
+A Devlop~\cite{devlop} é uma empresa portuguesa de engenharia de sistemas de informação, especializada no desenvolvimento de soluções na nuvem para a gestão da cadeia de abastecimento, bem como para empresas dos setores de transportes, logística e distribuição. Fundada em 1999, conta com 27 anos de experiência nos mercados nacional e internacional, sendo uma referência em transformação digital para o setor logístico e de transportes, bem como para \gls{pme} em Portugal e nos Países Africanos de Língua Oficial Portuguesa. A Devlop é detentora da propriedade intelectual dos seus produtos e faz parte do grupo Leviahub, um parceiro de tecnologia e consultoria no setor da \textit{Supply Chain}. Tem sede em Cascais e presença em Leiria, Aveiro e Porto. O logótipo da empresa é apresentado na \autoref{fig:devlop-logo}.
 
 No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes pilares: Supply Chain, Soluções Corporativas e Infraestrutura IT.
 
@@ -15,15 +15,15 @@ No âmbito da sua atuação, a empresa organiza a sua atividade em três grandes
   \label{fig:devlop-logo}
 \end{figure}
 
-No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão de transporte e armazenamento, como o Transporter, WebSHoT, WebTrans e WebDepot, bem como WMS para suporte às operações de inventário e de distribuição. Nas soluções corporativas, atua como integradora e revendedora de valor acrescentado de sistemas ERP, com forte ligação ao ecossistema Cegid/Primavera, incluindo a extensão de funcionalidades através da plataforma OMNIA (PaaS) e o desenvolvimento de dashboards com Power BI.
+No domínio da Supply Chain, a Devlop desenvolve soluções próprias de gestão de transporte e armazenamento, como o Transporter, WebSHoT, WebTrans e WebDepot, bem como \gls{wms} para suporte às operações de inventário e de distribuição. Nas soluções corporativas, atua como integradora e revendedora de valor acrescentado de sistemas \gls{erp}, com forte ligação ao ecossistema Cegid/Primavera, incluindo a extensão de funcionalidades através da plataforma OMNIA (\gls{paas}) e o desenvolvimento de dashboards com Power BI.
 
 No domínio da infraestrutura, fornece serviços de alojamento em nuvem, de cibersegurança (em parceria com a Sophos) e de suporte técnico.
 
-Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e BD SQL Server~\cite{sqlserver}, sendo frequente o uso de EDI e o desenvolvimento de APIs para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores ERP, especialistas em infraestrutura e analistas de negócio.
+Do ponto de vista tecnológico, o ambiente de desenvolvimento centra-se em tecnologias da Microsoft, com destaque para .NET~\cite{dotnet} no \textit{backend} e \gls{bd} SQL Server~\cite{sqlserver}, sendo frequente o uso de \gls{edi} e o desenvolvimento de \glspl{api} para integração entre sistemas. A equipa insere-se num contexto multidisciplinar, composto por programadores, consultores \gls{erp}, especialistas em infraestrutura e analistas de negócio.
 
 \subsection{Situação Atual do Projeto}
 
-O integrador de \textit{tracking}, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma API que atuava como ponte entre clientes externos e fornecedores de \textit{tracking}, comunicando, à data de início do estágio, exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}. Esta API registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de \textit{tracking} e os \textit{logs} de pedidos para posterior faturação, e ainda suportava o cálculo dos custos associados ao consumo da API.
+O integrador de \textit{tracking}, ponto de partida do estágio, já se encontrava desenvolvido e operacional. Existia uma \gls{api} que atuava como ponte entre clientes externos e fornecedores de \textit{tracking}, comunicando, à data de início do estágio, exclusivamente com o fornecedor ShipsGo~\cite{shipsgo}. Esta \gls{api} registava o cliente que criou cada \textit{shipment}, a aplicação cliente responsável pelo pedido, a informação de \textit{tracking} e os \textit{logs} de pedidos para posterior faturação, e ainda suportava o cálculo dos custos associados ao consumo da \gls{api}.
 
 Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando-se na expansão das capacidades do sistema existente.
 
@@ -32,18 +32,18 @@ Deste modo, o estágio partiu de uma base já funcional e consolidada, centrando
 
 \subsection{Objetivos gerais}
 
-O estágio teve como tema \enquote{Integrador Tracking - APIs ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos, utilizando as APIs da ShipsGo~\cite{shipsgo} e da SeaRates~\cite{searates} (\autoref{fig:searates-logo}), disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as APIs, a validação e comparação dos resultados entre os dois fornecedores e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
+O estágio teve como tema \enquote{Integrador Tracking - \glspl{api} ShipsGo e SeaRates}. O objetivo inicial consistiu em desenvolver um integrador para monitorização de envios marítimos, utilizando as \glspl{api} da ShipsGo~\cite{shipsgo} e da SeaRates~\cite{searates} (\autoref{fig:searates-logo}), disponibilizadas pela Devlop. As principais tarefas previstas incluíam a criação da integração com ambas as \glspl{api}, a validação e comparação dos resultados entre os dois fornecedores e a integração dos dados no sistema interno de gestão de trânsitos (i-Forwarder).
 
 \subsection{Objetivos específicos}
 
-De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na \textit{Tracking API} existente, respeitando o padrão de orquestração já implementado para o ShipsGo~\cite{shipsgo} e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte para operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, EF Core~\cite{efcore}, SQL Server e React.
+De forma a concretizar o objetivo geral do estágio, foram definidos os seguintes objetivos específicos: integrar o fornecedor SeaRates na \textit{Tracking \gls{api}} existente, respeitando o padrão de orquestração já implementado para o ShipsGo~\cite{shipsgo} e mantendo a compatibilidade com os \textit{endpoints} públicos; desenvolver uma interface \textit{frontend} funcional em React~\cite{react} para a plataforma de seguimento, com suporte para operações de gestão e consulta por parte de utilizadores finais e administradores; e adquirir proficiência na \textit{stack} tecnológica da Devlop, nomeadamente .NET, \gls{efcore}~\cite{efcore}, SQL Server e React.
 
-Previa-se também a preparação da integração da solução nos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de APIs num contexto empresarial real.
+Previa-se também a preparação da integração da solução nos sistemas internos da empresa, bem como a realização de testes e a elaboração da documentação técnica. Pretendia-se, ainda, que o estágio proporcionasse experiência prática no desenvolvimento e na integração de \glspl{api} num contexto empresarial real.
 
 % --- Metodologia ---
 \section{Metodologias de Trabalho}
 
-Durante o estágio, o planeamento do trabalho seguiu uma abordagem em cascata (\textit{waterfall}), com as seis fases bem definidas à partida e calendarizadas de acordo com o PIT. A execução, por sua vez, foi organizada em ciclos semanais nos quais eram definidos objetivos e tarefas a desenvolver, à semelhança de \textit{sprints} ágeis. No final de cada ciclo, realizava-se um ponto de situação para avaliar o progresso e identificar os próximos passos.
+Durante o estágio, o planeamento do trabalho seguiu uma abordagem em cascata (\textit{waterfall}), com as seis fases bem definidas à partida e calendarizadas de acordo com o \gls{pit}. A execução, por sua vez, foi organizada em ciclos semanais nos quais eram definidos objetivos e tarefas a desenvolver, à semelhança de \textit{sprints} ágeis. No final de cada ciclo, realizava-se um ponto de situação para avaliar o progresso e identificar os próximos passos.
 
 A comunicação técnica e o acompanhamento diário foram realizados principalmente com Sandro Cunha, colega de equipa que desempenhou o papel de responsável pelo acolhimento técnico, apoiando a integração no projeto e esclarecendo dúvidas. Realizavam-se ainda reuniões semanais com o orientador da empresa, Bruno Leitão, para a validação de decisões técnicas e o alinhamento do trabalho com os objetivos definidos. A comunicação foi efetuada maioritariamente através do Microsoft Teams.
 
@@ -58,4 +58,5 @@ O presente capítulo introduz o enquadramento do estágio, apresentando a entida
 
 O \autoref{chap:analise} analisa o grau de cumprimento dos objetivos face ao plano inicial, discute os principais desvios e os resultados alcançados e inventaria as tecnologias e ferramentas utilizadas. Por fim, o \autoref{chap:conclusoes} sintetiza os resultados do estágio, apresenta uma reflexão crítica sobre as competências adquiridas e as dificuldades enfrentadas, e conclui com propostas de trabalho futuro.
 
-Os anexos complementam o relatório com documentação de suporte, incluindo o PIT, o registo da execução efetiva e o diagrama de arquitetura do sistema.
+Os anexos complementam o relatório com documentação de suporte, incluindo o \gls{pit}, o registo da execução efetiva e o diagrama de arquitetura do sistema.
+

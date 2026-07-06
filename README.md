@@ -10,8 +10,8 @@ latexmk -pdf main.tex
 ```
 
 ```bash
-latexmk -C relatorio.tex
-latexmk -pdf relatorio.tex
+latexmk -C main.tex
+latexmk -pdf main.tex
 ```
 
 This command automatically handles the `pdflatex` → `biber` → `pdflatex` → `pdflatex` passes
